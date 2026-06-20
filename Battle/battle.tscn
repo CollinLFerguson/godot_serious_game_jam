@@ -13,30 +13,54 @@ position = Vector2(966, 543)
 texture = ExtResource("2_do635")
 
 [node name="Enemy" parent="." unique_id=1529993463 instance=ExtResource("1_ac2hh")]
-position = Vector2(923, 899)
+position = Vector2(866, 932)
 base_velocity = Vector2(-100, -100)
 base_torque = -60
 sprite = ExtResource("2_o5tja")
 
-[node name="Player" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
-position = Vector2(321, 407)
+[node name="Enemy2" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
+position = Vector2(313, 930)
+base_velocity = Vector2(-100, -100)
+base_torque = -60
+sprite = ExtResource("2_o5tja")
+
+[node name="Enemy3" parent="." unique_id=213090920 instance=ExtResource("1_ac2hh")]
+position = Vector2(800, 185)
+base_velocity = Vector2(-100, -100)
+base_torque = -60
+sprite = ExtResource("2_o5tja")
+
+[node name="Enemy4" parent="." unique_id=1169771426 instance=ExtResource("1_ac2hh")]
+position = Vector2(1422, 897)
+base_velocity = Vector2(-100, -100)
+base_torque = -60
+sprite = ExtResource("2_o5tja")
+
+[node name="Enemy5" parent="." unique_id=1600404327 instance=ExtResource("1_ac2hh")]
+position = Vector2(1452, 191)
+base_velocity = Vector2(-100, -100)
+base_torque = -60
+sprite = ExtResource("2_o5tja")
+
+[node name="Player" parent="." unique_id=1032372105 instance=ExtResource("1_ac2hh")]
+position = Vector2(244, 186)
 base_velocity = Vector2(100, 100)
 
 [node name="Wall" parent="." unique_id=785614695 instance=ExtResource("1_ksnli")]
-position = Vector2(959, -27)
+position = Vector2(965, -17)
 
 [node name="Wall2" parent="." unique_id=13427928 instance=ExtResource("1_ksnli")]
-position = Vector2(965, 1110)
+position = Vector2(965, 1102)
 
 [node name="Wall3" parent="." unique_id=829157609 instance=ExtResource("1_ksnli")]
-position = Vector2(-23, 709)
+position = Vector2(-9, 705)
 rotation = 1.5707964
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=90964794]
 position = Vector2(960, 540)
 
 [node name="Wall4" parent="." unique_id=1521899015 instance=ExtResource("1_ksnli")]
-position = Vector2(1943, 446)
+position = Vector2(1939, 442)
 rotation = 1.5707964
 
 [node name="RockBorder" type="Sprite2D" parent="." unique_id=355733280]

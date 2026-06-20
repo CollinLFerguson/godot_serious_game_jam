@@ -1,9 +1,12 @@
 extends RigidBody2D
 
-@export var base_velocity = Vector2(1,1)
+@export var min_velocity = 50
+@export var base_velocity = Vector2(50,50)
+@export var max_velocity = 200.0
 
-@export var max_velocity = 200
-@export var base_torque = 300
+@export var min_torque = 20.0
+@export var base_torque = 50.0
+@export var max_torque = 100.0
 
 @export var sprite: SpriteFrames = load("res://Actors/Sprites/player.tres")
 
@@ -20,22 +23,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _physics_process(delta: float) -> void:
-	var velocity = linear_velocity
-	#var rotation_speed = angular_velocity
-	#apply_torque(rotation_speed)
-
+func _physics_process(delta: float) -> void:	
+	pass
+	
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
-	var velocity := state.get_linear_velocity()
-	#var torque := state.get_constant_torque()
-	#var step := state.get_step()
-	
-	apply_force(velocity.limit_length(max_velocity))
-
-	# Handle bounce correctly via state
-	for i in range(state.get_contact_count()):
-		var normal = state.get_contact_local_normal(i)
-		var v = state.get_linear_velocity()
-		state.set_linear_velocity(v.bounce(normal))
+	var vel := state.linear_velocity
+	if vel.length() > max_velocity:
+		state.linear_velocity = vel.normalized() * max_velocity
+		
+	if abs(state.angular_velocity) > max_torque:
+		state.angular_velocity = sign(state.angular_velocity) * max_torque
