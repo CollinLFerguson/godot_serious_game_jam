@@ -19,6 +19,7 @@ animations = [{
 }]
 
 [node name="Turtle" type="RigidBody2D" unique_id=2115216272]
+gravity_scale = 0.0
 script = ExtResource("1_veoao")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
