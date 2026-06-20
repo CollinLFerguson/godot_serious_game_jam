@@ -1,33 +1,31 @@
 [gd_scene format=3 uid="uid://cq202qb8puj21"]
 
 [ext_resource type="Script" uid="uid://bcjc2nuryxn2o" path="res://Actors/turtle.gd" id="1_veoao"]
-[ext_resource type="Texture2D" uid="uid://kj86k3tkss36" path="res://Actors/Assets/player_turtle.png" id="2_veoao"]
+[ext_resource type="SpriteFrames" uid="uid://1akvpnd4dhcu" path="res://Actors/Sprites/player.tres" id="2_7mqse"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cnp70"]
+friction = 0.0
 bounce = 0.9
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6u5b"]
-radius = 62.0
-height = 144.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fd0u3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_veoao")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
+radius = 57.0
+height = 136.0
 
 [node name="Turtle" type="RigidBody2D" unique_id=2115216272]
 physics_material_override = SubResource("PhysicsMaterial_cnp70")
 gravity_scale = 0.0
+inertia = 10.0
+linear_damp = -1.0
+angular_velocity = 1.7453293
 script = ExtResource("1_veoao")
+base_torque = 10
+sprite = ExtResource("2_7mqse")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
 shape = SubResource("CapsuleShape2D_k6u5b")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=653166209]
-sprite_frames = SubResource("SpriteFrames_fd0u3")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=653166209]
+sprite_frames = ExtResource("2_7mqse")
+
+[node name="AttachPoint" type="Marker2D" parent="." unique_id=1242615]

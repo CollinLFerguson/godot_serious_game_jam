@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://qfqq8a0co8xr"]
+
+[ext_resource type="Texture2D" uid="uid://cdrolprqr0es3" path="res://Actors/Assets/enemy_turtle.png" id="1_qae0l"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qae0l")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

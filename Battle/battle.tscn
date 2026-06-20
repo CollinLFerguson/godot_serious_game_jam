@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="1_ac2hh"]
 [ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="1_ksnli"]
 [ext_resource type="Texture2D" uid="uid://dlp6isht2bftv" path="res://art/grass_background_better.png" id="2_do635"]
+[ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="2_o5tja"]
 [ext_resource type="Texture2D" uid="uid://b0h1djfai7cqa" path="res://art/rock_border.png" id="5_do635"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
@@ -15,6 +16,7 @@ texture = ExtResource("2_do635")
 position = Vector2(923, 899)
 base_velocity = Vector2(-100, -100)
 base_torque = -60
+sprite = ExtResource("2_o5tja")
 
 [node name="Player" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
 position = Vector2(321, 407)
