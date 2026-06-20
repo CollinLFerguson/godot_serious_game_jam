@@ -6,7 +6,10 @@ func _ready() -> void:
 	$StartBattleButton.pressed.connect(on_startBattleButton_pressed)
 
 func on_startBattleButton_pressed():
-	get_tree().change_scene_to_file("res://Battle/battle.tscn")
+	var sfx = $StartBattleButton/StartBattleSound
+	sfx.play()
+	await sfx.finished 
+	SignalBus.scene_switch.emit("res://Battle/battle.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
