@@ -1,14 +1,9 @@
 [gd_scene format=3 uid="uid://mdk087nvv283"]
 
-[ext_resource type="Texture2D" uid="uid://ctbncilcfux52" path="res://Collidable/rock.png" id="1_3bnye"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_554n6"]
 size = Vector2(1891, 57)
 
 [node name="Wall" type="StaticBody2D" unique_id=1800999164]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1706265192]
-texture = ExtResource("1_3bnye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2081036233]
 shape = SubResource("RectangleShape2D_554n6")

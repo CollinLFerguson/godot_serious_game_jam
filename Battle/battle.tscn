@@ -2,13 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="1_ac2hh"]
 [ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="1_ksnli"]
-[ext_resource type="Texture2D" uid="uid://ynoq2k2gvkud" path="res://art/grassy_background.png" id="1_o5tja"]
+[ext_resource type="Texture2D" uid="uid://dlp6isht2bftv" path="res://art/grass_background_better.png" id="2_do635"]
+[ext_resource type="Texture2D" uid="uid://b0h1djfai7cqa" path="res://art/rock_border.png" id="5_do635"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
 
-[node name="GrassyBackground" type="Sprite2D" parent="." unique_id=1203379509]
-position = Vector2(939, 528)
-texture = ExtResource("1_o5tja")
+[node name="GrassBackgroundBetter" type="Sprite2D" parent="." unique_id=166701581]
+position = Vector2(966, 543)
+texture = ExtResource("2_do635")
 
 [node name="Enemy" parent="." unique_id=1529993463 instance=ExtResource("1_ac2hh")]
 position = Vector2(923, 899)
@@ -20,18 +21,22 @@ position = Vector2(321, 407)
 base_velocity = Vector2(100, 100)
 
 [node name="Wall" parent="." unique_id=785614695 instance=ExtResource("1_ksnli")]
-position = Vector2(969, 29)
+position = Vector2(959, -27)
 
 [node name="Wall2" parent="." unique_id=13427928 instance=ExtResource("1_ksnli")]
-position = Vector2(970, 1029)
+position = Vector2(965, 1110)
 
 [node name="Wall3" parent="." unique_id=829157609 instance=ExtResource("1_ksnli")]
-position = Vector2(29, 709)
+position = Vector2(-23, 709)
 rotation = 1.5707964
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=90964794]
 position = Vector2(960, 540)
 
 [node name="Wall4" parent="." unique_id=1521899015 instance=ExtResource("1_ksnli")]
-position = Vector2(1891, 446)
+position = Vector2(1943, 446)
 rotation = 1.5707964
+
+[node name="RockBorder" type="Sprite2D" parent="." unique_id=355733280]
+position = Vector2(966, 543)
+texture = ExtResource("5_do635")
