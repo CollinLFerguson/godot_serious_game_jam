@@ -2,8 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="1_ac2hh"]
 [ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="1_ksnli"]
+[ext_resource type="Texture2D" uid="uid://ynoq2k2gvkud" path="res://art/grassy_background.png" id="1_o5tja"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
+
+[node name="GrassyBackground" type="Sprite2D" parent="." unique_id=1203379509]
+position = Vector2(939, 528)
+texture = ExtResource("1_o5tja")
 
 [node name="Enemy" parent="." unique_id=1529993463 instance=ExtResource("1_ac2hh")]
 position = Vector2(923, 899)
