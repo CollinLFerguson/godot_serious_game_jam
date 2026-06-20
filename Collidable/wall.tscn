@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://tjllbx6rnkew"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_buk2e"]
-
-[node name="Wall" type="StaticBody2D" unique_id=1440987667]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=44560875]
-shape = SubResource("RectangleShape2D_buk2e")
-debug_color = Color(0.9869663, 0, 0.32295576, 0.41960785)
