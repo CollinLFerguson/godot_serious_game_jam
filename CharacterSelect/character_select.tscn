@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://df13ck0yeo6gh"]
 
+[ext_resource type="Script" uid="uid://b8ytwdm2qr3xn" path="res://CharacterSelect/character_select.gd" id="1_s16rr"]
+
 [node name="CharacterSelect" type="Node2D" unique_id=760595578]
+script = ExtResource("1_s16rr")
 
 [node name="Options" type="MenuButton" parent="." unique_id=827291061]
 offset_left = 663.0
@@ -8,3 +11,11 @@ offset_top = 194.0
 offset_right = 846.0
 offset_bottom = 225.0
 text = "Choose your character"
+
+[node name="StartBattleButton" type="Button" parent="." unique_id=1232024631]
+offset_left = 619.0
+offset_top = 278.0
+offset_right = 893.0
+offset_bottom = 404.0
+theme_override_font_sizes/font_size = 36
+text = "Start Battle!"

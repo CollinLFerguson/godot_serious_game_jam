@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cx75n4mbae0fc"]
+
+[ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="1_ac2hh"]
+
+[node name="Battle" type="Node2D" unique_id=1111483387]
+
+[node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
