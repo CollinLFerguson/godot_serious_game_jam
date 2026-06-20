@@ -4,4 +4,11 @@
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
 
-[node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
+[node name="Player" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
+position = Vector2(321, 407)
+base_velocity = Vector2(2, 2)
+
+[node name="Enemy" parent="." unique_id=1529993463 instance=ExtResource("1_ac2hh")]
+position = Vector2(867, 1009)
+base_velocity = Vector2(-2, -2)
+base_torque = -60

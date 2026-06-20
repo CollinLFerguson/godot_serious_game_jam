@@ -7,8 +7,8 @@ var items = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	apply_force(Vector2(1,1))
-	apply_torque(60)
+	apply_force(base_velocity)
+	apply_torque(base_torque)
 	pass # Replace with function body.
 
 
