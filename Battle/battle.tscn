@@ -1,53 +1,32 @@
 [gd_scene format=3 uid="uid://cx75n4mbae0fc"]
 
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="1_ac2hh"]
-[ext_resource type="PackedScene" uid="uid://drl0qmp15rnba" path="res://Collidable/chad_cody_wall.tscn" id="2_ksnli"]
-[ext_resource type="Texture2D" uid="uid://ctbncilcfux52" path="res://Collidable/rock.png" id="3_o5tja"]
+[ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="1_ksnli"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
+
+[node name="Enemy" parent="." unique_id=1529993463 instance=ExtResource("1_ac2hh")]
+position = Vector2(923, 899)
+base_velocity = Vector2(-2, -2)
+base_torque = -60
 
 [node name="Player" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
 position = Vector2(321, 407)
 base_velocity = Vector2(2, 2)
 
-[node name="Enemy" parent="." unique_id=1529993463 instance=ExtResource("1_ac2hh")]
-position = Vector2(867, 1009)
-base_velocity = Vector2(-2, -2)
-base_torque = -60
+[node name="Wall" parent="." unique_id=785614695 instance=ExtResource("1_ksnli")]
+position = Vector2(969, 29)
 
-[node name="ChadCodyWall" parent="." unique_id=1063931832 instance=ExtResource("2_ksnli")]
-position = Vector2(960, 0)
-scale = Vector2(96, 1)
+[node name="Wall2" parent="." unique_id=13427928 instance=ExtResource("1_ksnli")]
+position = Vector2(970, 1029)
 
-[node name="ChadCodyWall3" parent="." unique_id=1387961328 instance=ExtResource("2_ksnli")]
-position = Vector2(0, 540)
-scale = Vector2(1, 54)
-
-[node name="ChadCodyWall4" parent="." unique_id=2114575715 instance=ExtResource("2_ksnli")]
-position = Vector2(1920, 540)
-scale = Vector2(1, 54)
-
-[node name="ChadCodyWall2" parent="." unique_id=1415898020 instance=ExtResource("2_ksnli")]
-position = Vector2(960, 1080)
-scale = Vector2(96, 1)
+[node name="Wall3" parent="." unique_id=829157609 instance=ExtResource("1_ksnli")]
+position = Vector2(29, 709)
+rotation = 1.5707964
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=90964794]
 position = Vector2(960, 540)
 
-[node name="Rock" type="Sprite2D" parent="." unique_id=210516466]
-position = Vector2(951, -14)
-texture = ExtResource("3_o5tja")
-
-[node name="Rock" type="Sprite2D" parent="Rock" unique_id=1347867997]
-position = Vector2(24, 1099)
-texture = ExtResource("3_o5tja")
-
-[node name="Rock" type="Sprite2D" parent="Rock/Rock" unique_id=380067264]
-position = Vector2(-979, -550)
+[node name="Wall4" parent="." unique_id=1521899015 instance=ExtResource("1_ksnli")]
+position = Vector2(1891, 446)
 rotation = 1.5707964
-texture = ExtResource("3_o5tja")
-
-[node name="Rock2" type="Sprite2D" parent="Rock" unique_id=613209826]
-position = Vector2(970, 587)
-rotation = -1.5707964
-texture = ExtResource("3_o5tja")
