@@ -10,8 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Testing"
-run/main_scene="uid://e5kd8sg2w4bk"
+config/name="serious_game_jam"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
@@ -19,15 +18,6 @@ config/icon="res://icon.svg"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/backstitch/plugin.cfg")
 
 [physics]
 
