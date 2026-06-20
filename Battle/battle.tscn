@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cx75n4mbae0fc"]
 
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="1_ac2hh"]
+[ext_resource type="PackedScene" uid="uid://drl0qmp15rnba" path="res://Collidable/chad_cody_wall.tscn" id="2_ksnli"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
 
@@ -12,3 +13,22 @@ base_velocity = Vector2(2, 2)
 position = Vector2(867, 1009)
 base_velocity = Vector2(-2, -2)
 base_torque = -60
+
+[node name="ChadCodyWall" parent="." unique_id=1063931832 instance=ExtResource("2_ksnli")]
+position = Vector2(960, 0)
+scale = Vector2(96, 1)
+
+[node name="ChadCodyWall3" parent="." unique_id=1387961328 instance=ExtResource("2_ksnli")]
+position = Vector2(0, 540)
+scale = Vector2(1, 54)
+
+[node name="ChadCodyWall4" parent="." unique_id=2114575715 instance=ExtResource("2_ksnli")]
+position = Vector2(1920, 540)
+scale = Vector2(1, 54)
+
+[node name="ChadCodyWall2" parent="." unique_id=1415898020 instance=ExtResource("2_ksnli")]
+position = Vector2(960, 1080)
+scale = Vector2(96, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=90964794]
+position = Vector2(960, 540)
