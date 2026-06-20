@@ -23,9 +23,10 @@ func _ready() -> void:
 func rebuild() -> void:
 	var w := map_size.x
 	var h := map_size.y
+	var padding = 100
 	polygon = PackedVector2Array([
-		Vector2(0, 0),
-		Vector2(w, 0),
-		Vector2(w, h),
-		Vector2(0, h),
+		Vector2(padding, padding),
+		Vector2(w - padding, padding),
+		Vector2(w - padding, h - padding),
+		Vector2(padding, h - padding),
 	])
