@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dxoxarrevn02d"]
+
+[node name="WallCurved" type="StaticBody2D" unique_id=2006173947]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=199526507]
+build_mode = 1
+polygon = PackedVector2Array(316, 304, 568, 169, 804, 94, 1177, 85, 1484, 182, 1690, 349, 1771, 454, 1801, 563, 1640, 739, 1424, 885, 1287, 945, 1068, 957, 954, 968, 809, 953, 671, 942, 519, 880, 335, 767, 165, 636, 140, 518, 234, 379)
