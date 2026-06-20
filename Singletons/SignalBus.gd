@@ -5,7 +5,7 @@ signal player_lost
 signal player_win
 
 # Upgrade signals
-signal upgrade_selected
+signal upgrade_selected(upgradeName: String)
 
 # Scene switching signal
 signal scene_switch(scenePath: String)
