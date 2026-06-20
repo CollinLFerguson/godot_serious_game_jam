@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dyk4fkrwlape4"]
+
+[node name="CodyTest" type="Node2D" unique_id=978592895]
+
+[node name="Control" type="Control" parent="." unique_id=21456189]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

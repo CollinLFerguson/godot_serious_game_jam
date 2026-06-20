@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="godot_serious_game_jam"
-config/features=PackedStringArray("4.7", "Forward Plus")
+config/name="Testing"
+config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
@@ -24,6 +24,10 @@ window/stretch/aspect="expand"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/backstitch/plugin.cfg")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -31,3 +35,4 @@ version_control/autoload_on_startup=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
