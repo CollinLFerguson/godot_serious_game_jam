@@ -1,6 +1,9 @@
 extends RigidBody2D
 
+@export var base_velocity = Vector2(1,1)
+@export var base_torque = 60
 
+var items = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,4 +24,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	
 	apply_torque(torque)
 	apply_force(velocity)
+	
+	for i in state.get_contact_count():
+		var normal = state.get_contact_local_normal(i)
+		linear_velocity = linear_velocity.bounce(normal)
 	
