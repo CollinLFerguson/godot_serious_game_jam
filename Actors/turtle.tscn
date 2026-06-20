@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cq202qb8puj21"]
 
 [ext_resource type="Texture2D" uid="uid://bo10byyuk4tk" path="res://Actors/Assets/turtle.png" id="1_3eanc"]
+[ext_resource type="Script" uid="uid://bcjc2nuryxn2o" path="res://Actors/turtle.gd" id="1_veoao"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6u5b"]
 radius = 64.0
@@ -18,6 +19,7 @@ animations = [{
 }]
 
 [node name="Turtle" type="RigidBody2D" unique_id=2115216272]
+script = ExtResource("1_veoao")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
 shape = SubResource("CapsuleShape2D_k6u5b")
