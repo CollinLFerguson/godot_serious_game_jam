@@ -6,7 +6,7 @@ extends CollisionPolygon2D
 ## Set `map_s ize` and the four-wall outline builds itself; change it at runtime
 ## and it rebuilds.
 
-@export var map_size: Vector2 = Vector2(1920, 1080):
+@export var map_size: Vector2 = DisplayServer.screen_get_size():
 	set(value):
 		map_size = value
 		if is_node_ready():
