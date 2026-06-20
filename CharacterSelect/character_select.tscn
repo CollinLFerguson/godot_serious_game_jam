@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://df13ck0yeo6gh"]
+
+[node name="CharacterSelect" type="Node2D" unique_id=760595578]
+
+[node name="Options" type="MenuButton" parent="." unique_id=827291061]
+offset_left = 663.0
+offset_top = 194.0
+offset_right = 846.0
+offset_bottom = 225.0
+text = "Choose your character"
