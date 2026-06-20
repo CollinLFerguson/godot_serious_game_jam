@@ -15,11 +15,16 @@ run/main_scene="uid://cfdrgt1thf03p"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://cewk05vab27id"
+
 [autoload]
 
 Bracket="*uid://dyenltv3yv53w"
 Upgrades="*uid://tw4hopiyfi7h"
 SignalBus="*uid://dct35ovu4bhfq"
+SceneSwitcher="*uid://5balno6pfkhf"
 
 [display]
 

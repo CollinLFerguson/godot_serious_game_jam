@@ -7,7 +7,7 @@ extends Polygon2D
 ## Set `map_size` and the four-wall outline builds itself; change it at runtime
 ## and it rebuilds.
 
-@export var map_size: Vector2 = DisplayServer.screen_get_size():
+@export var map_size: Vector2 = Vector2(get_viewport_rect().end.x, get_viewport_rect().end.y):
 	set(value):
 		map_size = value
 		if is_node_ready():

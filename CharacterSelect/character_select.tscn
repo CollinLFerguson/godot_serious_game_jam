@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://df13ck0yeo6gh"]
 
 [ext_resource type="Script" uid="uid://b8ytwdm2qr3xn" path="res://CharacterSelect/character_select.gd" id="1_s16rr"]
+[ext_resource type="AudioStream" uid="uid://bwrv05r1ibswf" path="res://SFX/start_battle.mp3" id="2_8hkwl"]
 
 [node name="CharacterSelect" type="Node2D" unique_id=760595578]
 script = ExtResource("1_s16rr")
@@ -19,3 +20,7 @@ offset_right = 893.0
 offset_bottom = 404.0
 theme_override_font_sizes/font_size = 36
 text = "Start Battle!"
+
+[node name="StartBattleSound" type="AudioStreamPlayer2D" parent="StartBattleButton" unique_id=780411458]
+stream = ExtResource("2_8hkwl")
+volume_db = -20.0

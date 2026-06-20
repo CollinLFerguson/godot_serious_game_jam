@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://mdk087nvv283"]
 
-[ext_resource type="Script" uid="uid://cxyirf1pkmlg" path="res://background.gd" id="1_mwx44"]
-[ext_resource type="Script" uid="uid://qdr6jxv0jbpc" path="res://collision.gd" id="2_fj232"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_554n6"]
 
-[node name="Wall" type="StaticBody2D" unique_id=167994414]
+[node name="Area2D" type="Area2D" unique_id=829157609]
 
-[node name="Background" type="Polygon2D" parent="." unique_id=1186570470]
-color = Color(0.47269297, 0.28954872, 0.17657918, 1)
-script = ExtResource("1_mwx44")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2081036233]
+shape = SubResource("RectangleShape2D_554n6")
 
-[node name="Collision" type="CollisionPolygon2D" parent="." unique_id=547029834]
-script = ExtResource("2_fj232")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1706265192]

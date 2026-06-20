@@ -6,7 +6,10 @@ func _ready() -> void:
 	$StartGameButton.pressed.connect(on_startGameButton_pressed)
 
 func on_startGameButton_pressed():
-	get_tree().change_scene_to_file("res://CharacterSelect/character_select.tscn")
+	var sfx = $StartGameButton/StartButtonSound
+	sfx.play()
+	await sfx.finished 
+	SignalBus.scene_switch.emit("res://CharacterSelect/character_select.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
