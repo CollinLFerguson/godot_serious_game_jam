@@ -12,12 +12,12 @@ texture = ExtResource("1_o5tja")
 
 [node name="Enemy" parent="." unique_id=1529993463 instance=ExtResource("1_ac2hh")]
 position = Vector2(923, 899)
-base_velocity = Vector2(-2, -2)
+base_velocity = Vector2(-100, -100)
 base_torque = -60
 
 [node name="Player" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
 position = Vector2(321, 407)
-base_velocity = Vector2(2, 2)
+base_velocity = Vector2(100, 100)
 
 [node name="Wall" parent="." unique_id=785614695 instance=ExtResource("1_ksnli")]
 position = Vector2(969, 29)

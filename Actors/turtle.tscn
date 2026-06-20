@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bcjc2nuryxn2o" path="res://Actors/turtle.gd" id="1_veoao"]
 [ext_resource type="Texture2D" uid="uid://kj86k3tkss36" path="res://Actors/Assets/player_turtle.png" id="2_veoao"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cnp70"]
+bounce = 0.9
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6u5b"]
 radius = 62.0
 height = 144.0
@@ -19,6 +22,7 @@ animations = [{
 }]
 
 [node name="Turtle" type="RigidBody2D" unique_id=2115216272]
+physics_material_override = SubResource("PhysicsMaterial_cnp70")
 gravity_scale = 0.0
 script = ExtResource("1_veoao")
 

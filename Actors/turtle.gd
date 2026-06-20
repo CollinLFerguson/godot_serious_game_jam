@@ -2,6 +2,7 @@ extends RigidBody2D
 
 @export var base_velocity = Vector2(1,1)
 @export var base_torque = 60
+@export var max_velocity = 200
 
 var items = []
 
@@ -23,7 +24,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var step := state.get_step()
 	
 	apply_torque(torque)
-	apply_force(velocity)
+	apply_force(velocity.limit_length(max_velocity))
 	
 	for i in state.get_contact_count():
 		var normal = state.get_contact_local_normal(i)
