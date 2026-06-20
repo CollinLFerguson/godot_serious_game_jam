@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cq202qb8puj21"]
+
+[ext_resource type="Texture2D" uid="uid://bo10byyuk4tk" path="res://Actors/Assets/turtle.png" id="1_3eanc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6u5b"]
+radius = 64.0
+height = 128.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fd0u3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3eanc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Turtle" type="RigidBody2D" unique_id=2115216272]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
+shape = SubResource("CapsuleShape2D_k6u5b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=653166209]
+sprite_frames = SubResource("SpriteFrames_fd0u3")
