@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://cq202qb8puj21"]
 
-[ext_resource type="Texture2D" uid="uid://bo10byyuk4tk" path="res://Actors/Assets/turtle.png" id="1_3eanc"]
 [ext_resource type="Script" uid="uid://bcjc2nuryxn2o" path="res://Actors/turtle.gd" id="1_veoao"]
+[ext_resource type="Texture2D" uid="uid://kj86k3tkss36" path="res://Actors/Assets/player_turtle.png" id="2_veoao"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6u5b"]
-radius = 64.0
-height = 128.0
+radius = 62.0
+height = 144.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fd0u3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_3eanc")
+"texture": ExtResource("2_veoao")
 }],
 "loop": 1,
 "name": &"default",
