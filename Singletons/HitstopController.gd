@@ -3,14 +3,15 @@ extends Node
 func _ready():
 	#SignalBus.hit.connect(hitstop_short)
 	pass
-	
 
 func hitstop_short():
-	Engine.time_scale = 0.1
-	await get_tree().create_timer(0.15, true, true, true).timeout
-	Engine.time_scale = 1
+	hitstop(0.15)
 
 func hitstop_long():
+	hitstop(0.30)
+
+func hitstop(time: float):
 	Engine.time_scale = 0.1
-	await get_tree().create_timer(0.30, true, true, true).timeout
+	#SoundController()
+	await get_tree().create_timer(time, true, true, true).timeout
 	Engine.time_scale = 1
