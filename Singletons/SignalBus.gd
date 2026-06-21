@@ -15,3 +15,4 @@ signal scene_switch(scenePath: String)
 
 #impact collision
 signal hit
+signal hitstop

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ddbmjx0et6qgp"]
+
+[ext_resource type="Script" uid="uid://dsgysjqous671" path="res://Controllers/hitstop_controller.gd" id="1_tag46"]
+
+[node name="HitstopController" type="Node" unique_id=1810793727]
+script = ExtResource("1_tag46")
