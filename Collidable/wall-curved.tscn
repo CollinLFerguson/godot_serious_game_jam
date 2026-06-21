@@ -1,7 +1,55 @@
 [gd_scene format=3 uid="uid://dxoxarrevn02d"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1oqq"]
+size = Vector2(633, 117)
+
 [node name="WallCurved" type="StaticBody2D" unique_id=2006173947]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=199526507]
 build_mode = 1
 polygon = PackedVector2Array(316, 304, 568, 169, 804, 94, 1177, 85, 1484, 182, 1690, 349, 1771, 454, 1801, 563, 1640, 739, 1424, 885, 1287, 945, 1068, 957, 954, 968, 809, 953, 671, 942, 519, 880, 335, 767, 165, 636, 140, 518, 234, 379)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1259905474]
+position = Vector2(439, 168)
+rotation = -0.5235988
+shape = SubResource("RectangleShape2D_t1oqq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D" unique_id=264763353]
+position = Vector2(538.88574, 150.62247)
+rotation = 0.5235988
+shape = SubResource("RectangleShape2D_t1oqq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionShape2D" unique_id=1728091670]
+position = Vector2(900.06134, 433.04807)
+rotation = 0.7853982
+shape = SubResource("RectangleShape2D_t1oqq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionShape2D" unique_id=175013122]
+position = Vector2(1016.9985, 634.50696)
+rotation = 1.3089969
+shape = SubResource("RectangleShape2D_t1oqq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionShape2D" unique_id=274921597]
+position = Vector2(757.0773, 1150.7036)
+rotation = 2.8797934
+shape = SubResource("RectangleShape2D_t1oqq")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="CollisionShape2D" unique_id=623868662]
+position = Vector2(-411.88013, 547.39734)
+rotation = 4.205269
+shape = SubResource("RectangleShape2D_t1oqq")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="CollisionShape2D" unique_id=916429585]
+position = Vector2(8.038952, 1008.07605)
+rotation = -2.4676166
+shape = SubResource("RectangleShape2D_t1oqq")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="CollisionShape2D" unique_id=656060001]
+position = Vector2(251.03572, 1117.1934)
+rotation = -2.6612165
+shape = SubResource("RectangleShape2D_t1oqq")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="CollisionShape2D" unique_id=1054701999]
+position = Vector2(-482.0827, 156.99158)
+rotation = -1.1326004
+shape = SubResource("RectangleShape2D_t1oqq")

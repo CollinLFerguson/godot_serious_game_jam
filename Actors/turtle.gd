@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+const HIT_EFFECT: PackedScene = preload("res://art/sparks/spark_impact.tscn")
+
 @export var min_velocity = 300
 @export var base_velocity = Vector2(500,500)
 @export var max_velocity = 1000.0
@@ -28,6 +30,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:	
 	var velocity = linear_velocity
 	apply_force(linear_velocity * (1 + acceleration))
+	spawn_effect(self)
 	
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -45,3 +48,10 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		state.angular_velocity = sign(state.angular_velocity) * max_angular_velocity
 	elif angular < min_angular_velocity and angular > 0.0:
 		state.angular_velocity = sign(state.angular_velocity) * min_angular_velocity
+		
+func spawn_effect(parent: Node2D) -> void:
+	var effect = HIT_EFFECT.instantiate()
+	parent.add_child(effect)
+	effect.position = parent.position  # sits at the parent's origin and rides along
+	effect.play()
+	effect.animation_finished.connect(effect.queue_free)
