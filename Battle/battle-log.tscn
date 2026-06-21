@@ -14,3 +14,11 @@ texture = ExtResource("1_o7vvn")
 position = Vector2(943, 872)
 
 [node name="WallCurved" parent="." unique_id=2006173947 instance=ExtResource("2_gtdv5")]
+
+[node name="Turtle2" parent="." unique_id=604692791 instance=ExtResource("3_gnf34")]
+position = Vector2(830, 419)
+rotation = -1.7694426
+
+[node name="Turtle3" parent="." unique_id=515677159 instance=ExtResource("3_gnf34")]
+position = Vector2(1276, 653)
+rotation = 0.85206676

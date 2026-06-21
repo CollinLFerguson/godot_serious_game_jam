@@ -7,6 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="2_o5tja"]
 [ext_resource type="Texture2D" uid="uid://b0h1djfai7cqa" path="res://art/rock_border.png" id="5_do635"]
 [ext_resource type="AudioStream" uid="uid://bxpixj85531us" path="res://SFX/battle theme srs.mp3" id="7_0lqow"]
+[ext_resource type="PackedScene" uid="uid://ditwvn3psmmec" path="res://art/sparks/spark_impact.tscn" id="6_ploow"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
 script = ExtResource("1_ploow")
@@ -16,30 +17,87 @@ position = Vector2(966, 543)
 texture = ExtResource("2_do635")
 
 [node name="Enemy" parent="." unique_id=1529993463 instance=ExtResource("1_ac2hh")]
-position = Vector2(923, 899)
+position = Vector2(866, 932)
+inertia = 10.0
+continuous_cd = 0
+contact_monitor = false
+max_contacts_reported = 0
+linear_damp = -1.0
+angular_velocity = 1.7453293
 base_velocity = Vector2(-100, -100)
-base_torque = -60
 sprite = ExtResource("2_o5tja")
 
-[node name="Player" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
-position = Vector2(321, 407)
-base_velocity = Vector2(100, 100)
+[node name="Enemy2" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
+position = Vector2(313, 930)
+inertia = 10.0
+continuous_cd = 0
+contact_monitor = false
+max_contacts_reported = 0
+linear_damp = -1.0
+angular_velocity = 1.7453293
+base_velocity = Vector2(-100, -100)
+sprite = ExtResource("2_o5tja")
+
+[node name="Enemy3" parent="." unique_id=213090920 instance=ExtResource("1_ac2hh")]
+position = Vector2(800, 185)
+inertia = 10.0
+continuous_cd = 0
+contact_monitor = false
+max_contacts_reported = 0
+linear_damp = -1.0
+angular_velocity = 1.7453293
+base_velocity = Vector2(-100, -100)
+sprite = ExtResource("2_o5tja")
+
+[node name="Enemy4" parent="." unique_id=1169771426 instance=ExtResource("1_ac2hh")]
+position = Vector2(1422, 897)
+inertia = 10.0
+continuous_cd = 0
+contact_monitor = false
+max_contacts_reported = 0
+linear_damp = -1.0
+angular_velocity = 1.7453293
+base_velocity = Vector2(-100, -100)
+sprite = ExtResource("2_o5tja")
+
+[node name="Enemy5" parent="." unique_id=1600404327 instance=ExtResource("1_ac2hh")]
+position = Vector2(1452, 191)
+inertia = 10.0
+continuous_cd = 0
+contact_monitor = false
+max_contacts_reported = 0
+linear_damp = -1.0
+angular_velocity = 1.7453293
+base_velocity = Vector2(-100, -100)
+sprite = ExtResource("2_o5tja")
+
+[node name="SparkImpact" parent="." unique_id=388181494 instance=ExtResource("6_ploow")]
+position = Vector2(880, 604)
+
+[node name="Player" parent="." unique_id=1032372105 instance=ExtResource("1_ac2hh")]
+position = Vector2(244, 186)
+inertia = 10.0
+continuous_cd = 0
+contact_monitor = false
+max_contacts_reported = 0
+linear_damp = -1.0
+angular_velocity = 1.7453293
 
 [node name="Wall" parent="." unique_id=785614695 instance=ExtResource("1_ksnli")]
-position = Vector2(959, -27)
+position = Vector2(965, -17)
 
 [node name="Wall2" parent="." unique_id=13427928 instance=ExtResource("1_ksnli")]
-position = Vector2(965, 1110)
+position = Vector2(965, 1102)
 
 [node name="Wall3" parent="." unique_id=829157609 instance=ExtResource("1_ksnli")]
-position = Vector2(-23, 709)
+position = Vector2(-9, 705)
 rotation = 1.5707964
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=90964794]
 position = Vector2(960, 540)
 
 [node name="Wall4" parent="." unique_id=1521899015 instance=ExtResource("1_ksnli")]
-position = Vector2(1943, 446)
+position = Vector2(1939, 442)
 rotation = 1.5707964
 
 [node name="RockBorder" type="Sprite2D" parent="." unique_id=355733280]

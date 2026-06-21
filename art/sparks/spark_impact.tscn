@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ditwvn3psmmec"]
+
+[ext_resource type="Texture2D" uid="uid://76ja7c1xn47t" path="res://art/sparks/spark1.png" id="1_o3pvu"]
+[ext_resource type="Texture2D" uid="uid://dotyh3cene58v" path="res://art/sparks/spark2.png" id="2_eak3o"]
+[ext_resource type="Texture2D" uid="uid://dn07vkd44qw0o" path="res://art/sparks/spark3.png" id="3_db1yd"]
+[ext_resource type="Texture2D" uid="uid://q8qgg58flebh" path="res://art/sparks/spark4.png" id="4_0sh1t"]
+[ext_resource type="Texture2D" uid="uid://bidywkgdc06k3" path="res://art/sparks/spark5.png" id="5_55qdt"]
+[ext_resource type="Script" uid="uid://vnb5ak2m0000" path="res://art/sparks/spark_impact.gd" id="6_eak3o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0civ7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o3pvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_eak3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_db1yd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0sh1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_55qdt")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="SparkImpact" type="AnimatedSprite2D" unique_id=388181494]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_0civ7")
+frame = 4
+frame_progress = 0.059080865
+script = ExtResource("6_eak3o")
