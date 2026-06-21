@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://df13ck0yeo6gh"]
+
+[ext_resource type="Script" uid="uid://b8ytwdm2qr3xn" path="res://CharacterSelect/character_select.gd" id="1_s16rr"]
+[ext_resource type="AudioStream" uid="uid://bwrv05r1ibswf" path="res://SFX/start_battle.mp3" id="2_8hkwl"]
+[ext_resource type="Texture2D" uid="uid://do8o8i34fkh34" path="res://UI/Buttons/TurtleStartBattleButton.png" id="3_satj8"]
+[ext_resource type="Texture2D" uid="uid://bpbe7l7hgly1e" path="res://UI/Backgrounds/TurtleCharacterDesignScreen.png" id="3_tr3ww"]
+[ext_resource type="Texture2D" uid="uid://kj86k3tkss36" path="res://Actors/Assets/player_turtle.png" id="5_djey7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0bxrt"]
+
+[node name="CharacterSelect" type="Node2D" unique_id=760595578]
+script = ExtResource("1_s16rr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=848935702]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_tr3ww")
+
+[node name="StartBattleButton" type="TextureButton" parent="." unique_id=630400428]
+offset_left = 1378.0
+offset_top = 839.0
+offset_right = 1878.0
+offset_bottom = 1039.0
+texture_normal = ExtResource("3_satj8")
+
+[node name="StartBattleSound" type="AudioStreamPlayer2D" parent="StartBattleButton" unique_id=780411458]
+stream = ExtResource("2_8hkwl")
+volume_db = -20.0
+
+[node name="Turtle" type="TextureRect" parent="." unique_id=438047227]
+offset_left = 1504.0
+offset_top = 343.0
+offset_right = 1852.0
+offset_bottom = 701.0
+texture = ExtResource("5_djey7")
+
+[node name="PixelArtCanvas" type="VBoxContainer" parent="." unique_id=377814399]
+offset_left = 642.0
+offset_top = 315.0
+offset_right = 1332.0
+offset_bottom = 1005.0
+
+[node name="OrangeColorButton" type="Button" parent="." unique_id=1083927424]
+offset_left = 215.0
+offset_top = 594.0
+offset_right = 345.0
+offset_bottom = 724.0
+
+[node name="YellowColorButton" type="Button" parent="." unique_id=1201610667]
+offset_left = 31.0
+offset_top = 756.0
+offset_right = 161.0
+offset_bottom = 886.0
+
+[node name="GreenColorButton" type="Button" parent="." unique_id=1359930193]
+offset_left = 217.0
+offset_top = 753.0
+offset_right = 347.0
+offset_bottom = 883.0
+
+[node name="BlueColorButton" type="Button" parent="." unique_id=1202772644]
+offset_left = 32.0
+offset_top = 921.0
+offset_right = 162.0
+offset_bottom = 1051.0
+
+[node name="PurpleColorButton" type="Button" parent="." unique_id=2096196077]
+offset_left = 219.0
+offset_top = 921.0
+offset_right = 349.0
+offset_bottom = 1051.0
+
+[node name="RedColorButton" type="Button" parent="." unique_id=2015867255]
+material = SubResource("CanvasItemMaterial_0bxrt")
+offset_left = 27.0
+offset_top = 596.0
+offset_right = 157.0
+offset_bottom = 726.0

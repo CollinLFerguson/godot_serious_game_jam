@@ -20,6 +20,12 @@ func setColorPalletteButtons():
 		normal_style.bg_color = Color(c["code"])
 		
 		c["buttonObject"].add_theme_stylebox_override("normal", normal_style)
+
+func setUpCanvas():
+	#line2d polyline with segments drawn, capture user mouse input
+	#new object when created, line seg terminated when user lets go
+	
+	pass;
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
