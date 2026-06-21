@@ -68,3 +68,4 @@ func disableAudioEffect(effect_identifier: String):
 		var fx = AudioServer.get_bus_effect(bus_idx, i)
 		if fx == effect:
 			AudioServer.remove_bus_effect(bus_idx, i)	
+			return
