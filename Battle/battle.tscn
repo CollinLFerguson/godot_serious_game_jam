@@ -15,36 +15,30 @@ texture = ExtResource("2_do635")
 [node name="Enemy" parent="." unique_id=1529993463 instance=ExtResource("1_ac2hh")]
 position = Vector2(866, 932)
 base_velocity = Vector2(-100, -100)
-base_torque = -60
 sprite = ExtResource("2_o5tja")
 
 [node name="Enemy2" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
 position = Vector2(313, 930)
 base_velocity = Vector2(-100, -100)
-base_torque = -60
 sprite = ExtResource("2_o5tja")
 
 [node name="Enemy3" parent="." unique_id=213090920 instance=ExtResource("1_ac2hh")]
 position = Vector2(800, 185)
 base_velocity = Vector2(-100, -100)
-base_torque = -60
 sprite = ExtResource("2_o5tja")
 
 [node name="Enemy4" parent="." unique_id=1169771426 instance=ExtResource("1_ac2hh")]
 position = Vector2(1422, 897)
 base_velocity = Vector2(-100, -100)
-base_torque = -60
 sprite = ExtResource("2_o5tja")
 
 [node name="Enemy5" parent="." unique_id=1600404327 instance=ExtResource("1_ac2hh")]
 position = Vector2(1452, 191)
 base_velocity = Vector2(-100, -100)
-base_torque = -60
 sprite = ExtResource("2_o5tja")
 
 [node name="Player" parent="." unique_id=1032372105 instance=ExtResource("1_ac2hh")]
 position = Vector2(244, 186)
-base_velocity = Vector2(100, 100)
 
 [node name="Wall" parent="." unique_id=785614695 instance=ExtResource("1_ksnli")]
 position = Vector2(965, -17)

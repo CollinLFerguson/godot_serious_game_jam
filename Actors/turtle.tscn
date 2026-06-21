@@ -12,15 +12,12 @@ radius = 57.0
 height = 136.0
 
 [node name="Turtle" type="RigidBody2D" unique_id=2115216272]
-mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_cnp70")
 gravity_scale = 0.0
-inertia = 10.0
 continuous_cd = 1
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_veoao")
-base_velocity = Vector2(100, 100)
 sprite = ExtResource("2_7mqse")
 metadata/_edit_group_ = true
 

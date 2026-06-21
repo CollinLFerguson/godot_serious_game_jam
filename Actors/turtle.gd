@@ -1,12 +1,14 @@
 extends RigidBody2D
 
-@export var min_velocity = 50
-@export var base_velocity = Vector2(50,50)
-@export var max_velocity = 200.0
+@export var min_velocity = 300
+@export var base_velocity = Vector2(500,500)
+@export var max_velocity = 1000.0
 
-@export var min_torque = 20.0
-@export var base_torque = 50.0
-@export var max_torque = 100.0
+@export var min_angular_velocity = 20.0
+@export var base_angular_velocity = 50.0
+@export var max_angular_velocity = 100.0
+
+@export var acceleration:float = 0.2
 
 @export var sprite: SpriteFrames = load("res://Actors/Sprites/player.tres")
 
@@ -17,20 +19,29 @@ func _ready() -> void:
 	$AnimatedSprite2D.sprite_frames = sprite
 
 	apply_central_impulse(base_velocity)
-	apply_torque_impulse(base_torque)
+	apply_torque_impulse(base_angular_velocity)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:	
-	pass
+	var velocity = linear_velocity
+	apply_force(linear_velocity * (1 + acceleration))
 	
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var vel := state.linear_velocity
-	if vel.length() > max_velocity:
+	var speed := vel.length()
+
+	if speed > max_velocity:
 		state.linear_velocity = vel.normalized() * max_velocity
-		
-	if abs(state.angular_velocity) > max_torque:
-		state.angular_velocity = sign(state.angular_velocity) * max_torque
+	elif speed < min_velocity and speed > 0.0:
+		state.linear_velocity = vel.normalized() * min_velocity
+	
+	var angular: float = abs(state.angular_velocity)
+
+	if angular > max_angular_velocity:
+		state.angular_velocity = sign(state.angular_velocity) * max_angular_velocity
+	elif angular < min_angular_velocity and angular > 0.0:
+		state.angular_velocity = sign(state.angular_velocity) * min_angular_velocity
