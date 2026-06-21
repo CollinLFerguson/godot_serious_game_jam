@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://cvjx6i1jlu2xh"]
-
-[node name="TestArena01" type="Node2D" unique_id=1811626847]
-
-[node name="Player1_Position" type="Marker2D" parent="." unique_id=1387993849]
-
-[node name="Player2_Position" type="Marker2D" parent="." unique_id=1152520975]

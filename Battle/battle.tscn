@@ -7,7 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="2_o5tja"]
 [ext_resource type="Texture2D" uid="uid://b0h1djfai7cqa" path="res://art/rock_border.png" id="5_do635"]
 [ext_resource type="PackedScene" uid="uid://ditwvn3psmmec" path="res://art/sparks/spark_impact.tscn" id="6_ploow"]
-[ext_resource type="AudioStream" uid="uid://bxpixj85531us" path="res://SFX/battle theme srs.mp3" id="7_0lqow"]
+[ext_resource type="AudioStream" uid="uid://bxpixj85531us" path="res://SFX/Soundtrack/battle_theme_srs.mp3" id="7_0lqow"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
 script = ExtResource("1_ploow")
@@ -42,6 +42,7 @@ texture = ExtResource("5_do635")
 
 [node name="BattleTheme" type="AudioStreamPlayer2D" parent="." unique_id=1873491557]
 stream = ExtResource("7_0lqow")
+bus = &"Soundtrack"
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
 position = Vector2(125, 104)

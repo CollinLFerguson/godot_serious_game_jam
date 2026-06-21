@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cfdrgt1thf03p"]
 
 [ext_resource type="Script" uid="uid://d2kcb1y7i8hnw" path="res://main.gd" id="1_ig7tw"]
-[ext_resource type="AudioStream" uid="uid://by6nevwj3vacl" path="res://SFX/start_game.mp3" id="2_0xm2m"]
+[ext_resource type="AudioStream" uid="uid://by6nevwj3vacl" path="res://SFX/UI/start_game.mp3" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://bymaxnddqeoci" path="res://UI/Backgrounds/TurtleStartScreen.png" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://13e5v5ne1hk0" path="res://UI/Buttons/TurtleStartButton.png" id="3_1bvp3"]
 
@@ -26,3 +26,4 @@ texture_normal = ExtResource("3_1bvp3")
 [node name="StartButtonSound" type="AudioStreamPlayer2D" parent="StartGameButton" unique_id=1071253263]
 stream = ExtResource("2_0xm2m")
 volume_db = -20.0
+bus = &"UI"
