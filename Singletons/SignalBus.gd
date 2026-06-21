@@ -9,3 +9,6 @@ signal upgrade_selected(upgradeName: String)
 
 # Scene switching signal
 signal scene_switch(scenePath: String)
+
+#impact collision
+signal hit

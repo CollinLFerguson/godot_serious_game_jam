@@ -28,3 +28,5 @@ shape = SubResource("CapsuleShape2D_k6u5b")
 sprite_frames = ExtResource("2_7mqse")
 
 [node name="AttachPoint" type="Marker2D" parent="." unique_id=1242615]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

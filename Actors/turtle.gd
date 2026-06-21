@@ -19,7 +19,7 @@ var items = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.sprite_frames = sprite
-
+	#SignalBus.hit.connect()
 	apply_central_impulse(base_velocity)
 	apply_torque_impulse(base_angular_velocity)
 
@@ -30,7 +30,6 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:	
 	var velocity = linear_velocity
 	apply_force(linear_velocity * (1 + acceleration))
-	spawn_effect(self)
 	
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -51,7 +50,11 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		
 func spawn_effect(parent: Node2D) -> void:
 	var effect = HIT_EFFECT.instantiate()
-	parent.add_child(effect)
-	effect.position = parent.position  # sits at the parent's origin and rides along
+	get_tree().current_scene.add_child(effect)
+	effect.global_position = parent.position  # sits at the parent's origin and rides along
+	effect.global_rotation = parent.transform.get_rotation()
 	effect.play()
-	effect.animation_finished.connect(effect.queue_free)
+
+func _on_body_entered(body: Node) -> void:
+	SignalBus.hit.emit()
+	spawn_effect(self)

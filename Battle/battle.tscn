@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dlp6isht2bftv" path="res://art/grass_background_better.png" id="2_do635"]
 [ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="2_o5tja"]
 [ext_resource type="Texture2D" uid="uid://b0h1djfai7cqa" path="res://art/rock_border.png" id="5_do635"]
+[ext_resource type="PackedScene" uid="uid://ditwvn3psmmec" path="res://art/sparks/spark_impact.tscn" id="6_ploow"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
 
@@ -14,31 +15,70 @@ texture = ExtResource("2_do635")
 
 [node name="Enemy" parent="." unique_id=1529993463 instance=ExtResource("1_ac2hh")]
 position = Vector2(866, 932)
+inertia = 10.0
+continuous_cd = 0
+contact_monitor = false
+max_contacts_reported = 0
+linear_damp = -1.0
+angular_velocity = 1.7453293
 base_velocity = Vector2(-100, -100)
 sprite = ExtResource("2_o5tja")
 
 [node name="Enemy2" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
 position = Vector2(313, 930)
+inertia = 10.0
+continuous_cd = 0
+contact_monitor = false
+max_contacts_reported = 0
+linear_damp = -1.0
+angular_velocity = 1.7453293
 base_velocity = Vector2(-100, -100)
 sprite = ExtResource("2_o5tja")
 
 [node name="Enemy3" parent="." unique_id=213090920 instance=ExtResource("1_ac2hh")]
 position = Vector2(800, 185)
+inertia = 10.0
+continuous_cd = 0
+contact_monitor = false
+max_contacts_reported = 0
+linear_damp = -1.0
+angular_velocity = 1.7453293
 base_velocity = Vector2(-100, -100)
 sprite = ExtResource("2_o5tja")
 
 [node name="Enemy4" parent="." unique_id=1169771426 instance=ExtResource("1_ac2hh")]
 position = Vector2(1422, 897)
+inertia = 10.0
+continuous_cd = 0
+contact_monitor = false
+max_contacts_reported = 0
+linear_damp = -1.0
+angular_velocity = 1.7453293
 base_velocity = Vector2(-100, -100)
 sprite = ExtResource("2_o5tja")
 
 [node name="Enemy5" parent="." unique_id=1600404327 instance=ExtResource("1_ac2hh")]
 position = Vector2(1452, 191)
+inertia = 10.0
+continuous_cd = 0
+contact_monitor = false
+max_contacts_reported = 0
+linear_damp = -1.0
+angular_velocity = 1.7453293
 base_velocity = Vector2(-100, -100)
 sprite = ExtResource("2_o5tja")
 
+[node name="SparkImpact" parent="." unique_id=388181494 instance=ExtResource("6_ploow")]
+position = Vector2(880, 604)
+
 [node name="Player" parent="." unique_id=1032372105 instance=ExtResource("1_ac2hh")]
 position = Vector2(244, 186)
+inertia = 10.0
+continuous_cd = 0
+contact_monitor = false
+max_contacts_reported = 0
+linear_damp = -1.0
+angular_velocity = 1.7453293
 
 [node name="Wall" parent="." unique_id=785614695 instance=ExtResource("1_ksnli")]
 position = Vector2(965, -17)

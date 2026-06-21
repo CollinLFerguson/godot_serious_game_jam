@@ -31,7 +31,8 @@ animations = [{
 }]
 
 [node name="SparkImpact" type="AnimatedSprite2D" unique_id=388181494]
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_0civ7")
 frame = 4
-frame_progress = 0.3691367
+frame_progress = 0.059080865
 script = ExtResource("6_eak3o")
