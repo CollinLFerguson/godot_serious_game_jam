@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b7humnijon73w" path="res://art/grass_background_final.png" id="2_bjo3u"]
 [ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="2_o5tja"]
 [ext_resource type="Texture2D" uid="uid://b0h1djfai7cqa" path="res://art/rock_border.png" id="5_do635"]
-[ext_resource type="PackedScene" uid="uid://ditwvn3psmmec" path="res://art/sparks/spark_impact.tscn" id="6_ploow"]
 [ext_resource type="AudioStream" uid="uid://bxpixj85531us" path="res://SFX/Soundtrack/battle_theme_srs.mp3" id="7_0lqow"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
@@ -15,9 +14,6 @@ script = ExtResource("1_ploow")
 [node name="GrassBackgroundFinal" type="Sprite2D" parent="." unique_id=2111261285]
 position = Vector2(960, 540)
 texture = ExtResource("2_bjo3u")
-
-[node name="SparkImpact" parent="." unique_id=388181494 instance=ExtResource("6_ploow")]
-position = Vector2(880, 604)
 
 [node name="Wall" parent="." unique_id=785614695 groups=["scenery"] instance=ExtResource("1_ksnli")]
 position = Vector2(965, -17)
@@ -35,10 +31,6 @@ position = Vector2(960, 540)
 [node name="Wall4" parent="." unique_id=1521899015 groups=["scenery"] instance=ExtResource("1_ksnli")]
 position = Vector2(1939, 442)
 rotation = 1.5707964
-
-[node name="RockBorder" type="Sprite2D" parent="." unique_id=355733280]
-position = Vector2(966, 543)
-texture = ExtResource("5_do635")
 
 [node name="BattleTheme" type="AudioStreamPlayer2D" parent="." unique_id=1873491557]
 stream = ExtResource("7_0lqow")
@@ -60,3 +52,7 @@ sprite = ExtResource("2_o5tja")
 [node name="Turtle4" parent="." unique_id=84617478 instance=ExtResource("1_ac2hh")]
 position = Vector2(1738, 922)
 base_velocity = Vector2(-500, -500)
+
+[node name="RockBorder" type="Sprite2D" parent="." unique_id=355733280]
+position = Vector2(960, 540)
+texture = ExtResource("5_do635")
