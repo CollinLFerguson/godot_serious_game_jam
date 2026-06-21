@@ -6,6 +6,7 @@ func _ready():
 	SignalBus.battle_start.connect(handleSoundtrack)
 	SignalBus.hit.connect(handleHitstop)
 	SignalBus.hit.connect(handleParticles)
+	SignalBus.hit.connect(handleDamage)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func handleSoundtrack():
@@ -19,3 +20,8 @@ func handleHitstop(source, target):
 
 func handleParticles(source: Node2D, target) -> void:
 	ParticleController.throwSparksParticle(source)
+	
+func handleDamage(source, target):
+	if target.get_class() == "RigidBody2D":
+		pass
+	

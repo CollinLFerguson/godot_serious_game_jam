@@ -35,6 +35,7 @@ func _ready() -> void:
 func on_startBattleButton_pressed():
 	var sfx = $StartBattleButton/StartBattleSound
 	sfx.play()
+	$StartBattleButton.disabled = true
 	await sfx.finished 
 	SignalBus.scene_switch.emit("res://Battle/battle.tscn")
 

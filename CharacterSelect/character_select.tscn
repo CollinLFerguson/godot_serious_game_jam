@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://df13ck0yeo6gh"]
 
 [ext_resource type="Script" uid="uid://b8ytwdm2qr3xn" path="res://CharacterSelect/character_select.gd" id="1_s16rr"]
-[ext_resource type="AudioStream" uid="uid://bwrv05r1ibswf" path="res://SFX/start_battle.mp3" id="2_8hkwl"]
+[ext_resource type="AudioStream" uid="uid://bwrv05r1ibswf" path="res://SFX/UI/start_battle.mp3" id="2_8hkwl"]
 [ext_resource type="Texture2D" uid="uid://do8o8i34fkh34" path="res://UI/Buttons/TurtleStartBattleButton.png" id="3_satj8"]
 [ext_resource type="Texture2D" uid="uid://bpbe7l7hgly1e" path="res://UI/Backgrounds/TurtleCharacterDesignScreen.png" id="3_tr3ww"]
 [ext_resource type="Texture2D" uid="uid://kj86k3tkss36" path="res://Actors/Assets/player_turtle.png" id="5_djey7"]

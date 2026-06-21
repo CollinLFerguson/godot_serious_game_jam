@@ -38,13 +38,26 @@ position = Vector2(45, -21)
 position = Vector2(-48, -22)
 
 [node name="Sword" parent="AttachPointLeft" unique_id=1020095384 instance=ExtResource("3_7mqse")]
+position = Vector2(-38, 1.0000038)
+rotation = -1.5930356
+scale = Vector2(1, 1)
 
 [node name="Label" type="Label" parent="." unique_id=1038118554]
 offset_left = -55.0
-offset_top = 4.0
+offset_top = 2.0
 offset_right = 54.0
 offset_bottom = 27.0
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
 text = "EVILTURTLE24"
 label_settings = SubResource("LabelSettings_d076r")
+
+[node name="Speed" type="Label" parent="." unique_id=557983902]
+visible = false
+offset_left = -167.0
+offset_top = -53.0
+offset_right = 156.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 64
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
