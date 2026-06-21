@@ -13,7 +13,7 @@ texture = ExtResource("1_o7vvn")
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("3_gnf34")]
 position = Vector2(943, 872)
 
-[node name="WallCurved" parent="." unique_id=2006173947 instance=ExtResource("2_gtdv5")]
+[node name="WallCurved" parent="." unique_id=2006173947 groups=["scenery"] instance=ExtResource("2_gtdv5")]
 
 [node name="Turtle2" parent="." unique_id=604692791 instance=ExtResource("3_gnf34")]
 position = Vector2(830, 419)
