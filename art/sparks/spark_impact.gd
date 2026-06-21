@@ -14,4 +14,3 @@ func _process(delta: float) -> void:
 
 func _on_animation_finished():
 	queue_free()
-	#pass

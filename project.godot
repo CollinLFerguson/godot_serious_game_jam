@@ -47,6 +47,8 @@ version_control/autoload_on_startup=true
 projectile=""
 actor=""
 scenery=""
+hitstop_bodies=""
+weapon=""
 
 [layer_names]
 

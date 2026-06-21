@@ -34,24 +34,20 @@ rotation = 1.5707964
 
 [node name="BattleTheme" type="AudioStreamPlayer2D" parent="." unique_id=1873491557]
 stream = ExtResource("7_0lqow")
-bus = &"Soundtrack"
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
 position = Vector2(125, 104)
 
 [node name="Turtle2" parent="." unique_id=800984328 instance=ExtResource("1_ac2hh")]
 position = Vector2(146, 967)
-base_velocity = Vector2(500, -500)
 sprite = ExtResource("2_o5tja")
 
 [node name="Turtle3" parent="." unique_id=585417831 instance=ExtResource("1_ac2hh")]
 position = Vector2(1782, 125)
-base_velocity = Vector2(-500, 500)
 sprite = ExtResource("2_o5tja")
 
 [node name="Turtle4" parent="." unique_id=84617478 instance=ExtResource("1_ac2hh")]
 position = Vector2(1738, 922)
-base_velocity = Vector2(-500, -500)
 
 [node name="RockBorder" type="Sprite2D" parent="." unique_id=355733280]
 position = Vector2(960, 540)
