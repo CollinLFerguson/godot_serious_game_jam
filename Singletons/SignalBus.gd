@@ -8,7 +8,7 @@ signal player_win
 signal battle_start
 
 # Upgrade signals
-signal upgrade_selected(upgradeName: String)
+signal upgrade_selected(source, upgradeName: String) #ex: upgrade_selected (self, upgradeName)
 
 # Scene switching signal
 signal scene_switch(scenePath: String)

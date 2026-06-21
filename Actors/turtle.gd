@@ -14,11 +14,10 @@ const HIT_EFFECT: PackedScene = preload("res://art/sparks/spark_impact.tscn")
 
 @export var sprite: SpriteFrames = load("res://Actors/Sprites/player.tres")
 
-var items = []
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.sprite_frames = sprite
+	SignalBus.upgrade_selected.emit(self, "Sword")
 	#SignalBus.hit.connect()
 	apply_central_impulse(base_velocity)
 	apply_torque_impulse(base_angular_velocity)

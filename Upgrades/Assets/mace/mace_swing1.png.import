@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca65t0i6aow22"
-path="res://.godot/imported/sword.png-ec51dec7a96c87d8f0732982d0031da3.ctex"
+uid="uid://bi4fgbiq5ento"
+path="res://.godot/imported/mace_swing1.png-6a8504e93ce3fdaa9506b897e7a14442.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Upgrades/sword.png"
-dest_files=["res://.godot/imported/sword.png-ec51dec7a96c87d8f0732982d0031da3.ctex"]
+source_file="res://Upgrades/Assets/mace/mace_swing1.png"
+dest_files=["res://.godot/imported/mace_swing1.png-6a8504e93ce3fdaa9506b897e7a14442.ctex"]
 
 [params]
 
