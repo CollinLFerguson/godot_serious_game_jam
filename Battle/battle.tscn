@@ -2,11 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="1_ac2hh"]
 [ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="1_ksnli"]
+[ext_resource type="Script" uid="uid://dn587shuigg4y" path="res://Battle/battle.gd" id="1_ploow"]
 [ext_resource type="Texture2D" uid="uid://dlp6isht2bftv" path="res://art/grass_background_better.png" id="2_do635"]
 [ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="2_o5tja"]
 [ext_resource type="Texture2D" uid="uid://b0h1djfai7cqa" path="res://art/rock_border.png" id="5_do635"]
+[ext_resource type="AudioStream" uid="uid://bxpixj85531us" path="res://SFX/battle theme srs.mp3" id="7_0lqow"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
+script = ExtResource("1_ploow")
 
 [node name="GrassBackgroundBetter" type="Sprite2D" parent="." unique_id=166701581]
 position = Vector2(966, 543)
@@ -42,3 +45,6 @@ rotation = 1.5707964
 [node name="RockBorder" type="Sprite2D" parent="." unique_id=355733280]
 position = Vector2(966, 543)
 texture = ExtResource("5_do635")
+
+[node name="BattleTheme" type="AudioStreamPlayer2D" parent="." unique_id=1873491557]
+stream = ExtResource("7_0lqow")

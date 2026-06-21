@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxpixj85531us"
+path="res://.godot/imported/battle theme srs.mp3-990b3639c053581a223a282b89e53cb8.mp3str"
+
+[deps]
+
+source_file="res://SFX/battle theme srs.mp3"
+dest_files=["res://.godot/imported/battle theme srs.mp3-990b3639c053581a223a282b89e53cb8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
