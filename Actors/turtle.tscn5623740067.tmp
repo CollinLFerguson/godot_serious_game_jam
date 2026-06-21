@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cq202qb8puj21"]
+
+[ext_resource type="Script" uid="uid://bcjc2nuryxn2o" path="res://Actors/turtle.gd" id="1_veoao"]
+[ext_resource type="SpriteFrames" uid="uid://1akvpnd4dhcu" path="res://Actors/Sprites/player.tres" id="2_7mqse"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cnp70"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ow75p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6u5b"]
+radius = 57.0
+height = 136.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_d076r"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Turtle" type="RigidBody2D" unique_id=2115216272 groups=["actor", "hitstop_bodies"]]
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_cnp70")
+gravity_scale = 0.0
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_veoao")
+max_angular_velocity = 50.0
+sprite = ExtResource("2_7mqse")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2143536447]
+sprite_frames = SubResource("SpriteFrames_ow75p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
+shape = SubResource("CapsuleShape2D_k6u5b")
+
+[node name="Label" type="Label" parent="." unique_id=1038118554]
+offset_left = -55.0
+offset_top = 2.0
+offset_right = 54.0
+offset_bottom = 27.0
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "EVILTURTLE24"
+label_settings = SubResource("LabelSettings_d076r")
+metadata/_edit_use_anchors_ = true
+
+[node name="Speed" type="Label" parent="." unique_id=557983902]
+offset_left = -167.0
+offset_top = -53.0
+offset_right = 156.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 64
+metadata/_edit_use_anchors_ = true
+
+[node name="Center" type="Marker2D" parent="." unique_id=1073313959]
+rotation = 0.64664906
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

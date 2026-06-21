@@ -2,17 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bcjc2nuryxn2o" path="res://Actors/turtle.gd" id="1_veoao"]
 [ext_resource type="SpriteFrames" uid="uid://1akvpnd4dhcu" path="res://Actors/Sprites/player.tres" id="2_7mqse"]
-[ext_resource type="PackedScene" uid="uid://c8m06oh162fw8" path="res://Upgrades/Assets/Sword/Sword.tscn" id="3_7mqse"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cnp70"]
 friction = 0.0
 bounce = 1.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ow75p"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6u5b"]
 radius = 57.0
 height = 136.0
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_le1oi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d076r"]
 outline_size = 2
@@ -29,12 +28,11 @@ script = ExtResource("1_veoao")
 max_angular_velocity = 50.0
 sprite = ExtResource("2_7mqse")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2143536447]
+sprite_frames = SubResource("SpriteFrames_ow75p")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
 shape = SubResource("CapsuleShape2D_k6u5b")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=653166209]
-material = SubResource("CanvasItemMaterial_le1oi")
-sprite_frames = ExtResource("2_7mqse")
 
 [node name="Label" type="Label" parent="." unique_id=1038118554]
 offset_left = -55.0
@@ -55,12 +53,7 @@ offset_bottom = 35.0
 theme_override_font_sizes/font_size = 64
 metadata/_edit_use_anchors_ = true
 
-[node name="Sword" parent="." unique_id=1087588841 instance=ExtResource("3_7mqse")]
-position = Vector2(-81, -33)
-rotation = -1.1939163
-
-[node name="Sword2" parent="." unique_id=1727634571 instance=ExtResource("3_7mqse")]
-position = Vector2(76.00001, -36.000004)
-rotation = 1.0499225
+[node name="Center" type="Marker2D" parent="." unique_id=1073313959]
+rotation = 0.64664906
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
