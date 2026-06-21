@@ -3,6 +3,7 @@ extends RigidBody2D
 @export var min_velocity = 300
 @export var base_velocity = Vector2(500,500)
 @export var max_velocity = 1000.0
+@export var health = 100
 
 @export var min_angular_velocity = 20.0
 @export var base_angular_velocity = 50.0
@@ -37,13 +38,16 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		state.linear_velocity = vel.normalized() * max_velocity
 	elif speed < min_velocity and speed > 0.0:
 		state.linear_velocity = vel.normalized() * min_velocity
-	
+		
+	$Speed.text = "%s" % int(state.linear_velocity.length())
 	var angular: float = abs(state.angular_velocity)
 
-	if angular > max_angular_velocity:
-		state.angular_velocity = sign(state.angular_velocity) * max_angular_velocity
-	elif angular < min_angular_velocity and angular > 0.0:
-		state.angular_velocity = sign(state.angular_velocity) * min_angular_velocity
+	#if angular > max_angular_velocity:
+		#state.angular_velocity = sign(state.angular_velocity) * max_angular_velocity
+	#elif angular < min_angular_velocity and angular > 0.0:
+		#state.angular_velocity = sign(state.angular_velocity) * min_angular_velocity
 		
 func _on_body_entered(body: Node) -> void:
-	SignalBus.hit.emit(self, body)
+	if body.is_in_group("actor"):
+		
+		SignalBus.hit.emit(self, body)
