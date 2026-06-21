@@ -25,14 +25,17 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_55qdt")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
-"speed": 10.0
+"speed": 20.0
 }]
 
 [node name="SparkImpact" type="AnimatedSprite2D" unique_id=388181494]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_0civ7")
-frame = 4
-frame_progress = 0.059080865
+autoplay = "default"
+frame = 2
+frame_progress = 0.939076
 script = ExtResource("6_eak3o")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
