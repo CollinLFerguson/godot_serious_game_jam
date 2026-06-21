@@ -11,7 +11,7 @@ bounce = 1.0
 radius = 57.0
 height = 136.0
 
-[node name="Turtle" type="RigidBody2D" unique_id=2115216272]
+[node name="Turtle" type="RigidBody2D" unique_id=2115216272 groups=["actor", "hitstop_bodies"]]
 physics_material_override = SubResource("PhysicsMaterial_cnp70")
 gravity_scale = 0.0
 continuous_cd = 1

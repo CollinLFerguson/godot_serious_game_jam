@@ -48,13 +48,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	elif angular < min_angular_velocity and angular > 0.0:
 		state.angular_velocity = sign(state.angular_velocity) * min_angular_velocity
 		
-func spawn_effect(parent: Node2D) -> void:
-	var effect = HIT_EFFECT.instantiate()
-	get_tree().current_scene.add_child(effect)
-	effect.global_position = parent.position  # sits at the parent's origin and rides along
-	effect.global_rotation = parent.transform.get_rotation()
-	effect.play()
+
 
 func _on_body_entered(body: Node) -> void:
-	SignalBus.hit.emit()
-	spawn_effect(self)
+	SignalBus.hit.emit(self, body)

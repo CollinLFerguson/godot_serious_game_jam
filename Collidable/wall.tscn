@@ -5,5 +5,5 @@ size = Vector2(1891, 57)
 
 [node name="Wall" type="StaticBody2D" unique_id=1800999164]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2081036233]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2081036233 groups=["scenery"]]
 shape = SubResource("RectangleShape2D_554n6")

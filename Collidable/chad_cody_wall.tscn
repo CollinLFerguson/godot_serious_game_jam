@@ -4,7 +4,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow75p"]
 
-[node name="ChadCodyWall" type="StaticBody2D" unique_id=1063931832]
+[node name="ChadCodyWall" type="StaticBody2D" unique_id=1063931832 groups=["scenery"]]
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=707786243]
 scale = Vector2(20, 20)

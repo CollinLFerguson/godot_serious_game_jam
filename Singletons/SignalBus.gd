@@ -14,5 +14,6 @@ signal upgrade_selected(upgradeName: String)
 signal scene_switch(scenePath: String)
 
 #impact collision
-signal hit
+signal hit(source, target) #source should always be passed like hit(self, body)
+
 signal hitstop

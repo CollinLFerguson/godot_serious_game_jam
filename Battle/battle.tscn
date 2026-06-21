@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dlp6isht2bftv" path="res://art/grass_background_better.png" id="2_do635"]
 [ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="2_o5tja"]
 [ext_resource type="Texture2D" uid="uid://b0h1djfai7cqa" path="res://art/rock_border.png" id="5_do635"]
-[ext_resource type="AudioStream" uid="uid://bxpixj85531us" path="res://SFX/battle theme srs.mp3" id="7_0lqow"]
 [ext_resource type="PackedScene" uid="uid://ditwvn3psmmec" path="res://art/sparks/spark_impact.tscn" id="6_ploow"]
+[ext_resource type="AudioStream" uid="uid://bxpixj85531us" path="res://SFX/battle theme srs.mp3" id="7_0lqow"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
 script = ExtResource("1_ploow")
@@ -16,87 +16,23 @@ script = ExtResource("1_ploow")
 position = Vector2(966, 543)
 texture = ExtResource("2_do635")
 
-[node name="Enemy" parent="." unique_id=1529993463 instance=ExtResource("1_ac2hh")]
-position = Vector2(866, 932)
-inertia = 10.0
-continuous_cd = 0
-contact_monitor = false
-max_contacts_reported = 0
-linear_damp = -1.0
-angular_velocity = 1.7453293
-base_velocity = Vector2(-100, -100)
-sprite = ExtResource("2_o5tja")
-
-[node name="Enemy2" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
-position = Vector2(313, 930)
-inertia = 10.0
-continuous_cd = 0
-contact_monitor = false
-max_contacts_reported = 0
-linear_damp = -1.0
-angular_velocity = 1.7453293
-base_velocity = Vector2(-100, -100)
-sprite = ExtResource("2_o5tja")
-
-[node name="Enemy3" parent="." unique_id=213090920 instance=ExtResource("1_ac2hh")]
-position = Vector2(800, 185)
-inertia = 10.0
-continuous_cd = 0
-contact_monitor = false
-max_contacts_reported = 0
-linear_damp = -1.0
-angular_velocity = 1.7453293
-base_velocity = Vector2(-100, -100)
-sprite = ExtResource("2_o5tja")
-
-[node name="Enemy4" parent="." unique_id=1169771426 instance=ExtResource("1_ac2hh")]
-position = Vector2(1422, 897)
-inertia = 10.0
-continuous_cd = 0
-contact_monitor = false
-max_contacts_reported = 0
-linear_damp = -1.0
-angular_velocity = 1.7453293
-base_velocity = Vector2(-100, -100)
-sprite = ExtResource("2_o5tja")
-
-[node name="Enemy5" parent="." unique_id=1600404327 instance=ExtResource("1_ac2hh")]
-position = Vector2(1452, 191)
-inertia = 10.0
-continuous_cd = 0
-contact_monitor = false
-max_contacts_reported = 0
-linear_damp = -1.0
-angular_velocity = 1.7453293
-base_velocity = Vector2(-100, -100)
-sprite = ExtResource("2_o5tja")
-
 [node name="SparkImpact" parent="." unique_id=388181494 instance=ExtResource("6_ploow")]
 position = Vector2(880, 604)
 
-[node name="Player" parent="." unique_id=1032372105 instance=ExtResource("1_ac2hh")]
-position = Vector2(244, 186)
-inertia = 10.0
-continuous_cd = 0
-contact_monitor = false
-max_contacts_reported = 0
-linear_damp = -1.0
-angular_velocity = 1.7453293
-
-[node name="Wall" parent="." unique_id=785614695 instance=ExtResource("1_ksnli")]
+[node name="Wall" parent="." unique_id=785614695 groups=["scenery"] instance=ExtResource("1_ksnli")]
 position = Vector2(965, -17)
 
-[node name="Wall2" parent="." unique_id=13427928 instance=ExtResource("1_ksnli")]
+[node name="Wall2" parent="." unique_id=13427928 groups=["scenery"] instance=ExtResource("1_ksnli")]
 position = Vector2(965, 1102)
 
-[node name="Wall3" parent="." unique_id=829157609 instance=ExtResource("1_ksnli")]
+[node name="Wall3" parent="." unique_id=829157609 groups=["scenery"] instance=ExtResource("1_ksnli")]
 position = Vector2(-9, 705)
 rotation = 1.5707964
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=90964794]
 position = Vector2(960, 540)
 
-[node name="Wall4" parent="." unique_id=1521899015 instance=ExtResource("1_ksnli")]
+[node name="Wall4" parent="." unique_id=1521899015 groups=["scenery"] instance=ExtResource("1_ksnli")]
 position = Vector2(1939, 442)
 rotation = 1.5707964
 
@@ -106,3 +42,20 @@ texture = ExtResource("5_do635")
 
 [node name="BattleTheme" type="AudioStreamPlayer2D" parent="." unique_id=1873491557]
 stream = ExtResource("7_0lqow")
+
+[node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
+position = Vector2(125, 104)
+
+[node name="Turtle2" parent="." unique_id=800984328 instance=ExtResource("1_ac2hh")]
+position = Vector2(146, 967)
+base_velocity = Vector2(500, -500)
+sprite = ExtResource("2_o5tja")
+
+[node name="Turtle3" parent="." unique_id=585417831 instance=ExtResource("1_ac2hh")]
+position = Vector2(1782, 125)
+base_velocity = Vector2(-500, 500)
+sprite = ExtResource("2_o5tja")
+
+[node name="Turtle4" parent="." unique_id=84617478 instance=ExtResource("1_ac2hh")]
+position = Vector2(1738, 922)
+base_velocity = Vector2(-500, -500)

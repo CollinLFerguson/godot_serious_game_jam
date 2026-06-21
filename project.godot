@@ -26,6 +26,7 @@ Upgrades="*uid://tw4hopiyfi7h"
 SignalBus="*uid://dct35ovu4bhfq"
 SceneSwitcher="*uid://5balno6pfkhf"
 SfxHandler="*uid://b0m4omjigi4c0"
+HitstopManager="*uid://72irm0im02vy"
 
 [display]
 
@@ -38,6 +39,19 @@ window/stretch/aspect="expand"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[global_group]
+
+projectile=""
+actor=""
+scenery=""
+hitstop_bodies=""
+
+[layer_names]
+
+2d_render/layer_1="walls"
+2d_render/layer_2="actors"
+2d_render/layer_3="projectiles"
 
 [physics]
 
