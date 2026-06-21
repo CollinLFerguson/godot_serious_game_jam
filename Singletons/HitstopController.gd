@@ -1,7 +1,8 @@
 extends Node
 
 func _ready():
-	SignalBus.hit.connect(hitstop_short)
+	#SignalBus.hit.connect(hitstop_short)
+	pass
 	
 
 func hitstop_short():

@@ -24,9 +24,11 @@ buses/default_bus_layout="uid://cewk05vab27id"
 Bracket="*uid://dyenltv3yv53w"
 Upgrades="*uid://tw4hopiyfi7h"
 SignalBus="*uid://dct35ovu4bhfq"
-SceneSwitcher="*uid://5balno6pfkhf"
-SfxHandler="*uid://b0m4omjigi4c0"
-HitstopManager="*uid://72irm0im02vy"
+SceneController="*uid://5balno6pfkhf"
+SoundController="*uid://b0m4omjigi4c0"
+HitstopController="*uid://72irm0im02vy"
+ParticleController="*uid://c485634kvbeec"
+EffectController="*uid://dhiscdd76u8mv"
 
 [display]
 

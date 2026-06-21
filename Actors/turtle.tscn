@@ -11,6 +11,10 @@ bounce = 1.0
 radius = 57.0
 height = 136.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_d076r"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Turtle" type="RigidBody2D" unique_id=2115216272 groups=["actor", "hitstop_bodies"]]
 physics_material_override = SubResource("PhysicsMaterial_cnp70")
 gravity_scale = 0.0
@@ -19,7 +23,6 @@ contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_veoao")
 sprite = ExtResource("2_7mqse")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
 shape = SubResource("CapsuleShape2D_k6u5b")
@@ -28,5 +31,13 @@ shape = SubResource("CapsuleShape2D_k6u5b")
 sprite_frames = ExtResource("2_7mqse")
 
 [node name="AttachPoint" type="Marker2D" parent="." unique_id=1242615]
+
+[node name="Label" type="Label" parent="." unique_id=1038118554]
+offset_left = -55.0
+offset_top = 4.0
+offset_right = 54.0
+offset_bottom = 27.0
+text = "EVILTURTLE24"
+label_settings = SubResource("LabelSettings_d076r")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

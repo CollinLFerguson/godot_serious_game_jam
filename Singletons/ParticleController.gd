@@ -2,20 +2,15 @@ extends Node
 
 const HIT_EFFECT: PackedScene = preload("res://art/sparks/spark_impact.tscn")
 
-func _ready():
-	SignalBus.battle_start.connect(playBattleTheme)
-	SignalBus.hit.connect(handleHitstop)
-	SignalBus.hit.connect(handleParticles)
-func playBattleTheme():
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
 	pass
-
-func handleHitstop(source, target):
-	if target.is_in_group('scenery'):
-		return
-	#define more conditions here.
-	HitstopManager.hitstop_short()
-
-func handleParticles(source: Node2D, target) -> void:
+func throwSparksParticle(source):
 	#TODO: This should be the branching point for a particleHandler.
 	var effect = HIT_EFFECT.instantiate()
 	get_tree().current_scene.add_child(effect)
