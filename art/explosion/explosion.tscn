@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://v8g2fegx0ovv"]
+
+[ext_resource type="Texture2D" uid="uid://bqvsr0heqc5ck" path="res://art/explosion/explode2.png" id="1_keawa"]
+[ext_resource type="Texture2D" uid="uid://bc6mcgpx5ubad" path="res://art/explosion/explode3.png" id="2_niabt"]
+[ext_resource type="Texture2D" uid="uid://b4lpkt24hdths" path="res://art/explosion/explode4.png" id="3_akbxb"]
+[ext_resource type="Texture2D" uid="uid://34b0xqm8df80" path="res://art/explosion/explode5.png" id="4_5d3n0"]
+[ext_resource type="Texture2D" uid="uid://cfsfh0eom1vxn" path="res://art/explosion/explode6.png" id="5_hm0bn"]
+[ext_resource type="Texture2D" uid="uid://b1hkrwit7edw2" path="res://art/explosion/explode7.png" id="6_o6y1a"]
+[ext_resource type="Texture2D" uid="uid://co8vegevkdl70" path="res://art/explosion/explode8.png" id="7_vlc87"]
+[ext_resource type="Texture2D" uid="uid://dc8bq3bnc7nh5" path="res://art/explosion/explode9.png" id="8_ivvll"]
+[ext_resource type="Texture2D" uid="uid://dl0um4k05tgof" path="res://art/explosion/explode10.png" id="9_uvgk0"]
+[ext_resource type="Texture2D" uid="uid://7oif2oo7fspa" path="res://art/explosion/explode11.png" id="10_j1aky"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_554n6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_keawa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_niabt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_akbxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5d3n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hm0bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o6y1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vlc87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ivvll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uvgk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_j1aky")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1854749366]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_554n6")
+frame_progress = 0.528138

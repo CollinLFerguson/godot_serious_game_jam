@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://yfhw0ul52hss"]
+
+[ext_resource type="Texture2D" uid="uid://4s3rvxbkfi3c" path="res://art/mine/mine1.png" id="1_cod4b"]
+[ext_resource type="Texture2D" uid="uid://cnxhro8salfsj" path="res://art/mine/mine2.png" id="2_g7vdd"]
+[ext_resource type="Texture2D" uid="uid://d0sq3swe6lnm" path="res://art/mine/mine3.png" id="3_o83e1"]
+[ext_resource type="Texture2D" uid="uid://oqu2prpec1dt" path="res://art/mine/mine4.png" id="4_s83af"]
+[ext_resource type="Texture2D" uid="uid://dptwrxtkuj64q" path="res://art/mine/mine5.png" id="5_g0ep2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x1p5a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cod4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g7vdd")
+}],
+"loop": 1,
+"name": &"armed",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o83e1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s83af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g0ep2")
+}],
+"loop": 1,
+"name": &"explode",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cod4b")
+}],
+"loop": 1,
+"name": &"rest",
+"speed": 5.0
+}]
+
+[node name="Mine" type="AnimatedSprite2D" unique_id=2183746]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_x1p5a")
+animation = &"rest"

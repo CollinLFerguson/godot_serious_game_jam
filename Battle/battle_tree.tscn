@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dhp2qsq7hmkuu"]
+
+[ext_resource type="Texture2D" uid="uid://b2odx6nu0txf8" path="res://art/tree-background.png" id="1_7vlax"]
+[ext_resource type="Texture2D" uid="uid://clpqfdkuy2bge" path="res://art/tree-border.png" id="2_k3bmh"]
+[ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="2_w3s0d"]
+[ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="4_3xio2"]
+[ext_resource type="PackedScene" uid="uid://cqgoiv4jluswv" path="res://Collidable/tree_collision.tscn" id="5_3xio2"]
+[ext_resource type="PackedScene" uid="uid://yfhw0ul52hss" path="res://art/mine/mine.tscn" id="6_at5ul"]
+
+[node name="battle-tree" type="Node2D" unique_id=861134569]
+
+[node name="TreeBackground" type="Sprite2D" parent="." unique_id=437700683]
+position = Vector2(960, 540)
+texture = ExtResource("1_7vlax")
+
+[node name="Mine" parent="." unique_id=2183746 instance=ExtResource("6_at5ul")]
+position = Vector2(428, 434)
+
+[node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("2_w3s0d")]
+position = Vector2(634, 786)
+
+[node name="TreeBorder" type="Sprite2D" parent="." unique_id=812374868]
+position = Vector2(960, 540)
+texture = ExtResource("2_k3bmh")
+
+[node name="Wall" parent="." unique_id=1800999164 instance=ExtResource("4_3xio2")]
+position = Vector2(965, 1110)
+
+[node name="Wall2" parent="." unique_id=1248433061 instance=ExtResource("4_3xio2")]
+position = Vector2(0, 654)
+rotation = 1.5707964
+
+[node name="Wall3" parent="." unique_id=1471142430 instance=ExtResource("4_3xio2")]
+position = Vector2(965, 0)
+
+[node name="Wall4" parent="." unique_id=35075151 instance=ExtResource("4_3xio2")]
+position = Vector2(1920, 654)
+rotation = 1.5707964
+
+[node name="TreeCollision" parent="." unique_id=305248489 instance=ExtResource("5_3xio2")]
+position = Vector2(-11, -11)
