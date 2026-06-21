@@ -50,13 +50,21 @@ func disableSoundtrack():
 func enableAudioEffect(effect_identifier: String):
 	var bus_idx = AudioServer.get_bus_index("Effects")
 	
-	var effect = EFFECTS[effect_identifier]
+	var effect = null
+	if EFFECTS.has(effect_identifier):
+		effect = EFFECTS[effect_identifier]
 	if effect == null || !(effect is AudioEffect) :
 		push_error("Invalid effect requested")
 		return
 	AudioServer.add_bus_effect(bus_idx, effect)
 	
-func disableAudioEffect(effect: String):
-	pass
-	#AudioServer.set_bus_effect()
+func disableAudioEffect(effect_identifier: String):
+	var bus_idx = AudioServer.get_bus_index("Effects")
 	
+	var effect = null
+	if EFFECTS.has(effect_identifier):
+		effect = EFFECTS[effect_identifier]
+	for i in AudioServer.get_bus_effect_count(bus_idx):
+		var fx = AudioServer.get_bus_effect(bus_idx, i)
+		if fx == effect:
+			AudioServer.remove_bus_effect(bus_idx, i)	
