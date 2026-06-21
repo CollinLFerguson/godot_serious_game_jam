@@ -1,7 +1,5 @@
 extends RigidBody2D
 
-const HIT_EFFECT: PackedScene = preload("res://art/sparks/spark_impact.tscn")
-
 @export var min_velocity = 300
 @export var base_velocity = Vector2(500,500)
 @export var max_velocity = 1000.0
@@ -49,8 +47,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	#elif angular < min_angular_velocity and angular > 0.0:
 		#state.angular_velocity = sign(state.angular_velocity) * min_angular_velocity
 		
-
-
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("actor"):
 		
