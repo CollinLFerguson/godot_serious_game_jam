@@ -34,11 +34,19 @@ offset_right = 1852.0
 offset_bottom = 701.0
 texture = ExtResource("5_djey7")
 
-[node name="PixelArtCanvas" type="VBoxContainer" parent="." unique_id=377814399]
+[node name="PixelArtCanvas" type="Panel" parent="." unique_id=197734335]
 offset_left = 642.0
 offset_top = 315.0
 offset_right = 1332.0
 offset_bottom = 1005.0
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1422781942]
+default_color = Color(0, 0, 0, 1)
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=279024980]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(690, 690)
 
 [node name="OrangeColorButton" type="Button" parent="." unique_id=1083927424]
 offset_left = 215.0
