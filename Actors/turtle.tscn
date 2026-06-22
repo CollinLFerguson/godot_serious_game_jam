@@ -52,6 +52,12 @@ stream = SubResource("AudioStreamMP3_554n6")
 max_polyphony = 2
 bus = &"Collision"
 
+[node name="LeftHand" type="Marker2D" parent="." unique_id=1163497855]
+position = Vector2(-42, 6)
+
+[node name="RightHand" type="Marker2D" parent="." unique_id=1131602439]
+position = Vector2(47, 4)
+
 [node name="Labels" type="GridContainer" parent="." unique_id=1170801662]
 anchors_preset = 8
 anchor_left = 0.5
