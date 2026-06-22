@@ -39,6 +39,7 @@ stream = ExtResource("7_0lqow")
 position = Vector2(125, 104)
 collision_mask = 1
 max_angular_velocity = 100.0
+deceleration = -2.0
 
 [node name="Turtle2" parent="." unique_id=800984328 instance=ExtResource("1_ac2hh")]
 position = Vector2(146, 967)

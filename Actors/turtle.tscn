@@ -13,11 +13,18 @@ bounce = 1.0
 radius = 57.0
 height = 136.0
 
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_554n6"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_d076r"]
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_554n6"]
+[sub_resource type="LabelSettings" id="LabelSettings_0lqow"]
+font_size = 46
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_veoao"]
 
 [node name="Turtle" type="RigidBody2D" unique_id=2115216272 groups=["actor", "hitstop_bodies"]]
 top_level = true
@@ -37,25 +44,6 @@ sprite_frames = SubResource("SpriteFrames_ow75p")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
 shape = SubResource("CapsuleShape2D_k6u5b")
 
-[node name="Label" type="Label" parent="." unique_id=1038118554]
-offset_left = -55.0
-offset_top = 2.0
-offset_right = 54.0
-offset_bottom = 27.0
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 64
-text = "EVILTURTLE24"
-label_settings = SubResource("LabelSettings_d076r")
-metadata/_edit_use_anchors_ = true
-
-[node name="Speed" type="Label" parent="." unique_id=557983902]
-offset_left = -167.0
-offset_top = -53.0
-offset_right = 156.0
-offset_bottom = 35.0
-theme_override_font_sizes/font_size = 64
-metadata/_edit_use_anchors_ = true
-
 [node name="Center" type="Marker2D" parent="." unique_id=1073313959]
 rotation = 0.64664906
 
@@ -63,5 +51,44 @@ rotation = 0.64664906
 stream = SubResource("AudioStreamMP3_554n6")
 max_polyphony = 2
 bus = &"Collision"
+
+[node name="Labels" type="GridContainer" parent="." unique_id=1170801662]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -59.0
+offset_right = 54.5
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+metadata/_edit_group_ = true
+
+[node name="Name" type="Label" parent="Labels" unique_id=1038118554]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "EVILTURTLE24"
+label_settings = SubResource("LabelSettings_d076r")
+metadata/_edit_use_anchors_ = true
+
+[node name="Health" type="Label" parent="Labels" unique_id=557983902]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "69"
+label_settings = SubResource("LabelSettings_0lqow")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Speed" type="Label" parent="Labels" unique_id=985965393]
+layout_mode = 2
+text = "96"
+label_settings = SubResource("LabelSettings_veoao")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

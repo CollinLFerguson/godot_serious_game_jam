@@ -1,0 +1,6 @@
+[gd_resource type="AudioEffectDistortion" format=3 uid="uid://cj32s4rciejm6"]
+
+[resource]
+mode = 4
+drive = 0.2
+post_gain = 2.0
