@@ -29,6 +29,7 @@ SoundController="*uid://b0m4omjigi4c0"
 HitstopController="*uid://72irm0im02vy"
 ParticleController="*uid://c485634kvbeec"
 EffectController="*uid://dhiscdd76u8mv"
+SaveManager="*uid://ga1q2p0u1qwn"
 
 [display]
 

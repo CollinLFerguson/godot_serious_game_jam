@@ -1,11 +1,12 @@
 extends RigidBody2D
 
 var sword_scene: PackedScene = preload("res://Upgrades/Assets/Sword/Sword.tscn")
+var upgrade_dict = {"sword":3}
+var is_player = false
 var upgrade_list = ["sword", "sword", "sword"]	#can add swords to this to give player more swords
 												#all the logic for this can be moved to the upgrades
 												#tab when ready / someone feels like it
 var actual_upgrades = []
-
 @export var min_velocity = 600
 @export var max_velocity = 2000.0
 var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
@@ -22,6 +23,8 @@ var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	upgrade_dict["sword"] += 1
+	print(upgrade_dict["sword"])
 	for x in upgrade_list:
 		if x == "sword":
 			actual_upgrades.append(sword_scene.instantiate())
@@ -90,3 +93,12 @@ func _on_body_entered(body: Node) -> void:
 		
 func apply_damage():
 	pass
+	
+	
+func save():
+	var save_dict = {
+		"upgrades" : upgrade_dict,
+		"is_player" : is_player
+	}
+	
+	return save_dict
