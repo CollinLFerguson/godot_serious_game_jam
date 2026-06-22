@@ -12,7 +12,10 @@ var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 @export var base_angular_velocity = 50.0
 @export var max_angular_velocity = 100.0
 
-@export var deceleration:float = .2
+@export var rotation_factor: float = 2.0
+@export var torque_strength: float = 50.0
+
+@export var deceleration:float = 0.2
 
 @export var sprite: SpriteFrames = load("res://Actors/Sprites/player.tres")
 
@@ -27,11 +30,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	$Labels/Health.text = "%s" % health
 
 func _physics_process(delta: float) -> void:	
-	var velocity = linear_velocity
+	$Labels/Speed.text = "%s" % linear_velocity.length()
+	var velocity = linear_velocity.length()
 	apply_force(linear_velocity * -(1 - deceleration))
+	
+	var target_av = velocity * rotation_factor
+	var av_error = target_av - angular_velocity
+	apply_torque(av_error * torque_strength)
 	
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -43,7 +51,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	elif speed < min_velocity and speed > 0.0:
 		state.linear_velocity = vel.normalized() * min_velocity
 		
-	$Speed.text = "%s" % health
+	
 	#$Speed.text = "%s" % int(state.linear_velocity.length())
 	var angular: float = abs(state.angular_velocity)
 
@@ -60,7 +68,8 @@ func _on_body_entered(body: Node) -> void:
 	elif body.is_in_group("weapon"):
 		SignalBus.hit.emit(self, body)
 		health -= body.damage
-		linear_velocity *= (1 + body.weight / 100)
+
+		apply_impulse(linear_velocity * (1 + body.weight / 100))
 	
 	elif body.is_in_group("scenery"):
 		if linear_velocity.length() > 1000:
