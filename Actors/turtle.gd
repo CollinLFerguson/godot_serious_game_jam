@@ -1,12 +1,7 @@
 extends RigidBody2D
-
-var sword_scene: PackedScene = preload("res://Upgrades/Assets/Sword/Sword.tscn")
-var upgrade_dict = {"sword":3}
 var is_player = false
-var upgrade_list = ["sword", "sword", "sword"]	#can add swords to this to give player more swords
-												#all the logic for this can be moved to the upgrades
-												#tab when ready / someone feels like it
-var actual_upgrades = []
+
+
 @export var min_velocity = 600
 @export var max_velocity = 2000.0
 var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
@@ -23,21 +18,7 @@ var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	upgrade_dict["sword"] += 1
-	print(upgrade_dict["sword"])
-	for x in upgrade_list:
-		if x == "sword":
-			actual_upgrades.append(sword_scene.instantiate())
-			
-	var upgrade_spawn = $Center
-	var num_swords = upgrade_list.count("sword")
-	for i in range(num_swords):
-		actual_upgrades[i].position = upgrade_spawn.position + Vector2(0,-100)\
-		.rotated((i + 1) * 2 * PI / num_swords)
-		actual_upgrades[i].rotation = ((i + 1) *2 * PI) / num_swords
-		add_collision_exception_with(actual_upgrades[i])
-		add_child(actual_upgrades[i])
-		
+	SignalBus.upgrade_selected.emit(self, "mace")
 	$AnimatedSprite2D.sprite_frames = sprite
 	#SignalBus.upgrade_selected.emit(self, "Sword")
 	#SignalBus.hit.connect()
@@ -94,6 +75,7 @@ func _on_body_entered(body: Node) -> void:
 func apply_damage():
 	pass
 	
+var upgrade_dict = []
 	
 func save():
 	var save_dict = {

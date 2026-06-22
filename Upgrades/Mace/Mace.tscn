@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://duk7tocmh3t23"]
+
+[ext_resource type="Script" uid="uid://by30hgchmlb87" path="res://Upgrades/Mace/mace.gd" id="1_qsosx"]
+[ext_resource type="Texture2D" uid="uid://cijhyl65na6su" path="res://Upgrades/Mace/mace_swing3.png" id="2_agm1g"]
+[ext_resource type="Texture2D" uid="uid://bi4fgbiq5ento" path="res://Upgrades/Mace/mace_swing1.png" id="3_5vh04"]
+[ext_resource type="Texture2D" uid="uid://b670cplxii1kp" path="res://Upgrades/Mace/mace_swing2.png" id="4_4rcxh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_35014"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_agm1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5vh04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4rcxh")
+}],
+"loop": 1,
+"name": &"swing",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k5dnt"]
+radius = 66.91985
+height = 157.92029
+
+[node name="Mace" type="StaticBody2D" unique_id=758026944]
+collision_layer = 2
+script = ExtResource("1_qsosx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1246150336]
+position = Vector2(4, -9)
+rotation = -0.7083347
+scale = Vector2(0.984, 1)
+sprite_frames = SubResource("SpriteFrames_35014")
+animation = &"swing"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=243718512]
+position = Vector2(1.9999998, -2.999999)
+rotation = 0.022948641
+shape = SubResource("CapsuleShape2D_k5dnt")
+
+[node name="AttachPoint" type="Marker2D" parent="." unique_id=558189759]
+position = Vector2(0, 66)
+
+[node name="EndPoint" type="Marker2D" parent="." unique_id=705973308]
+position = Vector2(0, -56)
