@@ -3,8 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://4s3rvxbkfi3c" path="res://art/mine/mine1.png" id="1_cod4b"]
 [ext_resource type="Texture2D" uid="uid://cnxhro8salfsj" path="res://art/mine/mine2.png" id="2_g7vdd"]
 [ext_resource type="Texture2D" uid="uid://d0sq3swe6lnm" path="res://art/mine/mine3.png" id="3_o83e1"]
-[ext_resource type="Texture2D" uid="uid://oqu2prpec1dt" path="res://art/mine/mine4.png" id="4_s83af"]
-[ext_resource type="Texture2D" uid="uid://dptwrxtkuj64q" path="res://art/mine/mine5.png" id="5_g0ep2"]
 [ext_resource type="Script" uid="uid://mhe5m1gmnkvf" path="res://art/mine/mine.gd" id="6_g7vdd"]
 [ext_resource type="Script" uid="uid://1t53ur36wnxp" path="res://art/mine/mine_anim.gd" id="6_s83af"]
 [ext_resource type="Script" uid="uid://elei8ealpevu" path="res://art/mine/mine_aoe.gd" id="7_o83e1"]
@@ -28,12 +26,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_o83e1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_s83af")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_g0ep2")
 }],
 "loop": 0,
 "name": &"explode",
@@ -51,7 +43,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1oqq"]
 radius = 131.03435
 
-[node name="Mine_Body" type="Area2D" unique_id=1110397731]
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_s83af"]
+
+[node name="Mine_Body" type="Area2D" unique_id=1110397731 groups=["weapon"]]
 script = ExtResource("6_g7vdd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1598966449]
@@ -68,6 +62,11 @@ script = ExtResource("7_o83e1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mine_AOE" unique_id=1123582980]
 shape = SubResource("CircleShape2D_t1oqq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1974946774]
+stream = SubResource("AudioStreamMP3_s83af")
+max_polyphony = 5
+bus = &"Effects"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="Mine_animation" to="Mine_animation" method="_on_animation_finished"]

@@ -58,5 +58,7 @@ collision_mask = 1
 max_angular_velocity = 100.0
 
 [node name="RockBorder" type="Sprite2D" parent="." unique_id=355733280]
+top_level = true
+z_index = 2
 position = Vector2(960, 540)
 texture = ExtResource("5_do635")

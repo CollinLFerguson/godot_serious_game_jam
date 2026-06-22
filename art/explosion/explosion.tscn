@@ -51,6 +51,8 @@ animations = [{
 }]
 
 [node name="Explosion" type="AnimatedSprite2D" unique_id=1854749366]
+top_level = true
+z_index = 1
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_554n6")

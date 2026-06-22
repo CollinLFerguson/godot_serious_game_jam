@@ -18,6 +18,7 @@ outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Turtle" type="RigidBody2D" unique_id=2115216272 groups=["actor", "hitstop_bodies"]]
+top_level = true
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_cnp70")
 gravity_scale = 0.0
