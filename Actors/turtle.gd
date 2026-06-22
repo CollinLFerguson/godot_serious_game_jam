@@ -88,6 +88,5 @@ func _on_body_entered(body: Node) -> void:
 	if health <= 0:
 		queue_free()
 		
-		
 func apply_damage():
 	pass

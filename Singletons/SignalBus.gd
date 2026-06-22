@@ -19,3 +19,5 @@ signal hit(source, target) #source should always be passed like hit(self, body)
 signal hitstop
 
 signal damage #keeping this seperate so that I'm not passing a bunch of unnecessary things into hit
+
+signal mine_explosion(mine, target_list)

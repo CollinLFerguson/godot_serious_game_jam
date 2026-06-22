@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dc8bq3bnc7nh5" path="res://art/explosion/explode9.png" id="8_ivvll"]
 [ext_resource type="Texture2D" uid="uid://dl0um4k05tgof" path="res://art/explosion/explode10.png" id="9_uvgk0"]
 [ext_resource type="Texture2D" uid="uid://7oif2oo7fspa" path="res://art/explosion/explode11.png" id="10_j1aky"]
+[ext_resource type="Script" uid="uid://f6oi2e3xctna" path="res://art/explosion/explosion.gd" id="11_niabt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_554n6"]
 animations = [{
@@ -44,12 +45,15 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_j1aky")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 15.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1854749366]
+[node name="Explosion" type="AnimatedSprite2D" unique_id=1854749366]
 texture_filter = 1
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_554n6")
-frame_progress = 0.528138
+script = ExtResource("11_niabt")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

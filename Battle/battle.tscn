@@ -37,17 +37,25 @@ stream = ExtResource("7_0lqow")
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
 position = Vector2(125, 104)
+collision_mask = 1
+max_angular_velocity = 100.0
 
 [node name="Turtle2" parent="." unique_id=800984328 instance=ExtResource("1_ac2hh")]
 position = Vector2(146, 967)
+collision_mask = 1
+max_angular_velocity = 100.0
 sprite = ExtResource("2_o5tja")
 
 [node name="Turtle3" parent="." unique_id=585417831 instance=ExtResource("1_ac2hh")]
 position = Vector2(1782, 125)
+collision_mask = 1
+max_angular_velocity = 100.0
 sprite = ExtResource("2_o5tja")
 
 [node name="Turtle4" parent="." unique_id=84617478 instance=ExtResource("1_ac2hh")]
 position = Vector2(1738, 922)
+collision_mask = 1
+max_angular_velocity = 100.0
 
 [node name="RockBorder" type="Sprite2D" parent="." unique_id=355733280]
 position = Vector2(960, 540)

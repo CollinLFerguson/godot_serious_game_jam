@@ -5,8 +5,9 @@ extends Node
 func _ready():
 	SignalBus.battle_start.connect(handleSoundtrack)
 	SignalBus.hit.connect(handleHitstop)
-	SignalBus.hit.connect(handleParticles)
+	SignalBus.hit.connect(handleSparksParticles)
 	SignalBus.hit.connect(handleDamage)
+	SignalBus.mine_explosion.connect(handleMineExplosion)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func handleSoundtrack():
@@ -18,10 +19,13 @@ func handleHitstop(source, target):
 	#define more conditions here.
 	HitstopController.hitstop_short()
 
-func handleParticles(source: Node2D, target) -> void:
+func handleSparksParticles(source: Node2D, target) -> void:
 	ParticleController.throwSparksParticle(source)
 	
 func handleDamage(source, target):
 	if target.get_class() == "RigidBody2D":
 		pass
+		
+func handleMineExplosion(mine, target_list):
+	ParticleController.throwExplosionParticle(mine)
 	

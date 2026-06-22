@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cqgoiv4jluswv" path="res://Collidable/tree_collision.tscn" id="5_3xio2"]
 [ext_resource type="PackedScene" uid="uid://yfhw0ul52hss" path="res://art/mine/mine.tscn" id="6_at5ul"]
 
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_at5ul"]
+
 [node name="battle-tree" type="Node2D" unique_id=861134569]
 
 [node name="TreeBackground" type="Sprite2D" parent="." unique_id=437700683]
@@ -14,7 +16,7 @@ position = Vector2(960, 540)
 texture = ExtResource("1_7vlax")
 
 [node name="Mine" parent="." unique_id=2183746 instance=ExtResource("6_at5ul")]
-position = Vector2(428, 434)
+position = Vector2(562, 547)
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("2_w3s0d")]
 position = Vector2(634, 786)
@@ -39,3 +41,12 @@ rotation = 1.5707964
 
 [node name="TreeCollision" parent="." unique_id=305248489 instance=ExtResource("5_3xio2")]
 position = Vector2(-11, -11)
+
+[node name="Mine2" parent="." unique_id=1110397731 instance=ExtResource("6_at5ul")]
+position = Vector2(391, 551)
+
+[node name="Mine3" parent="." unique_id=950061049 instance=ExtResource("6_at5ul")]
+position = Vector2(223, 555)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=140025716]
+stream = SubResource("AudioStreamMP3_at5ul")
