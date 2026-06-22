@@ -17,6 +17,8 @@ height = 136.0
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_554n6"]
+
 [node name="Turtle" type="RigidBody2D" unique_id=2115216272 groups=["actor", "hitstop_bodies"]]
 top_level = true
 collision_mask = 3
@@ -56,5 +58,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Center" type="Marker2D" parent="." unique_id=1073313959]
 rotation = 0.64664906
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=477965546]
+stream = SubResource("AudioStreamMP3_554n6")
+max_polyphony = 2
+bus = &"Collision"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
