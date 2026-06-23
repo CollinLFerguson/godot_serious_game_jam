@@ -1,11 +1,7 @@
 extends RigidBody2D
-var is_player = false
-var actual_upgrades
-var upgrade_dict
 
 @export var min_velocity = 600
 @export var max_velocity = 2000.0
-var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
 @export var health = 100
 
@@ -16,17 +12,19 @@ var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 @export var rotation_factor: float = 2.0
 @export var torque_strength: float = 50.0
 
-@export var deceleration:float = 0.2
+@export var scenery_damage_threshhold:float = 1000
 
+@export var deceleration:float = 0.2
 @export var sprite: SpriteFrames = load("res://Actors/Sprites/player.tres")
+
+var is_player = false
+var upgrade_dict = []
+var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.upgrade_selected.emit(self, "mace")
-
+	SignalBus.load_upgrades.emit(self, ["mace", "sword", "mace", "sword"])
 	$AnimatedSprite2D.sprite_frames = sprite
-	#SignalBus.upgrade_selected.emit(self, "Sword")
-	#SignalBus.hit.connect()
 	apply_central_impulse(base_velocity)
 	apply_torque_impulse(base_angular_velocity)
 
@@ -74,7 +72,7 @@ func _on_body_entered(body: Node) -> void:
 		apply_impulse(linear_velocity * (1 + body.weight / 100))
 	
 	elif body.is_in_group("scenery"):
-		if linear_velocity.length() > 1000:
+		if linear_velocity.length() > scenery_damage_threshhold:
 			
 			SignalBus.hit.emit(self, body)
 			health -= int(linear_velocity.length() / 200)
@@ -103,3 +101,6 @@ func save():
 	}
 	
 	return save_dict
+
+func reportStats(): 
+	pass

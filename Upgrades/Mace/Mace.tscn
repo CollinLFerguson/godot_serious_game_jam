@@ -19,16 +19,21 @@ animations = [{
 }],
 "loop": 1,
 "name": &"swing",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k5dnt"]
-radius = 66.91985
-height = 157.92029
+radius = 17.041418
+height = 92.02167
 
-[node name="Mace" type="StaticBody2D" unique_id=758026944]
+[sub_resource type="CircleShape2D" id="CircleShape2D_d076r"]
+radius = 29.0
+
+[node name="Mace" type="StaticBody2D" unique_id=758026944 groups=["weapon"]]
+position = Vector2(3, 4)
 collision_layer = 2
 script = ExtResource("1_qsosx")
+weight = 12
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1246150336]
 position = Vector2(4, -9)
@@ -36,15 +41,20 @@ rotation = -0.7083347
 scale = Vector2(0.984, 1)
 sprite_frames = SubResource("SpriteFrames_35014")
 animation = &"swing"
-frame = 1
+frame = 2
+frame_progress = 0.43871865
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=243718512]
-position = Vector2(1.9999998, -2.999999)
+[node name="ChainCollisionShape" type="CollisionShape2D" parent="." unique_id=243718512 groups=["weapon"]]
+position = Vector2(-2, 24.999998)
 rotation = 0.022948641
 shape = SubResource("CapsuleShape2D_k5dnt")
 
 [node name="AttachPoint" type="Marker2D" parent="." unique_id=558189759]
-position = Vector2(0, 66)
+position = Vector2(-3, 57)
 
 [node name="EndPoint" type="Marker2D" parent="." unique_id=705973308]
 position = Vector2(0, -56)
+
+[node name="BallCollisionShape" type="CollisionShape2D" parent="." unique_id=13968330 groups=["weapon"]]
+position = Vector2(0, -50)
+shape = SubResource("CircleShape2D_d076r")
