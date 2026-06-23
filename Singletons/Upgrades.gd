@@ -19,7 +19,8 @@ func _ready() -> void:
 func createItemInstantiations(itemName, count):
 	for c in count:
 		actual_upgrades.append(upgrade_dict[itemName]["scene"].instantiate())
-
+	for a in actual_upgrades:
+		a.get_node("AnimatedSprite2D").play()
 '''
 attachUpgradeItem
 attach upgrade to attachment point on turtle
