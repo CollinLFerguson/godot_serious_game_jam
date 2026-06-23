@@ -1,7 +1,7 @@
 extends Node
 
 # Win/loss signals
-signal player_lost
+signal player_died
 signal player_win
 
 # Battle signals
@@ -21,3 +21,5 @@ signal hitstop
 signal damage #keeping this seperate so that I'm not passing a bunch of unnecessary things into hit
 
 signal mine_explosion(mine, target_list)
+
+signal enemy_died
