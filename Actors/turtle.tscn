@@ -97,4 +97,6 @@ label_settings = SubResource("LabelSettings_veoao")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=2031630674]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

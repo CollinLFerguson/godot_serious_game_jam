@@ -1,6 +1,7 @@
 extends RigidBody2D
 var is_player = false
-
+var actual_upgrades
+var upgrade_dict
 
 @export var min_velocity = 600
 @export var max_velocity = 2000.0
@@ -21,7 +22,8 @@ var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.load_upgrade.emit(self)
+	SignalBus.upgrade_selected.emit(self, "mace")
+
 	$AnimatedSprite2D.sprite_frames = sprite
 	#SignalBus.upgrade_selected.emit(self, "Sword")
 	#SignalBus.hit.connect()
@@ -86,15 +88,13 @@ func _on_body_entered(body: Node) -> void:
 		
 func apply_damage():
 	pass
-	
-var upgrade_dict = []
 
 func save_upgrades(is_player: bool):
 	if is_player:
 		return [Upgrades.upgrade_item]
 	else:
 		return upgrade_dict
-	
+
 func save():
 	var upgrades = save_upgrades(is_player)
 	var save_dict = {

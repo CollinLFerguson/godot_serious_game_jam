@@ -12,7 +12,7 @@ func hitstop_long():
 
 func hitstop(time: float):
 	Engine.time_scale = 0.1
-	SoundController.enableAudioEffect("slowdown_pitch_shift")
+	SoundController.enableAudioEffect("Hitstop")
 	await get_tree().create_timer(time, true, true, true).timeout
-	SoundController.disableAudioEffect("slowdown_pitch_shift")
+	SoundController.disableAudioEffect("Hitstop")
 	Engine.time_scale = 1

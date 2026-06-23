@@ -18,10 +18,9 @@ animations = [{
 radius = 35.0
 height = 126.0
 
-[node name="Sword" type="StaticBody2D" unique_id=1087588841 groups=["weapon"]]
+[node name="Sword" type="StaticBody2D" unique_id=2064383032 groups=["weapon"]]
 collision_layer = 2
 script = ExtResource("1_mce6v")
-weight = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1078108734]
 scale = Vector2(0.665, 0.665)
