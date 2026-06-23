@@ -12,10 +12,6 @@ func _ready() -> void:
 	$MaceButton.pressed.connect(on_maceButton_pressed)
 	$SwordButton.pressed.connect(on_swordButton_pressed)
 	$StartBattleButton.pressed.connect(on_startBattleButton_pressed)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 func on_maceButton_pressed():
 	var normal_style = StyleBoxFlat.new()

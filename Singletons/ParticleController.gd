@@ -6,10 +6,6 @@ const BOMBA_EFFECT: PackedScene = preload("res://art/explosion/explosion.tscn")
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 func throwSparksParticle(source):
 	#TODO: This should be the branching point for a particleHandler.
 	var effect = HIT_EFFECT.instantiate()

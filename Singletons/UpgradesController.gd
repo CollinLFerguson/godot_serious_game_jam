@@ -21,8 +21,8 @@ func _ready() -> void:
 	SignalBus.load_upgrades.connect(attachUpgradeItem)
 
 func setUpgradeItem(itemName):
-	pass
 	#upgrade_item = itemName
+	pass
 		
 func getSourceAttachPoints(source):
 	var attach_collection = source.get_node("AttachPoints")

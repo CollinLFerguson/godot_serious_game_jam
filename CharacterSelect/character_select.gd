@@ -82,7 +82,3 @@ func drawCheck(mouse: Vector2, line: Line2D) -> bool:
 		if mouse != line.points[line.points.size() - 1]:
 			return true
 	return false
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

@@ -17,10 +17,6 @@ func _ready() -> void:
 	# Designating Turtle #1 as the player
 	$Turtle.is_player = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func enemyDied():
 	enemyCount -= 1
 	if enemyCount == 0:

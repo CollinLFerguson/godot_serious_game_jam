@@ -29,10 +29,10 @@ func _ready() -> void:
 	apply_torque_impulse(base_angular_velocity)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Labels/Health.text = "%s" % health
 
-func _physics_process(delta: float) -> void:	
+func _physics_process(_delta: float) -> void:	
 	$Labels/Speed.text = "%s" % linear_velocity.length()
 	var velocity = linear_velocity.length()
 	apply_force(linear_velocity * -(1 - deceleration))
@@ -87,14 +87,14 @@ func _on_body_entered(body: Node) -> void:
 func apply_damage():
 	pass
 
-func save_upgrades(is_player: bool):
+func save_upgrades():
 	if is_player:
 		return [Upgrades.upgrade_item]
 	else:
 		return upgrade_dict
 
 func save():
-	var upgrades = save_upgrades(is_player)
+	var upgrades = save_upgrades()
 	var save_dict = {
 		"upgrades" : upgrades,
 		"is_player" : is_player
