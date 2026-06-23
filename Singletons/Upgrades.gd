@@ -2,11 +2,13 @@ extends Node
 
 var sword_scene: PackedScene = preload("res://Upgrades/Sword/Sword.tscn")
 var mace_scene: PackedScene = preload("res://Upgrades/Mace/Mace.tscn")
+var stars_scene: PackedScene = preload("res://Upgrades/ThrowingStars/ThrowingStars.tscn")
 
 
 var upgrade_dict = {
 		"sword": {"description" : "It is a sword.", "scene": sword_scene },
 		"mace": {"description" : "It is a mace.", "scene": mace_scene },
+		"stars": {"description" : "These are throwing stars.", "scene": stars_scene },
 	}
 
 var actual_upgrades = []

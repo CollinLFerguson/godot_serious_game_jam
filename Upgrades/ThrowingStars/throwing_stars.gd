@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+@export var damage = 5
+@export var weight = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

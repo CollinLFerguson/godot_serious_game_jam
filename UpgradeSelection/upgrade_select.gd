@@ -2,7 +2,8 @@ extends Node2D
 
 var upgrade_options = {
 	"sword": {"button": $SwordButton},
-	"mace": {"button": $SwordButton},
+	"mace": {"button": $MaceButton},
+	"stars": {"button": $ThrowingStarsButton},
 }
 
 var selected_upgrade = ""
@@ -11,6 +12,7 @@ var selected_upgrade = ""
 func _ready() -> void:
 	$MaceButton.pressed.connect(on_maceButton_pressed)
 	$SwordButton.pressed.connect(on_swordButton_pressed)
+	$ThrowingStarsButton.pressed.connect(on_throwingStarsButton_pressed)
 	$StartBattleButton.pressed.connect(on_startBattleButton_pressed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,10 +36,19 @@ func on_swordButton_pressed():
 	
 	var hover_style = StyleBoxFlat.new()
 	hover_style.bg_color = Color("7c5b23ff")
-	
 	$SwordButton.add_theme_stylebox_override("normal", normal_style)
 	$SwordButton.add_theme_stylebox_override("hover", hover_style)
 	selected_upgrade = "sword"
+	
+func on_throwingStarsButton_pressed():
+	var normal_style = StyleBoxFlat.new()
+	normal_style.bg_color = Color("e6ba4dff")
+	
+	var hover_style = StyleBoxFlat.new()
+	hover_style.bg_color = Color("7c5b23ff")
+	$ThrowingStarsButton.add_theme_stylebox_override("normal", normal_style)
+	$ThrowingStarsButton.add_theme_stylebox_override("hover", hover_style)
+	selected_upgrade = "stars"
 		
 func on_startBattleButton_pressed():
 	# Play sound effect for hitting the button
