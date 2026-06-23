@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var stars_scene: PackedScene = preload("res://Upgrades/ThrowingStars/ThrowingStars.tscn")
+
 @export var min_velocity = 600
 @export var max_velocity = 2000.0
 
@@ -21,19 +23,22 @@ var pain_sound = preload("res://SFX/Effects/turtle_hurt2.mp3")
 var terrain_sound = preload("res://SFX/Effects/crunch.mp3")
 
 var is_player = false
-var upgrade_dict = []
+var upgrade_dict = {"stars":1}
 var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.load_upgrades.emit(self, ["mace", "sword", "mace", "sword"])
+	SignalBus.load_upgrades.emit(self, ["mace"])
 	$AnimatedSprite2D.sprite_frames = sprite
 	apply_central_impulse(base_velocity)
 	apply_torque_impulse(base_angular_velocity)
+	if upgrade_dict["stars"] > 0:
+		$StarTimer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	$Labels/Health.text = "%s" % health
+	
 
 func _physics_process(_delta: float) -> void:	
 	$Labels/Speed.text = "%s" % linear_velocity.length()
@@ -113,3 +118,11 @@ func save():
 
 func reportStats(): 
 	pass
+
+
+func _on_star_timer_timeout() -> void:
+	get_parent().stars_scene = stars_scene
+	var new_star = get_parent().stars_scene.instantiate()
+	new_star.position = position
+	add_collision_exception_with(new_star)
+	get_parent().add_child(new_star)

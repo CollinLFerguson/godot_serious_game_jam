@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://4stlk6icxhwa"]
+
+[ext_resource type="Texture2D" uid="uid://vqecta1jdjbc" path="res://Upgrades/ThrowingStars/throwingStar.png" id="1_5i3j4"]
+
+[node name="ThrowingStarVisual" type="Sprite2D" unique_id=1427591175]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_5i3j4")

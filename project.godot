@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="serious-game-jam"
-run/main_scene="uid://cfdrgt1thf03p"
+run/main_scene="uid://cx75n4mbae0fc"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 

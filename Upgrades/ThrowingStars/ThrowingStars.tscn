@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://b7lqvx0evbm38" path="res://Upgrades/ThrowingStars/throwing_stars.gd" id="1_xn71j"]
 [ext_resource type="Texture2D" uid="uid://vqecta1jdjbc" path="res://Upgrades/ThrowingStars/throwingStar.png" id="2_6y6pl"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_veoao"]
+friction = 0.0
+bounce = 1.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_6y6pl"]
 animations = [{
 "frames": [{
@@ -17,13 +21,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_35014"]
 radius = 73.061615
 
-[node name="ThrowingStars" type="RigidBody2D" unique_id=1597296165]
+[node name="ThrowingStars" type="RigidBody2D" unique_id=1597296165 groups=["weapon"]]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_veoao")
+gravity_scale = 0.0
 script = ExtResource("1_xn71j")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=363626676]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_6y6pl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=890233834]
-position = Vector2(1, 11)
+position = Vector2(0, 5)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_35014")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

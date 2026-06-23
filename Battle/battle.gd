@@ -3,6 +3,7 @@ extends Node2D
 var enemyCount = 3
 const gameOverScene = preload("res://Battle/game_over_screen.tscn")
 const endBattleScene = preload("res://Battle/end_battle_screen.tscn")
+var stars_scene: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

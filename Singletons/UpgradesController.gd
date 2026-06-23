@@ -3,6 +3,7 @@ extends Node
 var sword_scene: PackedScene = preload("res://Upgrades/Sword/Sword.tscn")
 var mace_scene: PackedScene = preload("res://Upgrades/Mace/Mace.tscn")
 var stars_scene: PackedScene = preload("res://Upgrades/ThrowingStars/ThrowingStars.tscn")
+var stars_visual_scene: PackedScene = preload("res://Upgrades/ThrowingStars/ThrowingStarVisual.tscn")
 
 var UPGRADES = {
 		"sword": {
@@ -17,7 +18,7 @@ var UPGRADES = {
 		},
 		"stars": {
 			"description" : "These are throwing stars.", 
-			"scene": stars_scene ,
+			"scene": stars_visual_scene ,
 			"attach_points":["LeftHand", "RightHand", "LeftFoot", "RightFoot"]
 		},
 	}
