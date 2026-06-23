@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ncxfbmuj6cqh"]
+
+[ext_resource type="Script" uid="uid://chl1nx4siq1e2" path="res://UpgradeSelection/upgrade_select.gd" id="1_nwyyi"]
+[ext_resource type="Texture2D" uid="uid://c7l3smb7mljyy" path="res://UI/Backgrounds/TurtleChooseUpgradeScreen.png" id="2_upg4n"]
+[ext_resource type="Texture2D" uid="uid://do8o8i34fkh34" path="res://UI/Buttons/TurtleStartBattleButton.png" id="3_qndx7"]
+[ext_resource type="AudioStream" uid="uid://bwrv05r1ibswf" path="res://SFX/UI/start_battle.mp3" id="4_dpkvm"]
+
+[node name="UpgradeSelect" type="Node2D" unique_id=1106215260]
+script = ExtResource("1_nwyyi")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1557639357]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_upg4n")
+
+[node name="SwordButton" type="Button" parent="." unique_id=391337172]
+offset_left = 498.0
+offset_top = 230.0
+offset_right = 1320.0
+offset_bottom = 404.0
+theme_override_font_sizes/font_size = 44
+text = "Sword
+Description: A mighty blade."
+alignment = 0
+
+[node name="MaceButton" type="Button" parent="." unique_id=992438751]
+offset_left = 503.0
+offset_top = 449.0
+offset_right = 1329.0
+offset_bottom = 623.0
+theme_override_font_sizes/font_size = 44
+text = "Mace
+Description: A weapon of many spikes."
+alignment = 0
+
+[node name="StartBattleButton" type="TextureButton" parent="." unique_id=1684609894]
+offset_left = 1378.0
+offset_top = 839.0
+offset_right = 1878.0
+offset_bottom = 1039.0
+texture_normal = ExtResource("3_qndx7")
+
+[node name="StartBattleSound" type="AudioStreamPlayer2D" parent="StartBattleButton" unique_id=1902981708]
+stream = ExtResource("4_dpkvm")
+volume_db = -20.0

@@ -23,6 +23,7 @@ func setColorPalletteButtons():
 		normal_style.bg_color = Color(c["code"])
 		
 		c["buttonObject"].add_theme_stylebox_override("normal", normal_style)
+		c["buttonObject"].add_theme_stylebox_override("hover", hover_style)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,7 +49,7 @@ func on_startBattleButton_pressed():
 	await sfx.finished 
 	
 	# Switch to next scene
-	SignalBus.scene_switch.emit("res://Battle/battle.tscn")
+	SignalBus.scene_switch.emit("res://UpgradeSelection/upgrade_select.tscn")
 
 func mouseEnteredCanvas():
 	canDraw = true

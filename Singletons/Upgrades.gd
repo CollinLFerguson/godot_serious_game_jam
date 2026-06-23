@@ -3,7 +3,6 @@ extends Node
 var sword_scene: PackedScene = preload("res://Upgrades/Sword/Sword.tscn")
 var mace_scene: PackedScene = preload("res://Upgrades/Mace/Mace.tscn")
 
-@onready var mace = get_node("/root/Upgrades/Mace")
 
 var upgrade_dict = {
 		"sword": {"description" : "It is a sword.", "scene": sword_scene },
@@ -11,24 +10,30 @@ var upgrade_dict = {
 	}
 
 var actual_upgrades = []
+var upgrade_item = ""
 
 func _ready() -> void:
-	SignalBus.upgrade_selected.connect(attachUpgradeItem)
+	SignalBus.upgrade_selected.connect(setUpgradeItem)
+	SignalBus.load_upgrade.connect(attachUpgradeItem)
 
+func setUpgradeItem(itemName):
+	upgrade_item = itemName
 
 func createItemInstantiations(itemName, count):
 	for c in count:
 		actual_upgrades.append(upgrade_dict[itemName]["scene"].instantiate())
 	for a in actual_upgrades:
 		a.get_node("AnimatedSprite2D").play()
+		
 '''
 attachUpgradeItem
 attach upgrade to attachment point on turtle
 	var source: node (parent signalling for upgrade attachment)
 	var itemName: string
 '''
-func attachUpgradeItem(source, itemName):
+func attachUpgradeItem(source):
 	var num_items = 2
+	var itemName = upgrade_item
 	createItemInstantiations(itemName, num_items)
 	
 	var upgrade_spawn_1 = source.get_node("LeftHand")

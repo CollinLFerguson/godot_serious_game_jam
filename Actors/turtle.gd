@@ -21,7 +21,7 @@ var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.upgrade_selected.emit(self, "mace")
+	SignalBus.load_upgrade.emit(self)
 	$AnimatedSprite2D.sprite_frames = sprite
 	#SignalBus.upgrade_selected.emit(self, "Sword")
 	#SignalBus.hit.connect()
