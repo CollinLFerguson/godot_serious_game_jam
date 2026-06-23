@@ -16,6 +16,9 @@ extends RigidBody2D
 
 @export var deceleration:float = 0.2
 @export var sprite: SpriteFrames = load("res://Actors/Sprites/player.tres")
+var sword_sound = preload("res://SFX/Effects/sword_sound.mp3")
+var pain_sound = preload("res://SFX/Effects/turtle_hurt2.mp3")
+var terrain_sound = preload("res://SFX/Effects/crunch.mp3")
 
 var is_player = false
 var upgrade_dict = []
@@ -64,26 +67,32 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("actor"):
 		SignalBus.hit.emit(self, body)
 		health -= int(body.linear_velocity.length() / 200)
-		
+		$AudioStreamPlayer2D.stream = pain_sound
+		$AudioStreamPlayer2D.play()
 	elif body.is_in_group("weapon"):
 		SignalBus.hit.emit(self, body)
 		health -= body.damage
 
 		apply_impulse(linear_velocity * (1 + body.weight / 100))
+		$AudioStreamPlayer2D.stream = sword_sound
+		$AudioStreamPlayer2D.play()
 	
 	elif body.is_in_group("scenery"):
 		if linear_velocity.length() > scenery_damage_threshhold:
 			
 			SignalBus.hit.emit(self, body)
 			health -= int(linear_velocity.length() / 200)
-		
+			$AudioStreamPlayer2D.stream = terrain_sound
+			$AudioStreamPlayer2D.play()
 	if health <= 0:
+		$AudioStreamPlayer2D.stream = pain_sound
+		$AudioStreamPlayer2D.play()
 		if is_player:
 			SignalBus.player_died.emit()
 		if not is_player:
 			SignalBus.enemy_died.emit()
 		queue_free()
-		
+	
 func apply_damage():
 	pass
 

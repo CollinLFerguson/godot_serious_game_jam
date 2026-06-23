@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://4s3rvxbkfi3c" path="res://art/mine/mine1.png" id="1_cod4b"]
 [ext_resource type="Texture2D" uid="uid://cnxhro8salfsj" path="res://art/mine/mine2.png" id="2_g7vdd"]
 [ext_resource type="Texture2D" uid="uid://d0sq3swe6lnm" path="res://art/mine/mine3.png" id="3_o83e1"]
-[ext_resource type="Script" uid="uid://mhe5m1gmnkvf" path="res://art/mine/mine.gd" id="6_g7vdd"]
-[ext_resource type="Script" uid="uid://1t53ur36wnxp" path="res://art/mine/mine_anim.gd" id="6_s83af"]
-[ext_resource type="Script" uid="uid://elei8ealpevu" path="res://art/mine/mine_aoe.gd" id="7_o83e1"]
+[ext_resource type="Script" uid="uid://mhe5m1gmnkvf" path="res://Upgrades/Mine/mine.gd" id="6_g7vdd"]
+[ext_resource type="Script" uid="uid://1t53ur36wnxp" path="res://Upgrades/Mine/mine_anim.gd" id="6_s83af"]
+[ext_resource type="Script" uid="uid://elei8ealpevu" path="res://Upgrades/Mine/mine_aoe.gd" id="7_o83e1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_554n6"]
 radius = 30.016663

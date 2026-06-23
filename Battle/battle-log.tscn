@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bmh3xhh2o77ma" path="res://art/log_background.png" id="1_o7vvn"]
 [ext_resource type="PackedScene" uid="uid://dxoxarrevn02d" path="res://Collidable/wall-curved.tscn" id="2_gtdv5"]
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="3_gnf34"]
-[ext_resource type="PackedScene" uid="uid://yfhw0ul52hss" path="res://art/mine/mine.tscn" id="4_ngede"]
+[ext_resource type="PackedScene" uid="uid://yfhw0ul52hss" path="res://Upgrades/Mine/mine.tscn" id="4_ngede"]
 
 [node name="BattleLog" type="Node2D" unique_id=1341374353]
 

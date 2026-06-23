@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="2_w3s0d"]
 [ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="4_3xio2"]
 [ext_resource type="PackedScene" uid="uid://cqgoiv4jluswv" path="res://Collidable/tree_collision.tscn" id="5_3xio2"]
-[ext_resource type="PackedScene" uid="uid://yfhw0ul52hss" path="res://art/mine/mine.tscn" id="6_at5ul"]
+[ext_resource type="PackedScene" uid="uid://yfhw0ul52hss" path="res://Upgrades/Mine/mine.tscn" id="6_at5ul"]
 
 [node name="battle-tree" type="Node2D" unique_id=861134569]
 
