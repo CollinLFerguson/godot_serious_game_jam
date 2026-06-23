@@ -22,7 +22,7 @@ buses/default_bus_layout="uid://cewk05vab27id"
 [autoload]
 
 Bracket="*uid://dyenltv3yv53w"
-Upgrades="*uid://tw4hopiyfi7h"
+UpgradesController="*uid://tw4hopiyfi7h"
 SignalBus="*uid://dct35ovu4bhfq"
 SceneController="*uid://5balno6pfkhf"
 SoundController="*uid://b0m4omjigi4c0"

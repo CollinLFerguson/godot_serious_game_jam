@@ -89,7 +89,7 @@ func apply_damage():
 
 func save_upgrades():
 	if is_player:
-		return [Upgrades.upgrade_item]
+		return [UpgradesController.UPGRADES]
 	else:
 		return upgrade_dict
 
