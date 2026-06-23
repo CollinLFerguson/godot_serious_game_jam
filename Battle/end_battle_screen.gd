@@ -6,4 +6,4 @@ func _ready() -> void:
 	$EndBattleButton.pressed.connect(endOfBattle)
 
 func endOfBattle():
-	SignalBus.scene_switch.emit("res://UpgradeSelection/upgrade_selection.tscn")
+	SignalBus.scene_switch.emit("res://UpgradeSelection/upgrade_select.tscn")
