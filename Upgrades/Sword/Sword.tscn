@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8m06oh162fw8"]
 
-[ext_resource type="Texture2D" uid="uid://ca65t0i6aow22" path="res://Upgrades/Assets/Sword/sword.png" id="1_hnaed"]
-[ext_resource type="Script" uid="uid://bsxl00wkgkt2o" path="res://Upgrades/Assets/Sword/sword.gd" id="1_mce6v"]
+[ext_resource type="Texture2D" uid="uid://ca65t0i6aow22" path="res://Upgrades/Sword/sword.png" id="1_hnaed"]
+[ext_resource type="Script" uid="uid://bsxl00wkgkt2o" path="res://Upgrades/Sword/sword.gd" id="1_mce6v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_35014"]
 animations = [{
@@ -21,6 +21,7 @@ height = 126.0
 [node name="Sword" type="StaticBody2D" unique_id=1087588841 groups=["weapon"]]
 collision_layer = 2
 script = ExtResource("1_mce6v")
+weight = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1078108734]
 scale = Vector2(0.665, 0.665)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b670cplxii1kp"
-path="res://.godot/imported/mace_swing2.png-9553e32d6f74a1df186743cc5241f5ed.ctex"
+uid="uid://cijhyl65na6su"
+path="res://.godot/imported/mace_swing3.png-3b44a0a74a8f71fcfee9971dd6d0e935.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Upgrades/Assets/mace/mace_swing2.png"
-dest_files=["res://.godot/imported/mace_swing2.png-9553e32d6f74a1df186743cc5241f5ed.ctex"]
+source_file="res://Upgrades/Mace/mace_swing3.png"
+dest_files=["res://.godot/imported/mace_swing3.png-3b44a0a74a8f71fcfee9971dd6d0e935.ctex"]
 
 [params]
 

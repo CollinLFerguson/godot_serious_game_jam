@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://0c5ohgo6x3rf"]
+
+[node name="Sword" type="RigidBody2D" unique_id=1020095384]
