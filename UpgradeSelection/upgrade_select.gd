@@ -10,6 +10,7 @@ var selected_upgrade = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SignalBus.load_soundtrack.emit("")
 	$MaceButton.pressed.connect(on_maceButton_pressed)
 	$SwordButton.pressed.connect(on_swordButton_pressed)
 	$ThrowingStarsButton.pressed.connect(on_throwingStarsButton_pressed)
