@@ -7,8 +7,6 @@
 friction = 0.0
 bounce = 1.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ow75p"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6u5b"]
 radius = 57.0
 height = 136.0
@@ -39,24 +37,15 @@ max_angular_velocity = 50.0
 sprite = ExtResource("2_7mqse")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2143536447]
-sprite_frames = SubResource("SpriteFrames_ow75p")
+sprite_frames = ExtResource("2_7mqse")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
 shape = SubResource("CapsuleShape2D_k6u5b")
-
-[node name="Center" type="Marker2D" parent="." unique_id=1073313959]
-rotation = 0.64664906
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=477965546]
 stream = SubResource("AudioStreamMP3_554n6")
 max_polyphony = 2
 bus = &"Collision"
-
-[node name="LeftHand" type="Marker2D" parent="." unique_id=1163497855]
-position = Vector2(-42, 6)
-
-[node name="RightHand" type="Marker2D" parent="." unique_id=1131602439]
-position = Vector2(47, 4)
 
 [node name="Labels" type="GridContainer" parent="." unique_id=1170801662]
 anchors_preset = 8
@@ -64,10 +53,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -54.5
-offset_top = -59.0
-offset_right = 54.5
-offset_bottom = 59.0
+offset_left = -54.0
+offset_top = -63.0
+offset_right = 55.0
+offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
@@ -96,5 +85,24 @@ text = "96"
 label_settings = SubResource("LabelSettings_veoao")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AttachPoints" type="Node" parent="." unique_id=573040718]
+
+[node name="RightHand" type="Marker2D" parent="AttachPoints" unique_id=1131602439]
+position = Vector2(47, -21)
+
+[node name="LeftHand" type="Marker2D" parent="AttachPoints" unique_id=583777797]
+position = Vector2(-46, -20)
+
+[node name="LeftFoot" type="Marker2D" parent="AttachPoints" unique_id=1224952384]
+position = Vector2(-45, 43)
+rotation = 3.1415927
+
+[node name="RightFoot" type="Marker2D" parent="AttachPoints" unique_id=1068516613]
+position = Vector2(46, 45)
+rotation = 3.1415927
+
+[node name="Center" type="Marker2D" parent="AttachPoints" unique_id=1073313959]
+rotation = 0.64664906
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
