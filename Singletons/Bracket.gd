@@ -23,5 +23,5 @@ func generateBracket():
 	
 
 func getRandomUpgrade() -> String:
-	var keys = Upgrades.upgrade_dict.keys()
+	var keys = Upgrades.UPGRADES.keys()
 	return keys.pick_random()
