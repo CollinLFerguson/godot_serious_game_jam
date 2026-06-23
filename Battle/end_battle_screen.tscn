@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cwk7unktesme4"]
+
+[ext_resource type="Script" uid="uid://cwb6o0s7d5yb8" path="res://Battle/end_battle_screen.gd" id="1_y7wee"]
+
+[node name="EndBattleScreen" type="Control" unique_id=985275269]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y7wee")
+
+[node name="EndBattleLabel" type="Label" parent="." unique_id=52203036]
+layout_mode = 0
+offset_left = 878.0
+offset_top = 440.0
+offset_right = 1099.0
+offset_bottom = 508.0
+theme_override_font_sizes/font_size = 49
+text = "You Win!!"
+
+[node name="EndBattleButton" type="Button" parent="." unique_id=483420750]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 546.0
+offset_right = 1098.0
+offset_bottom = 622.0
+theme_override_font_sizes/font_size = 49
+text = "Upgrade"

@@ -1,5 +1,6 @@
 extends Node
 
+
 # Win/loss signals
 signal player_died
 signal player_win
@@ -10,7 +11,7 @@ signal battle_start
 # Upgrade signals
 signal upgrade_selected(upgradeName: String)
 
-signal load_upgrade(source) #ex: load_upgrade(self)
+signal load_upgrades(source, upgrade_name) #ex: load_upgrade(self)
 
 # Scene switching signal
 signal scene_switch(scenePath: String)

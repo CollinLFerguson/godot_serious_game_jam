@@ -4,13 +4,14 @@ var EFFECTS: Dictionary = {}
 var SOUNDTRACKS: Dictionary = {}
 
 func _ready():
-	_load_effects("res://SFX/Effects/")
+	_read_effects_directory("res://SFX/TrackEffects/")
 	_load_soundtracks("res://SFX/Soundtrack/")
 	
-func _load_effects(path:String):
+func _load_effects(path:String, dir_name):
 	var directory = DirAccess.open(path)
 	if not directory:
 		push_error("Effects directory could not be found")
+		return
 	
 	directory.list_dir_begin()
 	var file_name = directory.get_next()
@@ -19,9 +20,24 @@ func _load_effects(path:String):
 		if not directory.current_is_dir() and file_name.ends_with(".tres"):
 			var effect = load(path + file_name)
 			if effect is AudioEffect:
-				EFFECTS[file_name.get_basename()] = effect
+				EFFECTS[dir_name].append(effect)
 		file_name = directory.get_next()
 
+func _read_effects_directory(path):
+	var directory = DirAccess.open(path)
+	if not directory:
+		push_error("Effects directory could not be found")
+		return
+	
+	directory.list_dir_begin()
+	var file_name = directory.get_next()
+	
+	while file_name != "":
+		if directory.current_is_dir() and file_name != "." or file_name != "..":
+			EFFECTS[file_name] = []
+			_load_effects(path + file_name + "/", file_name)
+		file_name = directory.get_next()
+	
 func _load_soundtracks(path:String):
 	var directory = DirAccess.open(path)
 	if not directory:
@@ -50,22 +66,23 @@ func disableSoundtrack():
 func enableAudioEffect(effect_identifier: String):
 	var bus_idx = AudioServer.get_bus_index("Effects")
 	
-	var effect = null
+	var effects = null
 	if EFFECTS.has(effect_identifier):
-		effect = EFFECTS[effect_identifier]
-	if effect == null || !(effect is AudioEffect) :
+		effects = EFFECTS[effect_identifier]
+	if effects == null || !(effects is Array) :
 		push_error("Invalid effect requested")
 		return
-	AudioServer.add_bus_effect(bus_idx, effect)
+	for effect in effects:
+		if(effect is AudioEffect):
+			AudioServer.add_bus_effect(bus_idx, effect)
 	
 func disableAudioEffect(effect_identifier: String):
 	var bus_idx = AudioServer.get_bus_index("Effects")
 	
-	var effect = null
+	var effects = null
 	if EFFECTS.has(effect_identifier):
-		effect = EFFECTS[effect_identifier]
-	for i in AudioServer.get_bus_effect_count(bus_idx):
+		effects = EFFECTS[effect_identifier]
+	for i in range(AudioServer.get_bus_effect_count(bus_idx) - 1, -1, -1):
 		var fx = AudioServer.get_bus_effect(bus_idx, i)
-		if fx == effect:
-			AudioServer.remove_bus_effect(bus_idx, i)	
-			return
+		if fx in effects:
+			AudioServer.remove_bus_effect(bus_idx, i)

@@ -34,6 +34,7 @@ rotation = 1.5707964
 
 [node name="BattleTheme" type="AudioStreamPlayer2D" parent="." unique_id=1873491557]
 stream = ExtResource("7_0lqow")
+bus = &"Soundtrack"
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
 position = Vector2(125, 104)
