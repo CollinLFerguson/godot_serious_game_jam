@@ -77,8 +77,11 @@ func _on_body_entered(body: Node) -> void:
 			SignalBus.hit.emit(self, body)
 			health -= int(linear_velocity.length() / 200)
 		
-		
 	if health <= 0:
+		if is_player:
+			SignalBus.player_died.emit()
+		if not is_player:
+			SignalBus.enemy_died.emit()
 		queue_free()
 		
 func apply_damage():

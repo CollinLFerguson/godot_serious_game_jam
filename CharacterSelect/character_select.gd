@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var canDraw: bool
 var line: Line2D
 var currentLine: Line2D
@@ -37,10 +36,10 @@ func _ready() -> void:
 
 func on_startBattleButton_pressed():
 	# Save user drawing TODO this doesn't seem to work lmfao
-	# await RenderingServer.frame_post_draw
-	# var img: Image = $SubViewport.get_texture().get_image()
-	# img.save_png("res://user_drawing.png")
-	# var userTexture := ImageTexture.create_from_image(img)
+	await RenderingServer.frame_post_draw
+	var img: Image = $PixelArtCanvas/SubViewportContainer/SubViewport.get_texture().get_image()
+	img.save_png("res://PlayerDrawing/playerDrawing.png")
+	var userTexture := ImageTexture.create_from_image(img)
 	
 	# Play sound effect for hitting the button
 	var sfx = $StartBattleButton/StartBattleSound
