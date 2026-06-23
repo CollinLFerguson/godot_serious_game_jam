@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b2ao8ckrxuxp0"]
+
+[ext_resource type="Script" uid="uid://b7lqvx0evbm38" path="res://Upgrades/ThrowingStars/throwing_stars.gd" id="1_xn71j"]
+[ext_resource type="Texture2D" uid="uid://vqecta1jdjbc" path="res://Upgrades/ThrowingStars/throwingStar.png" id="2_6y6pl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6y6pl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6y6pl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ThrowingStars" type="RigidBody2D" unique_id=1597296165]
+script = ExtResource("1_xn71j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=363626676]
+sprite_frames = SubResource("SpriteFrames_6y6pl")

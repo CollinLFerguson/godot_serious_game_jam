@@ -88,10 +88,17 @@ func apply_damage():
 	pass
 	
 var upgrade_dict = []
+
+func save_upgrades(is_player: bool):
+	if is_player:
+		return [Upgrades.upgrade_item]
+	else:
+		return upgrade_dict
 	
 func save():
+	var upgrades = save_upgrades(is_player)
 	var save_dict = {
-		"upgrades" : upgrade_dict,
+		"upgrades" : upgrades,
 		"is_player" : is_player
 	}
 	
