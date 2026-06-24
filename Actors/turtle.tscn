@@ -91,6 +91,7 @@ vertical_alignment = 1
 
 [node name="RightHand" type="Marker2D" parent="AttachPoints" unique_id=1131602439]
 position = Vector2(47, -21)
+rotation = 1.0471976
 
 [node name="LeftHand" type="Marker2D" parent="AttachPoints" unique_id=583777797]
 position = Vector2(-46, -20)

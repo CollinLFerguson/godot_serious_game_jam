@@ -14,8 +14,10 @@ func _on_cannonball_timer_timeout() -> void:
 	var turtle = $".."
 	var new_ball = cannonballs_scene.instantiate()
 	new_ball.position = position
-	add_collision_exception_with(new_ball)
-	get_parent().add_child(new_ball)
+	
+	var turtle_velocity = turtle.linear_velocity
+	
+	new_ball.apply_impulse(turtle_velocity * 2)
 	
 	turtle.add_collision_exception_with(new_ball)
 	add_collision_exception_with(new_ball)

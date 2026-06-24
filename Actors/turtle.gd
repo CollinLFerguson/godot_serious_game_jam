@@ -28,7 +28,7 @@ var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.load_upgrades.emit(self, ["cannon"])
+	SignalBus.load_upgrades.emit(self, ["shield", "shield", "cannon", "cannon"])
 	$AnimatedSprite2D.sprite_frames = sprite
 	apply_central_impulse(base_velocity)
 	apply_torque_impulse(base_angular_velocity)

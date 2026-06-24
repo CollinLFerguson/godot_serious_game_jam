@@ -1,10 +1,12 @@
 extends RigidBody2D
 
 @export var damage = 20
-@export var weight = 15
+@export var weight = 60
+
+var base_velocity
 
 func _ready() -> void:
-	linear_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
+	pass
 
 func _physics_process(delta: float) -> void:
 	$AnimatedSprite2D.rotation += .1
