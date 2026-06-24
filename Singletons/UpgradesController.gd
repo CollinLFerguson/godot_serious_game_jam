@@ -7,6 +7,7 @@ var stars_visual_scene: PackedScene = preload("res://Upgrades/ThrowingStars/Thro
 var cannon_scene: PackedScene = preload("res://Upgrades/HandCannon/HandCannon.tscn")
 var cannonballs_visual_scene: PackedScene = preload("res://Upgrades/HandCannon/cannonball/CannonballVisual.tscn")
 var shield_scene: PackedScene = preload("res://Upgrades/Shield/Shield.tscn")
+var mine_scene: PackedScene = preload("res://Upgrades/Mine/mine.tscn")
 
 var UPGRADES = {
 		"sword": {
@@ -34,6 +35,11 @@ var UPGRADES = {
 			"scene": cannon_scene ,
 			"attach_points":["LeftHand", "RightHand", "LeftFoot", "RightFoot"]
 		},
+		"mine": {
+			"description" : "This is a mine.", 
+			"scene": mine_scene ,
+			"attach_points":["LeftHand", "RightHand", "LeftFoot", "RightFoot"]
+		}
 	}
 
 func _ready() -> void:
@@ -72,7 +78,8 @@ func attachUpgradeItem(source, upgrade_identifiers):
 			var attach_point = source_attach_points[i]
 			if attach_point.name in valid_attach_points:
 				attachAndTransform(source, attach_point, item)
-				source.add_collision_exception_with(item)
+				if item is PhysicsBody2D:
+					source.add_collision_exception_with(item)
 				source_attach_points.remove_at(i)
 				break
 	

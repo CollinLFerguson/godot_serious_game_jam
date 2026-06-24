@@ -28,8 +28,9 @@ func handleDamage(source, target):
 func handleMineExplosion(mine, target_list):
 	ParticleController.throwExplosionParticle(mine)
 	for tgt in target_list:
-		var pos_vec = 100*(tgt.position - mine.position)
-		tgt.linear_velocity = pos_vec
-		#if tgt.get_class() == "RigidBody2D":
-			#tgt.apply_impulse(tgt.position, pos_vec)
+		if tgt.is_in_group("actor"):
+			var pos_vec = 100*(tgt.position - mine.position)
+			tgt.linear_velocity = pos_vec
+			#if tgt.get_class() == "RigidBody2D":
+				#tgt.apply_impulse(tgt.position, pos_vec)
 	

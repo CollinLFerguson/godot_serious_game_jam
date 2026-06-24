@@ -45,7 +45,9 @@ radius = 131.03435
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_s83af"]
 
-[node name="Mine_Body" type="Area2D" unique_id=1110397731 groups=["weapon"]]
+[node name="Mine_Body" type="Area2D" unique_id=1110397731 groups=["hitstop_bodies", "weapon"]]
+monitoring = false
+monitorable = false
 script = ExtResource("6_g7vdd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1598966449]
@@ -54,10 +56,12 @@ shape = SubResource("CircleShape2D_554n6")
 [node name="Mine_animation" type="AnimatedSprite2D" parent="." unique_id=2183746]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_x1p5a")
-animation = &"armed"
+animation = &"rest"
 script = ExtResource("6_s83af")
 
 [node name="Mine_AOE" type="Area2D" parent="." unique_id=252937211]
+monitoring = false
+monitorable = false
 script = ExtResource("7_o83e1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mine_AOE" unique_id=1123582980]
@@ -68,7 +72,13 @@ stream = SubResource("AudioStreamMP3_s83af")
 max_polyphony = 5
 bus = &"Effects"
 
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1524014843]
+autostart = true
+
+[node name="AttachPoint" type="Marker2D" parent="." unique_id=418994727]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="Mine_animation" to="Mine_animation" method="_on_animation_finished"]
 [connection signal="body_entered" from="Mine_AOE" to="Mine_AOE" method="_on_body_entered"]
 [connection signal="body_exited" from="Mine_AOE" to="Mine_AOE" method="_on_body_exited"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
