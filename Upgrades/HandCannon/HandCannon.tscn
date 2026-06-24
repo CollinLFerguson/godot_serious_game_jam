@@ -34,3 +34,8 @@ position = Vector2(0, 25.984308)
 
 [node name="EndPoint" type="Marker2D" parent="." unique_id=37286495]
 position = Vector2(0, -25.984308)
+
+[node name="CannonballTimer" type="Timer" parent="." unique_id=900865745]
+wait_time = 3.0
+
+[connection signal="timeout" from="CannonballTimer" to="." method="_on_cannonball_timer_timeout"]

@@ -1,7 +1,36 @@
 [gd_scene format=3 uid="uid://4stlk6icxhwa"]
 
 [ext_resource type="Texture2D" uid="uid://vqecta1jdjbc" path="res://Upgrades/ThrowingStars/throwingStar.png" id="1_5i3j4"]
+[ext_resource type="Script" uid="uid://xq3g58junrdi" path="res://Upgrades/ThrowingStars/throwing_star_visual.gd" id="2_52a6i"]
 
-[node name="ThrowingStarVisual" type="Sprite2D" unique_id=1427591175]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_5i3j4")
+[sub_resource type="CircleShape2D" id="CircleShape2D_d076r"]
+radius = 3.259601
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d076r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5i3j4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="ThrowingStarVisual" type="StaticBody2D" unique_id=1398625811]
+scale = Vector2(4, 4)
+script = ExtResource("2_52a6i")
+
+[node name="AttachPoint" type="Marker2D" parent="." unique_id=205574420]
+scale = Vector2(0.5, 0.5)
+
+[node name="StarTimer" type="Timer" parent="." unique_id=1080903265]
+wait_time = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=77629594]
+shape = SubResource("CircleShape2D_d076r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1399884031]
+sprite_frames = SubResource("SpriteFrames_d076r")
+
+[connection signal="timeout" from="StarTimer" to="." method="_on_star_timer_timeout"]

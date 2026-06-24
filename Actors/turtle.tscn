@@ -94,24 +94,17 @@ position = Vector2(47, -21)
 
 [node name="LeftHand" type="Marker2D" parent="AttachPoints" unique_id=583777797]
 position = Vector2(-46, -20)
+rotation = -1.0471976
 
 [node name="LeftFoot" type="Marker2D" parent="AttachPoints" unique_id=1224952384]
 position = Vector2(-45, 43)
-rotation = 3.1415927
+rotation = 4.1887903
 
 [node name="RightFoot" type="Marker2D" parent="AttachPoints" unique_id=1068516613]
 position = Vector2(46, 45)
-rotation = 3.1415927
+rotation = 2.0943952
 
 [node name="Center" type="Marker2D" parent="AttachPoints" unique_id=1073313959]
 rotation = 0.64664906
 
-[node name="StarTimer" type="Timer" parent="." unique_id=130396727]
-wait_time = 3.0
-
-[node name="CannonballTimer" type="Timer" parent="." unique_id=1746355450]
-wait_time = 3.0
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="StarTimer" to="." method="_on_star_timer_timeout"]
-[connection signal="timeout" from="CannonballTimer" to="." method="_on_cannonball_timer_timeout"]
