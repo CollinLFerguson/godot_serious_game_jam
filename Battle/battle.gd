@@ -26,8 +26,7 @@ func enemyDied():
 		battleOver()
 
 func gameOver():
-	var gameOverInstance = gameOverScene.instantiate()
-	add_child(gameOverInstance)
+	SignalBus.scene_switch.emit("res://Battle/game_over_screen.tscn")
 
 func battleOver():
 	var endBattleInstance = endBattleScene.instantiate()
