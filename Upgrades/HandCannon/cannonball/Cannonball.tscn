@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://prl6t7qwkxkp"]
+
+[ext_resource type="Script" uid="uid://s2256j5sm143" path="res://Upgrades/HandCannon/cannonball/cannonball.gd" id="1_57lbc"]
+[ext_resource type="Texture2D" uid="uid://budmcf0uaa3ho" path="res://Upgrades/HandCannon/cannonball/cannonball.png" id="1_n680u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_35014"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n680u")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35014"]
+radius = 55.09421
+
+[node name="Cannonball" type="RigidBody2D" unique_id=1193819863 groups=["weapon"]]
+scale = Vector2(0.30243585, 0.3107753)
+collision_layer = 2
+script = ExtResource("1_57lbc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=417205116]
+position = Vector2(0, 1)
+scale = Vector2(0.671875, 0.609375)
+sprite_frames = SubResource("SpriteFrames_35014")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=406081249]
+position = Vector2(0, 1)
+scale = Vector2(0.671875, 0.609375)
+shape = SubResource("CircleShape2D_35014")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

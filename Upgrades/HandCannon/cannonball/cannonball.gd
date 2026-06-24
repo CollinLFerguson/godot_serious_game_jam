@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-@export var damage = 5
-@export var weight = 5
+@export var damage = 20
+@export var weight = 15
 
 func _ready() -> void:
 	linear_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))

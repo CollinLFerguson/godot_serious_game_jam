@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 var stars_scene: PackedScene = preload("res://Upgrades/ThrowingStars/ThrowingStars.tscn")
+var cannonballs_scene: PackedScene = preload("res://Upgrades/HandCannon/cannonball/Cannonball.tscn")
 
 @export var min_velocity = 600
 @export var max_velocity = 2000.0
@@ -23,17 +24,19 @@ var pain_sound = preload("res://SFX/Effects/turtle_hurt2.mp3")
 var terrain_sound = preload("res://SFX/Effects/crunch.mp3")
 
 var is_player = false
-var upgrade_dict = {"stars":1}
+var upgrade_dict = {"stars":0, "cannonball":3}
 var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.load_upgrades.emit(self, ["mace"])
+	SignalBus.load_upgrades.emit(self, ["sword", "cannon"] )
 	$AnimatedSprite2D.sprite_frames = sprite
 	apply_central_impulse(base_velocity)
 	apply_torque_impulse(base_angular_velocity)
 	if upgrade_dict["stars"] > 0:
 		$StarTimer.start()
+	if upgrade_dict["cannonball"] > 0:
+		$CannonballTimer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -126,3 +129,9 @@ func _on_star_timer_timeout() -> void:
 	new_star.position = position
 	add_collision_exception_with(new_star)
 	get_parent().add_child(new_star)
+	
+func _on_cannonball_timer_timeout() -> void:
+	get_parent().cannonballs_scene = cannonballs_scene
+	var new_ball = get_parent().cannonballs_scene.instantiate()
+	new_ball.position = position
+	add_collision_exception_with(new_ball)

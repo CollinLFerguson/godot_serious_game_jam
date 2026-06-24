@@ -109,9 +109,5 @@ rotation = 0.64664906
 [node name="StarTimer" type="Timer" parent="." unique_id=130396727]
 wait_time = 3.0
 
-[node name="CannonballTimer" type="Timer" parent="." unique_id=1746355450]
-wait_time = 3.0
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="StarTimer" to="." method="_on_star_timer_timeout"]
-[connection signal="timeout" from="CannonballTimer" to="." method="_on_cannonball_timer_timeout"]

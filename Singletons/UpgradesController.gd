@@ -4,6 +4,8 @@ var sword_scene: PackedScene = preload("res://Upgrades/Sword/Sword.tscn")
 var mace_scene: PackedScene = preload("res://Upgrades/Mace/Mace.tscn")
 var stars_scene: PackedScene = preload("res://Upgrades/ThrowingStars/ThrowingStars.tscn")
 var stars_visual_scene: PackedScene = preload("res://Upgrades/ThrowingStars/ThrowingStarVisual.tscn")
+var cannon_scene: PackedScene = preload("res://Upgrades/HandCannon/HandCannon.tscn")
+var cannonballs_visual_scene: PackedScene = preload("res://Upgrades/HandCannon/cannonball/CannonballVisual.tscn")
 
 var UPGRADES = {
 		"sword": {
@@ -19,6 +21,16 @@ var UPGRADES = {
 		"stars": {
 			"description" : "These are throwing stars.", 
 			"scene": stars_visual_scene ,
+			"attach_points":["LeftHand", "RightHand", "LeftFoot", "RightFoot"]
+		},
+		"cannon": {
+			"description" : "This is a hand cannon.", 
+			"scene": cannon_scene ,
+			"attach_points":["LeftHand", "RightHand", "LeftFoot", "RightFoot"]
+		},
+		"cannonball": {
+			"description" : "This is a hand cannon.", 
+			"scene": cannonballs_visual_scene ,
 			"attach_points":["LeftHand", "RightHand", "LeftFoot", "RightFoot"]
 		},
 	}
@@ -66,6 +78,7 @@ func attachUpgradeItem(source, upgrade_identifiers):
 				break
 	
 func attachAndTransform(parent_node, parent_attach_point, child_node):
+	var original_child_scale = child_node.scale
 	parent_node.add_child(child_node)
 	var parent_transform = parent_attach_point.transform
 	var child_attach_point = child_node.get_node("AttachPoint")
@@ -73,3 +86,5 @@ func attachAndTransform(parent_node, parent_attach_point, child_node):
 	if(child_attach_point != null):
 		child_transform = child_attach_point.transform
 	child_node.transform = parent_transform * child_transform.inverse()
+	#rescale the child
+	child_node.transform = child_node.transform.scaled(original_child_scale)
