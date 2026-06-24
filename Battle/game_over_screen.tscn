@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://wbstf6sm6qrn"]
 
 [ext_resource type="Script" uid="uid://n63a13fdbgaj" path="res://Battle/game_over_screen.gd" id="1_axcxa"]
+[ext_resource type="Texture2D" uid="uid://cio5m8dc83dou" path="res://UI/Backgrounds/TurtleGameOverScreen.png" id="2_ibylp"]
 
 [node name="GameOverScreen" type="Control" unique_id=206667240]
 layout_mode = 3
@@ -11,20 +12,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_axcxa")
 
-[node name="GameOverLabel" type="Label" parent="." unique_id=454179034]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=260227971]
 layout_mode = 0
-offset_left = 847.0
-offset_top = 438.0
-offset_right = 1134.0
-offset_bottom = 520.0
-theme_override_font_sizes/font_size = 49
-text = "GAME OVER"
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_ibylp")
 
 [node name="RestartButton" type="Button" parent="." unique_id=424714621]
 layout_mode = 0
-offset_left = 888.0
-offset_top = 546.0
-offset_right = 1083.0
-offset_bottom = 639.0
-theme_override_font_sizes/font_size = 49
+offset_left = 827.0
+offset_top = 913.0
+offset_right = 1176.0
+offset_bottom = 1040.0
+theme_override_font_sizes/font_size = 78
 text = "Restart"
