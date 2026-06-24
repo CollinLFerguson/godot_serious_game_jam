@@ -124,14 +124,13 @@ func reportStats():
 
 
 func _on_star_timer_timeout() -> void:
-	#get_parent().stars_scene = stars_scene
 	var new_star = stars_scene.instantiate()
 	new_star.position = position
 	add_collision_exception_with(new_star)
 	get_parent().add_child(new_star)
 	
 func _on_cannonball_timer_timeout() -> void:
-	get_parent().cannonballs_scene = cannonballs_scene
-	var new_ball = get_parent().cannonballs_scene.instantiate()
+	var new_ball = cannonballs_scene.instantiate()
 	new_ball.position = position
 	add_collision_exception_with(new_ball)
+	get_parent().add_child(new_ball)
