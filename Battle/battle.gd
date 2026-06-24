@@ -9,6 +9,7 @@ var cannonballs_scene: PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.battle_start.emit()
+	SignalBus.load_soundtrack.emit("battle_theme_srs")
 	SignalBus.enemy_died.connect(enemyDied)
 	SignalBus.player_died.connect(gameOver)
 	

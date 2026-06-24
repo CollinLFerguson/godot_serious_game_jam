@@ -7,5 +7,4 @@ func _ready() -> void:
 
 
 func _on_animation_finished() -> void:
-	print("did explode")
 	queue_free()

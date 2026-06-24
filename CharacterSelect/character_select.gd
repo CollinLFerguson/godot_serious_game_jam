@@ -33,7 +33,8 @@ func _ready() -> void:
 	$PixelArtCanvas.mouse_entered.connect(mouseEnteredCanvas)
 	$PixelArtCanvas.mouse_exited.connect(mouseExitedCanvas)
 	$StartBattleButton.pressed.connect(on_startBattleButton_pressed)
-
+	SignalBus.load_soundtrack.emit("")
+	
 func on_startBattleButton_pressed():
 	# Save user drawing TODO this doesn't seem to work lmfao
 	await RenderingServer.frame_post_draw

@@ -26,3 +26,5 @@ signal damage #keeping this seperate so that I'm not passing a bunch of unnecess
 signal mine_explosion(mine, target_list)
 
 signal enemy_died
+
+signal load_soundtrack(track_name: String)

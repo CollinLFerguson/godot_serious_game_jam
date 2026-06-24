@@ -3,15 +3,14 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SignalBus.battle_start.connect(handleSoundtrack)
 	SignalBus.hit.connect(handleHitstop)
 	SignalBus.hit.connect(handleSparksParticles)
 	SignalBus.hit.connect(handleDamage)
 	SignalBus.mine_explosion.connect(handleMineExplosion)
-
+	SignalBus.load_soundtrack.connect(handleSoundtrack)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func handleSoundtrack():
-	pass
+func handleSoundtrack(track_name: String, loop: bool = false):
+	SoundController.enableSoundtrack(track_name, loop)
 
 func handleHitstop(source, target):
 	if target.is_in_group('scenery'):
@@ -28,11 +27,9 @@ func handleDamage(source, target):
 		
 func handleMineExplosion(mine, target_list):
 	ParticleController.throwExplosionParticle(mine)
-	#print(mine.position)
 	for tgt in target_list:
 		var pos_vec = 100*(tgt.position - mine.position)
 		tgt.linear_velocity = pos_vec
-		print(tgt.linear_velocity)
 		#if tgt.get_class() == "RigidBody2D":
 			#tgt.apply_impulse(tgt.position, pos_vec)
 	

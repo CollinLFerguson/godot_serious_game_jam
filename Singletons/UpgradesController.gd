@@ -63,7 +63,6 @@ attach upgrade to attachment point on turtle
 
 func attachUpgradeItem(source, upgrade_identifiers):
 	var source_attach_points = getSourceAttachPoints(source)
-	print(upgrade_identifiers)
 	for item_name in upgrade_identifiers:
 		var item = createItemInstantiation(item_name)
 		var valid_attach_points = UPGRADES[item_name]["attach_points"]
@@ -71,7 +70,6 @@ func attachUpgradeItem(source, upgrade_identifiers):
 		for i in range(source_attach_points.size()):
 			var attach_point = source_attach_points[i]
 			if attach_point.name in valid_attach_points:
-				print(attach_point.name + " " + item.name)
 				attachAndTransform(source, attach_point, item)
 				source.add_collision_exception_with(item)
 				source_attach_points.remove_at(i)

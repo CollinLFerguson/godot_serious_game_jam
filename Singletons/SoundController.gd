@@ -2,10 +2,17 @@ extends Node
 
 var EFFECTS: Dictionary = {}
 var SOUNDTRACKS: Dictionary = {}
+var MUSIC_STREAM: AudioStreamPlayer
 
 func _ready():
 	_read_effects_directory("res://SFX/TrackEffects/")
 	_load_soundtracks("res://SFX/Soundtrack/")
+	_initiate_music_player()
+	
+func _initiate_music_player():
+	MUSIC_STREAM = AudioStreamPlayer.new()
+	MUSIC_STREAM.bus = "Music"
+	add_child(MUSIC_STREAM)
 	
 func _load_effects(path:String, dir_name):
 	var directory = DirAccess.open(path)
@@ -47,20 +54,29 @@ func _load_soundtracks(path:String):
 	var file_name = directory.get_next()
 	
 	while file_name != "":
-		if not directory.current_is_dir() and file_name.ends_with(".tres"):
+		if not directory.current_is_dir() and file_name.ends_with(".mp3"):
 			var soundtrack = load(path + file_name)
-			if soundtrack is AudioEffect:
+			print(soundtrack)
+			if soundtrack is AudioStreamMP3:
 				SOUNDTRACKS[file_name.get_basename()] = soundtrack
 		file_name = directory.get_next()
 	
 func playBattleTheme():
 	pass
 
-func enableSoundtrack(soundtrack_identifier: String):
-	pass
+func enableSoundtrack(soundtrack_identifier: String, loop: bool = true):
+	var bus_idx = AudioServer.get_bus_index("Soundtrack")
+	if(!SOUNDTRACKS.has(soundtrack_identifier)):
+		MUSIC_STREAM.stop()
+		return
+	var track = SOUNDTRACKS[soundtrack_identifier]
+	if(loop == true):
+		track.loop()
+	MUSIC_STREAM.stream = SOUNDTRACKS[soundtrack_identifier]
+	MUSIC_STREAM.play()
 
 func disableSoundtrack():
-	pass
+	MUSIC_STREAM.stop()
 
 
 func enableAudioEffect(effect_identifier: String):
