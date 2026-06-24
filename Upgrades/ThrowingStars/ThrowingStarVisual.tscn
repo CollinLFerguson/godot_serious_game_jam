@@ -18,7 +18,9 @@ animations = [{
 }]
 
 [node name="ThrowingStarVisual" type="StaticBody2D" unique_id=1398625811]
-scale = Vector2(4, 4)
+scale = Vector2(1.5, 1.5)
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("2_52a6i")
 
 [node name="AttachPoint" type="Marker2D" parent="." unique_id=205574420]

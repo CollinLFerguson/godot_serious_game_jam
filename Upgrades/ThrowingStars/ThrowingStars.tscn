@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_35014"]
 radius = 73.061615
 
-[node name="ThrowingStars" type="RigidBody2D" unique_id=1597296165 groups=["projectile", "weapon"]]
+[node name="ThrowingStars" type="RigidBody2D" unique_id=1597296165 groups=["projectile"]]
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_veoao")
 gravity_scale = 0.0

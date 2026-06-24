@@ -82,6 +82,11 @@ func _on_body_entered(body: Node) -> void:
 		$AudioStreamPlayer2D.stream = sword_sound
 		$AudioStreamPlayer2D.play()
 	
+	elif body.is_in_group("projectile"):
+		health -= body.damage
+		apply_impulse(linear_velocity * (1 + body.weight / 200))
+		body.queue_free()
+	
 	elif body.is_in_group("scenery"):
 		if linear_velocity.length() > scenery_damage_threshhold:
 			
