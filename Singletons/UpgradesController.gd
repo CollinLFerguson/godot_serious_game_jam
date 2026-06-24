@@ -6,6 +6,7 @@ var stars_scene: PackedScene = preload("res://Upgrades/ThrowingStars/ThrowingSta
 var stars_visual_scene: PackedScene = preload("res://Upgrades/ThrowingStars/ThrowingStarVisual.tscn")
 var cannon_scene: PackedScene = preload("res://Upgrades/HandCannon/HandCannon.tscn")
 var cannonballs_visual_scene: PackedScene = preload("res://Upgrades/HandCannon/cannonball/CannonballVisual.tscn")
+var shield_scene: PackedScene = preload("res://Upgrades/Shield/Shield.tscn")
 
 var UPGRADES = {
 		"sword": {
@@ -21,16 +22,16 @@ var UPGRADES = {
 		"stars": {
 			"description" : "These are throwing stars.", 
 			"scene": stars_visual_scene ,
+			"attach_points":["LeftHand", "RightHand", "LeftFoot", "RightFoot", "Center"]
+		},
+		"shield": {
+			"description" : "Protects your turtle from weapons.", 
+			"scene": shield_scene ,
 			"attach_points":["LeftHand", "RightHand", "LeftFoot", "RightFoot"]
 		},
 		"cannon": {
 			"description" : "This is a hand cannon.", 
 			"scene": cannon_scene ,
-			"attach_points":["LeftHand", "RightHand", "LeftFoot", "RightFoot"]
-		},
-		"cannonball": {
-			"description" : "This is a hand cannon.", 
-			"scene": cannonballs_visual_scene ,
 			"attach_points":["LeftHand", "RightHand", "LeftFoot", "RightFoot"]
 		},
 	}
