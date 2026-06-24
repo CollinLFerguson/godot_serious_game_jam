@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cilfnclo3nure"]
+
+[ext_resource type="Texture2D" uid="uid://bnvvmxogejktm" path="res://art/first_battle_bg.png" id="1_p3uur"]
+[ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="2_igvwn"]
+[ext_resource type="Texture2D" uid="uid://bb8d6cin6dwf3" path="res://art/first_battle_border.png" id="3_3f7mq"]
+
+[node name="FirstBattle" type="Node2D" unique_id=1746147702]
+
+[node name="FirstBattleBg" type="Sprite2D" parent="." unique_id=1685902845]
+position = Vector2(960, 540)
+texture = ExtResource("1_p3uur")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1800280814]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=661692689]
+build_mode = 1
+polygon = PackedVector2Array(168, 471, 716, 239, 1201, 244, 1208, 273, 1342, 319, 1407, 325, 1411, 349, 1451, 363, 1473, 366, 1502, 390, 1559, 397, 1572, 390, 1737, 459, 1743, 527, 1755, 555, 1745, 606, 1767, 622, 1218, 865, 761, 868, 166, 605)
+
+[node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("2_igvwn")]
+position = Vector2(956, 690)
+
+[node name="FirstBattleBorder" type="Sprite2D" parent="." unique_id=1459911466]
+top_level = true
+z_index = 2
+position = Vector2(960, 540)
+texture = ExtResource("3_3f7mq")
