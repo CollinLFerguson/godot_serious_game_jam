@@ -19,7 +19,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_35014"]
 radius = 55.09421
 
-[node name="Cannonball" type="RigidBody2D" unique_id=1193819863 groups=["weapon"]]
+[node name="Cannonball" type="RigidBody2D" unique_id=1193819863 groups=["projectile", "weapon"]]
 scale = Vector2(0.30243585, 0.3107753)
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_57lbc")
@@ -32,7 +32,7 @@ position = Vector2(0, 1)
 scale = Vector2(0.671875, 0.609375)
 sprite_frames = SubResource("SpriteFrames_35014")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=406081249]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=406081249 groups=["projectile", "weapon"]]
 position = Vector2(0, 1)
 scale = Vector2(0.671875, 0.609375)
 shape = SubResource("CircleShape2D_35014")
