@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c777nj0keyjsh"]
 
-[ext_resource type="Texture2D" uid="uid://claibtxm4ftcv" path="res://art/final_battle_bg.png" id="1_58c6v"]
-[ext_resource type="Texture2D" uid="uid://cyldtr73f0avv" path="res://art/final_battle_border.png" id="2_vpwv4"]
+[ext_resource type="Texture2D" uid="uid://db218ecl24l2b" path="res://art/final_battle_bg.png" id="1_58c6v"]
+[ext_resource type="Texture2D" uid="uid://ccffajg0aebbx" path="res://art/final_battle_border.png" id="2_vpwv4"]
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="3_vpwv4"]
 
 [node name="FinalBattle" type="Node2D" unique_id=748497410]
