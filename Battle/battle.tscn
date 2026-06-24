@@ -39,6 +39,7 @@ bus = &"Soundtrack"
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
 position = Vector2(125, 104)
 collision_mask = 1
+is_player = true
 max_angular_velocity = 100.0
 deceleration = -2.0
 

@@ -46,12 +46,14 @@ func on_throwingStarsButton_pressed():
 	$ThrowingStarsButton.add_theme_stylebox_override("normal", normal_style)
 	$ThrowingStarsButton.add_theme_stylebox_override("hover", hover_style)
 	selected_upgrade = "stars"
-		
+	
 func on_startBattleButton_pressed():
 	# Play sound effect for hitting the button
 	var sfx = $StartBattleButton/StartBattleSound
 	sfx.play()
 	$StartBattleButton.disabled = true
+	$Turtle.upgrade_arr.append(selected_upgrade)
+	SaveManager.save_game()
 	await sfx.finished 
 	
 	SignalBus.upgrade_selected.emit(selected_upgrade)

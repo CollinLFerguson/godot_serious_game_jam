@@ -24,7 +24,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_veoao"]
 
-[node name="Turtle" type="RigidBody2D" unique_id=2115216272 groups=["actor", "hitstop_bodies"]]
+[node name="Turtle" type="RigidBody2D" unique_id=2115216272 groups=["Persist", "actor", "hitstop_bodies"]]
 top_level = true
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_cnp70")
@@ -33,6 +33,7 @@ continuous_cd = 1
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_veoao")
+upgrade_arr = ["sword", "sword", "sword", "sword"]
 max_angular_velocity = 50.0
 sprite = ExtResource("2_7mqse")
 

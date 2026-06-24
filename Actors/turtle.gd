@@ -1,5 +1,8 @@
 extends RigidBody2D
 
+
+@export var upgrade_arr: Array[String] = []
+@export var is_player = false
 @export var min_velocity = 600
 @export var max_velocity = 2000.0
 
@@ -20,15 +23,13 @@ var sword_sound = preload("res://SFX/Effects/sword_sound.mp3")
 var pain_sound = preload("res://SFX/Effects/turtle_hurt2.mp3")
 var terrain_sound = preload("res://SFX/Effects/crunch.mp3")
 
-var is_player = false
-
-var upgrade_dict = {}
-
 var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.load_upgrades.emit(self, ["shield", "shield", "cannon", "cannon"])
+	if is_player:
+		SaveManager.load_game(self)
+	SignalBus.load_upgrades.emit(self, upgrade_arr)
 	$AnimatedSprite2D.sprite_frames = sprite
 	apply_central_impulse(base_velocity)
 	apply_torque_impulse(base_angular_velocity)
@@ -100,17 +101,16 @@ func _on_body_entered(body: Node) -> void:
 func apply_damage():
 	pass
 
-func save_upgrades():
-	if is_player:
-		return [UpgradesController.UPGRADES]
-	else:
-		return upgrade_dict
+#func save_upgrades():
+	#if is_player:
+		#return [UpgradesController.UPGRADES]
+	#else:
+		#return upgrade_dict
 
 func save():
-	var upgrades = save_upgrades()
+	var upgrades = upgrade_arr
 	var save_dict = {
 		"upgrades" : upgrades,
-		"is_player" : is_player
 	}
 	
 	return save_dict
