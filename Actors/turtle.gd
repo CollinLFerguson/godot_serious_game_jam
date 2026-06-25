@@ -28,26 +28,26 @@ var turtle_stats_resource = preload("res://UI/TurtleInfo/TurtleInfo.tscn")
 var turtle_stats:Node
 var is_turtle_a_gigachad = false
 var base_velocity:Vector2 = Vector2(500,500)
+var battle_started = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if is_player:
 		upgrade_arr.assign(ProgressionController.upgrade_list)
-	SignalBus.battle_start.connect(battle_started)
+	SignalBus.battle_start.connect(battle_start_actions)
 	SignalBus.load_upgrades.emit(self, upgrade_arr)
+	$AnimatedSprite2D.sprite_frames = sprite
 	_init_stats()
 	
-	$AnimatedSprite2D.sprite_frames = sprite
-	
+	linear_velocity = Vector2.ZERO
 
-func battle_started(playerVector:Vector2):
+func battle_start_actions(playerVector:Vector2):
+	battle_started = true
 	if is_player:
 		base_velocity = base_velocity * playerVector
 	else:
 		base_velocity = base_velocity.rotated(randf_range(0, PI * 2))
 	linear_velocity = base_velocity
-	print("base velocity: ", base_velocity)
-	print("base_angular_velocity: ", base_angular_velocity)
 	
 	angular_velocity = base_angular_velocity
 		
@@ -91,13 +91,14 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		state.angular_velocity = sign(state.angular_velocity) * min_angular_velocity
 		
 func _on_body_entered(body: Node) -> void:
+	if(!battle_started):
+		return
 	if body.is_in_group("actor"):
 		SignalBus.hit.emit(self, body)
 		health -= int(body.linear_velocity.length() / 200)
 		$AudioStreamPlayer2D.stream = pain_sound
 		$AudioStreamPlayer2D.play()
 	elif body.is_in_group("weapon"):
-		print(body.name)
 		SignalBus.hit.emit(self, body)
 		health -= body.damage
 

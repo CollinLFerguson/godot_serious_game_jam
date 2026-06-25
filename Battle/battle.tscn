@@ -43,6 +43,7 @@ stream = ExtResource("7_0lqow")
 bus = &"Soundtrack"
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
+position = Vector2(320, 867)
 is_player = true
 
 [node name="Turtle2" parent="." unique_id=800984328 instance=ExtResource("1_ac2hh")]
