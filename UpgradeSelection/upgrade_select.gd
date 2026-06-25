@@ -8,7 +8,6 @@ func _ready() -> void:
 	buttons = [$optionButton1, $optionButton2, $optionButton3]
 	populate_button_text()
 	load_all_default_button_styles()
-	SignalBus.load_soundtrack.emit("")
 	
 	$optionButton1.pressed.connect(optionButtonHandler.bind($optionButton1))
 	$optionButton2.pressed.connect(optionButtonHandler.bind($optionButton2))

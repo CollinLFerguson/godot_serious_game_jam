@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3t4bv13uean6"]
 
 [ext_resource type="Script" uid="uid://csrmukho854l" path="res://UI/Control/joystick.gd" id="1_536c6"]
+[ext_resource type="Texture2D" uid="uid://13e5v5ne1hk0" path="res://UI/Buttons/TurtleStartButton.png" id="2_1mr4h"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pnhfq"]
 
@@ -11,6 +12,7 @@ top_level = true
 custom_minimum_size = Vector2(250, 250)
 propagate_maximum_size = true
 layout_mode = 3
+anchors_preset = 0
 offset_right = 362.0
 offset_bottom = 250.0
 grow_horizontal = 2
@@ -57,12 +59,15 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -56.0
-offset_top = -15.5
-offset_bottom = 15.5
+offset_left = 11.0
+offset_top = -101.0
+offset_right = 523.0
+offset_bottom = 107.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "START
+text = "
 "
+icon = ExtResource("2_1mr4h")
+flat = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

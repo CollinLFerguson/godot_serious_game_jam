@@ -8,14 +8,16 @@ var parent_actor: Node
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
+	SignalBus.battle_start.connect(startTimer)
+	
+func startTimer(args):
 	if isspawned:
 		await get_tree().create_timer(1.0).timeout
-		#self.arm()
 	else:
 		$SpawnTimer.start()
 	if isarmed:
 		arm(null)
-
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

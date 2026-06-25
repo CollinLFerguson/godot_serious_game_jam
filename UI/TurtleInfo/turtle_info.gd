@@ -7,6 +7,7 @@ var turtle_name = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SignalBus.battle_over.connect(cleanup)
 	$Name.text = str(turtle.turtle_name)
 	pass # Replace with function body.
 
@@ -17,3 +18,6 @@ func _process(delta: float) -> void:
 		global_position = turtle.global_position - size / 2
 		$Health.text = str(turtle.health)
 		$Speed.text = str(turtle.linear_velocity.length())
+
+func cleanup():
+	self.queue_free()

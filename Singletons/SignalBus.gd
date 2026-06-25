@@ -6,8 +6,8 @@ signal player_died
 signal player_win
 
 # Battle signals
-signal battle_start
-
+signal battle_start(playerVector: Vector2)
+signal battle_over
 # Upgrade signals
 signal upgrade_selected(upgradeName: String)
 

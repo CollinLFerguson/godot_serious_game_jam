@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="4_3xio2"]
 [ext_resource type="PackedScene" uid="uid://cqgoiv4jluswv" path="res://Collidable/tree_collision.tscn" id="5_3xio2"]
 [ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/grunt.tres" id="5_jq54r"]
+[ext_resource type="PackedScene" uid="uid://d3t4bv13uean6" path="res://UI/Control/Joystick.tscn" id="9_2pw26"]
 
 [node name="battle-tree" type="Node2D" unique_id=861134569]
 script = ExtResource("1_at5ul")
@@ -59,6 +60,14 @@ rotation = 1.5707964
 position = Vector2(-11, -11)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=558444098]
+
+[node name="Joystick" parent="CanvasLayer" unique_id=1229592199 instance=ExtResource("9_2pw26")]
+offset_left = 783.0
+offset_top = 828.0
+offset_right = 1145.0
+offset_bottom = 1078.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=352946117]
 limit_left = 0

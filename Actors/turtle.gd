@@ -6,7 +6,7 @@ extends RigidBody2D
 @export var is_player = false
 @export var min_velocity = 600
 @export var max_velocity = 2000.0
-
+ 
 @export var health = 100
 
 @export var min_angular_velocity = 20.0
@@ -27,22 +27,30 @@ var turtle_stats_resource = preload("res://UI/TurtleInfo/TurtleInfo.tscn")
 
 var turtle_stats:Node
 var is_turtle_a_gigachad = false
-var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
+var base_velocity:Vector2 = Vector2(500,500)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if is_player:
 		upgrade_arr.assign(ProgressionController.upgrade_list)
-	#else:
-		#sprite.set_frame("henchman")
+	SignalBus.battle_start.connect(battle_started)
 	SignalBus.load_upgrades.emit(self, upgrade_arr)
-	#if self.visible:
 	_init_stats()
-
+	
 	$AnimatedSprite2D.sprite_frames = sprite
-	apply_central_impulse(base_velocity)
-	apply_torque_impulse(base_angular_velocity)
+	
 
+func battle_started(playerVector:Vector2):
+	if is_player:
+		base_velocity = base_velocity * playerVector
+	else:
+		base_velocity = base_velocity.rotated(randf_range(0, PI * 2))
+	linear_velocity = base_velocity
+	print("base velocity: ", base_velocity)
+	print("base_angular_velocity: ", base_angular_velocity)
+	
+	angular_velocity = base_angular_velocity
+		
 func _init_stats() -> void:
 	self.health += 10*(upgrade_arr.size())
 	turtle_stats = turtle_stats_resource.instantiate()
@@ -143,9 +151,6 @@ func save():
 	}
 	
 	return save_dict
-
-func reportStats(): 
-	pass
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	apply_damage(900)

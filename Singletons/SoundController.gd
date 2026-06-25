@@ -3,6 +3,7 @@ extends Node
 var EFFECTS: Dictionary = {}
 var SOUNDTRACKS: Dictionary = {}
 var MUSIC_STREAM: AudioStreamPlayer
+var current_soundtrack:String = ""
 
 func _ready():
 	_read_effects_directory("res://SFX/TrackEffects/")
@@ -64,6 +65,8 @@ func playBattleTheme():
 	pass
 
 func enableSoundtrack(soundtrack_identifier: String, loop: bool = true):
+	if(soundtrack_identifier == current_soundtrack):
+		return
 	var bus_idx = AudioServer.get_bus_index("Soundtrack")
 	if(!SOUNDTRACKS.has(soundtrack_identifier)):
 		MUSIC_STREAM.stop()
@@ -73,7 +76,8 @@ func enableSoundtrack(soundtrack_identifier: String, loop: bool = true):
 		track.loop()
 	MUSIC_STREAM.stream = SOUNDTRACKS[soundtrack_identifier]
 	MUSIC_STREAM.play()
-
+	current_soundtrack = soundtrack_identifier
+	
 func disableSoundtrack():
 	MUSIC_STREAM.stop()
 

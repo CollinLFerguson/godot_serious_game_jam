@@ -11,7 +11,6 @@ var engine_time = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.battle_start.emit()
 	SignalBus.load_soundtrack.emit("battle_theme_srs")
 	SignalBus.enemy_died.connect(enemyDied)
 	SignalBus.player_died.connect(gameOver)
@@ -42,6 +41,7 @@ func gameOver():
 		SignalBus.scene_switch.emit("res://Battle/game_over_screen.tscn")
 
 func battleOver():
+	SignalBus.battle_over.emit()
 	is_round_over = true
 	zooming = true
 	var endBattleInstance = endBattleScene.instantiate()

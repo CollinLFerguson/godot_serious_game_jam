@@ -3,6 +3,9 @@ extends StaticBody2D
 var stars_scene: PackedScene = preload("res://Upgrades/ThrowingStars/ThrowingStars.tscn")
 
 func _ready() -> void:
+	SignalBus.battle_start.connect(startTimer)
+	
+func startTimer(args):
 	$StarTimer.start()
 
 func _on_star_timer_timeout() -> void:

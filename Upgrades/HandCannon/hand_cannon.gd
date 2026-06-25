@@ -7,7 +7,9 @@ var cannonballs_scene: PackedScene = preload("res://Upgrades/HandCannon/cannonba
 var explode_sound = preload("res://art/explosion/explosion.mp3")
 
 func _ready() -> void:
-	#call the spawn function for cannon balls, use 3 sec timer
+	SignalBus.battle_start.connect(startTimer)
+	
+func startTimer(args):
 	$CannonballTimer.start()
 
 

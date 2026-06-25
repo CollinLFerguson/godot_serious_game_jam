@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="1_ksnli"]
 [ext_resource type="Script" uid="uid://dn587shuigg4y" path="res://Battle/battle.gd" id="1_ploow"]
 [ext_resource type="Texture2D" uid="uid://dtgspnskla8sv" path="res://art/rock_battle_bg.png" id="2_0lqow"]
-[ext_resource type="SpriteFrames" uid="uid://1akvpnd4dhcu" path="res://Actors/Sprites/player.tres" id="6_ihngk"]
 [ext_resource type="AudioStream" uid="uid://bxpixj85531us" path="res://SFX/Soundtrack/battle_theme_srs.mp3" id="7_0lqow"]
 [ext_resource type="Texture2D" uid="uid://cqq8m67ygxq41" path="res://art/rock_battle_border.png" id="7_bjo3u"]
 [ext_resource type="SpriteFrames" uid="uid://l7u2e1ccs378" path="res://Actors/Sprites/henchman.tres" id="7_ihngk"]
@@ -44,12 +43,7 @@ stream = ExtResource("7_0lqow")
 bus = &"Soundtrack"
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
-position = Vector2(278, 892)
-collision_mask = 1
-upgrade_arr = Array[String](["mace", "mace", "mace", "mace"])
-max_angular_velocity = 100.0
-deceleration = -2.0
-sprite = ExtResource("6_ihngk")
+is_player = true
 
 [node name="Turtle2" parent="." unique_id=800984328 instance=ExtResource("1_ac2hh")]
 position = Vector2(1631, 190)
@@ -75,7 +69,6 @@ polygon = PackedVector2Array(1283, 709, 1300, 729, 1381, 727, 1499, 751, 1525, 7
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1575837722]
 
 [node name="Joystick" parent="CanvasLayer" unique_id=776560750 instance=ExtResource("8_bjo3u")]
-anchors_preset = 0
 offset_left = 785.0
 offset_top = 819.0
 offset_right = 1147.0

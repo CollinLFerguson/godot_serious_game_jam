@@ -4,7 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$StartGameButton.pressed.connect(on_startGameButton_pressed)
-	SignalBus.load_soundtrack.emit("")
+	SignalBus.load_soundtrack.emit("main_menu")
 func on_startGameButton_pressed():
 	var sfx = $StartGameButton/StartButtonSound
 	sfx.play()

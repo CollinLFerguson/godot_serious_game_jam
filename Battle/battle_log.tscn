@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b82jjfqdkvdhh" path="res://Battle/battle_log.gd" id="1_pnilc"]
 [ext_resource type="PackedScene" uid="uid://dxoxarrevn02d" path="res://Collidable/wall-curved.tscn" id="2_gtdv5"]
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="3_gnf34"]
+[ext_resource type="PackedScene" uid="uid://d3t4bv13uean6" path="res://UI/Control/Joystick.tscn" id="4_uegmr"]
 [ext_resource type="SpriteFrames" uid="uid://l7u2e1ccs378" path="res://Actors/Sprites/henchman.tres" id="5_xown1"]
 [ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/grunt.tres" id="6_uegmr"]
 
@@ -17,6 +18,14 @@ texture = ExtResource("1_ov3sv")
 [node name="WallCurved" parent="." unique_id=2006173947 groups=["scenery"] instance=ExtResource("2_gtdv5")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=279051768]
+
+[node name="Joystick" parent="CanvasLayer" unique_id=1229592199 instance=ExtResource("4_uegmr")]
+offset_left = 799.0
+offset_top = 831.0
+offset_right = 1161.0
+offset_bottom = 1081.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("3_gnf34")]
 position = Vector2(335, 549)
