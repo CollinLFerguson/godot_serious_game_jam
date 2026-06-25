@@ -72,6 +72,10 @@ func attachUpgradeItem(source, upgrade_identifiers):
 	var source_attach_points = getSourceAttachPoints(source)
 	for item_name in upgrade_identifiers:
 		var item = createItemInstantiation(item_name)
+		
+		if item == null:
+			return
+			
 		var valid_attach_points = UPGRADES[item_name]["attach_points"]
 		
 		for i in range(source_attach_points.size()):

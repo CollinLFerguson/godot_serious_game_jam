@@ -14,7 +14,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_upg4n")
 
-[node name="SwordButton" type="Button" parent="." unique_id=391337172]
+[node name="optionButton1" type="Button" parent="." unique_id=391337172]
 offset_left = 501.0
 offset_top = 219.0
 offset_right = 1323.0
@@ -24,7 +24,7 @@ text = "Sword
 Description: A mighty blade."
 alignment = 0
 
-[node name="MaceButton" type="Button" parent="." unique_id=992438751]
+[node name="optionButton2" type="Button" parent="." unique_id=992438751]
 offset_left = 503.0
 offset_top = 449.0
 offset_right = 1329.0
@@ -34,7 +34,7 @@ text = "Mace
 Description: A weapon of many spikes."
 alignment = 0
 
-[node name="ThrowingStarsButton" type="Button" parent="." unique_id=738771349]
+[node name="optionButton3" type="Button" parent="." unique_id=738771349]
 offset_left = 501.0
 offset_top = 678.0
 offset_right = 1340.0

@@ -33,7 +33,7 @@ continuous_cd = 1
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_veoao")
-upgrade_arr = ["sword", "sword", "sword", "sword"]
+upgrade_arr = Array[String](["sword", "sword", "sword", "sword"])
 max_angular_velocity = 50.0
 sprite = ExtResource("2_7mqse")
 
