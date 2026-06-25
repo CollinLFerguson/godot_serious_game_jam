@@ -16,7 +16,7 @@ extends RigidBody2D
 @export var rotation_factor: float = 2.0
 @export var torque_strength: float = 50.0
 
-@export var scenery_damage_threshhold:float = 1000
+@export var scenery_damage_threshhold:float = 1200
 
 @export var deceleration:float = 0.2
 @export var sprite: SpriteFrames = load("res://Actors/Sprites/player.tres")
@@ -38,6 +38,7 @@ func _ready() -> void:
 	SignalBus.load_upgrades.emit(self, upgrade_arr)
 	#if self.visible:
 	_init_stats()
+
 	$AnimatedSprite2D.sprite_frames = sprite
 	apply_central_impulse(base_velocity)
 	apply_torque_impulse(base_angular_velocity)
