@@ -58,4 +58,4 @@ func on_startBattleButton_pressed():
 	
 	SignalBus.upgrade_selected.emit(selected_upgrade)
 	# Switch to next scene
-	SignalBus.scene_switch.emit("res://Battle/battle.tscn")
+	SignalBus.scene_switch.emit("res://Battle/first_battle.tscn")

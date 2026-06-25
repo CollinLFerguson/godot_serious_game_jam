@@ -12,13 +12,7 @@ func _ready() -> void:
 	SignalBus.load_soundtrack.emit("battle_theme_srs")
 	SignalBus.enemy_died.connect(enemyDied)
 	SignalBus.player_died.connect(gameOver)
-	
-	SaveManager.save_game()
-	SaveManager.load_game()
-	# $BattleTheme.play()
-	
-	# Designating Turtle #1 as the player
-	$Turtle.is_player = true
+
 
 func enemyDied():
 	enemyCount -= 1

@@ -45,7 +45,6 @@ radius = 131.03435
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_s83af"]
 
-<<<<<<< HEAD
 [node name="Mine_Body" type="Area2D" unique_id=1110397731 groups=["hitstop_bodies", "weapon"]]
 monitoring = false
 monitorable = false
@@ -61,7 +60,6 @@ animation = &"rest"
 script = ExtResource("6_s83af")
 
 [node name="Mine_AOE" type="Area2D" parent="." unique_id=252937211]
-<<<<<<< HEAD
 monitoring = false
 monitorable = false
 script = ExtResource("7_o83e1")
