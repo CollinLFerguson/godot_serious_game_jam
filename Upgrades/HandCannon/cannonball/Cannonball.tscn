@@ -21,7 +21,7 @@ animations = [{
 radius = 55.09421
 
 [node name="Cannonball" type="RigidBody2D" unique_id=1193819863 groups=["projectile"]]
-scale = Vector2(0.30243585, 0.3107753)
+scale = Vector2(0.14211634, 0.16021673)
 collision_layer = 2
 mass = 20.0
 physics_material_override = SubResource("PhysicsMaterial_57lbc")
