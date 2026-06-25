@@ -25,3 +25,5 @@ top_level = true
 z_index = 2
 position = Vector2(960, 540)
 texture = ExtResource("2_vpwv4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1933880606]

@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+@export var turtle_name: String = ""
 
 @export var upgrade_arr: Array[String] = []
 @export var is_player = false
@@ -22,6 +23,9 @@ extends RigidBody2D
 var sword_sound = preload("res://SFX/Effects/sword_sound.mp3")
 var pain_sound = preload("res://SFX/Effects/turtle_hurt2.mp3")
 var terrain_sound = preload("res://SFX/Effects/crunch.mp3")
+var turtle_stats_resource = preload("res://UI/TurtleInfo/TurtleInfo.tscn")
+
+var turtle_stats:Node
 
 var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
@@ -31,18 +35,26 @@ func _ready() -> void:
 		SaveManager.load_game(self)
 	SignalBus.load_upgrades.emit(self, upgrade_arr)
 
+	_init_stats()
 	$AnimatedSprite2D.sprite_frames = sprite
 	apply_central_impulse(base_velocity)
 	apply_torque_impulse(base_angular_velocity)
 
-
+func _init_stats() -> void:
+	turtle_stats = turtle_stats_resource.instantiate()
+	turtle_stats.turtle = self
+	var canvas_layer = get_tree().current_scene.get_node("CanvasLayer")
+	if(canvas_layer):
+		canvas_layer.add_child(turtle_stats)
+	
+	print(turtle_stats)
+	print(turtle_stats.visible)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	$Labels/Health.text = "%s" % health
-	
+	pass
 
 func _physics_process(_delta: float) -> void:	
-	$Labels/Speed.text = "%s" % linear_velocity.length()
 	var velocity = linear_velocity.length()
 	apply_force(linear_velocity * -(1 - deceleration))
 	
@@ -103,6 +115,7 @@ func _on_body_entered(body: Node) -> void:
 			SignalBus.player_died.emit()
 		if not is_player:
 			SignalBus.enemy_died.emit()
+		turtle_stats.queue_free()
 		queue_free()
 	
 func apply_damage():

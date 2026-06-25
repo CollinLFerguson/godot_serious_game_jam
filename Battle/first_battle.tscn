@@ -31,3 +31,5 @@ texture = ExtResource("3_3f7mq")
 [node name="Turtle2" parent="." unique_id=421837953 instance=ExtResource("2_igvwn")]
 position = Vector2(348, 512)
 sprite = ExtResource("4_igvwn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=572632643]

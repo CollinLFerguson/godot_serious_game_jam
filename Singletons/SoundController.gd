@@ -56,7 +56,6 @@ func _load_soundtracks(path:String):
 	while file_name != "":
 		if not directory.current_is_dir() and file_name.ends_with(".mp3"):
 			var soundtrack = load(path + file_name)
-			print(soundtrack)
 			if soundtrack is AudioStreamMP3:
 				SOUNDTRACKS[file_name.get_basename()] = soundtrack
 		file_name = directory.get_next()
