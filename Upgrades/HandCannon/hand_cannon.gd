@@ -4,6 +4,7 @@ extends StaticBody2D
 @export var weight = 2
 
 var cannonballs_scene: PackedScene = preload("res://Upgrades/HandCannon/cannonball/Cannonball.tscn")
+var explode_sound = preload("res://art/explosion/explosion.mp3")
 
 func _ready() -> void:
 	#call the spawn function for cannon balls, use 3 sec timer
@@ -27,3 +28,6 @@ func _on_cannonball_timer_timeout() -> void:
 	add_collision_exception_with(new_ball)
 	get_tree().current_scene.add_child(new_ball)
 	new_ball.global_position = self.get_node("EndPoint").global_position
+	new_ball.z_index = self.z_index + 1
+	$AudioStreamPlayer2D.stream = explode_sound
+	$AudioStreamPlayer2D.play()
