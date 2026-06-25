@@ -8,7 +8,6 @@ var dragging := false
 func _ready() -> void:
 	print($Base.visible)
 	print($Ball.visible)
-	draw_circle(Vector2.ZERO, 50, Color.RED)
 	
 func _gui_input(event: InputEvent) -> void:
 	var center = size / 2
