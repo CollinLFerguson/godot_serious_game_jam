@@ -44,9 +44,8 @@ func on_startBattleButton_pressed():
 	var sfx = $StartBattleButton/StartBattleSound
 	sfx.play()
 	$StartBattleButton.disabled = true
-	$Turtle.upgrade_arr.append(selected_upgrade)
-	SaveManager.save_game()
-	await sfx.finished 
+	ProgressionController.upgrade_list.append(selected_upgrade)
+	await sfx.finished
 	
 	SignalBus.upgrade_selected.emit(selected_upgrade)
 	# Switch to next scene

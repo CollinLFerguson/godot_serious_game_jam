@@ -32,7 +32,7 @@ var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if is_player:
-		SaveManager.load_game(self)
+		upgrade_arr.assign(ProgressionController.upgrade_list)
 	#else:
 		#sprite.set_frame("henchman")
 	SignalBus.load_upgrades.emit(self, upgrade_arr)

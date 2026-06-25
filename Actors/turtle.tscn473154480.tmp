@@ -36,7 +36,6 @@ script = ExtResource("1_veoao")
 upgrade_arr = Array[String](["sword", "sword", "sword", "sword"])
 max_angular_velocity = 50.0
 sprite = SubResource("SpriteFrames_veoao")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2143536447]
 sprite_frames = SubResource("SpriteFrames_veoao")

@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://b82jjfqdkvdhh" path="res://Battle/battle_log.gd" id="1_pnilc"]
 [ext_resource type="PackedScene" uid="uid://dxoxarrevn02d" path="res://Collidable/wall-curved.tscn" id="2_gtdv5"]
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="3_gnf34"]
-[ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="5_pnilc"]
 
 [node name="BattleLog" type="Node2D" unique_id=1341374353]
 script = ExtResource("1_pnilc")
@@ -13,51 +12,19 @@ script = ExtResource("1_pnilc")
 position = Vector2(960, 540)
 texture = ExtResource("1_ov3sv")
 
-[node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("3_gnf34")]
-position = Vector2(943, 872)
-turtle_name = null
-is_player = true
-min_velocity = null
-max_velocity = null
-health = null
-min_angular_velocity = null
-base_angular_velocity = null
-rotation_factor = null
-torque_strength = null
-scenery_damage_threshhold = null
-deceleration = null
-
 [node name="WallCurved" parent="." unique_id=2006173947 groups=["scenery"] instance=ExtResource("2_gtdv5")]
 
-[node name="Turtle2" parent="." unique_id=604692791 instance=ExtResource("3_gnf34")]
-position = Vector2(452.00006, 334)
-rotation = 0.020926476
-turtle_name = null
-is_player = null
-min_velocity = null
-max_velocity = null
-health = null
-min_angular_velocity = null
-base_angular_velocity = null
-rotation_factor = null
-torque_strength = null
-scenery_damage_threshhold = null
-deceleration = null
-
-[node name="Turtle3" parent="." unique_id=515677159 instance=ExtResource("3_gnf34")]
-position = Vector2(1523.9999, 327.99997)
-rotation = 0.08076036
-turtle_name = null
-is_player = null
-min_velocity = null
-max_velocity = null
-health = null
-min_angular_velocity = null
-base_angular_velocity = null
-rotation_factor = null
-torque_strength = null
-scenery_damage_threshhold = null
-deceleration = null
-sprite = ExtResource("5_pnilc")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=279051768]
+
+[node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("3_gnf34")]
+position = Vector2(438, 368)
+upgrade_arr = Array[String]([])
+is_player = true
+
+[node name="Turtle2" parent="." unique_id=2070388463 instance=ExtResource("3_gnf34")]
+position = Vector2(1230, 465)
+upgrade_arr = Array[String](["sword", "sword"])
+
+[node name="Turtle3" parent="." unique_id=1016347890 instance=ExtResource("3_gnf34")]
+position = Vector2(853, 683)
+upgrade_arr = Array[String](["sword", "sword"])
