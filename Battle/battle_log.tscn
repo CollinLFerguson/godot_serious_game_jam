@@ -32,3 +32,10 @@ sprite = ExtResource("5_xown1")
 position = Vector2(1377, 728)
 upgrade_arr = Array[String](["sword", "shield"])
 sprite = ExtResource("6_uegmr")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1079174422]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+position_smoothing_enabled = true

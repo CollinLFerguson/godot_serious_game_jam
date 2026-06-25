@@ -16,7 +16,7 @@ extends RigidBody2D
 @export var rotation_factor: float = 2.0
 @export var torque_strength: float = 50.0
 
-@export var scenery_damage_threshhold:float = 1000
+@export var scenery_damage_threshhold:float = 1200
 
 @export var deceleration:float = 0.2
 @export var sprite: SpriteFrames = load("res://Actors/Sprites/player.tres")
@@ -26,7 +26,7 @@ var terrain_sound = preload("res://SFX/Effects/crunch.mp3")
 var turtle_stats_resource = preload("res://UI/TurtleInfo/TurtleInfo.tscn")
 
 var turtle_stats:Node
-
+var is_turtle_a_gigachad = false
 var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
 # Called when the node enters the scene tree for the first time.
@@ -38,12 +38,13 @@ func _ready() -> void:
 	SignalBus.load_upgrades.emit(self, upgrade_arr)
 	#if self.visible:
 	_init_stats()
+
 	$AnimatedSprite2D.sprite_frames = sprite
 	apply_central_impulse(base_velocity)
 	apply_torque_impulse(base_angular_velocity)
 
 func _init_stats() -> void:
-	self.health += 5*(upgrade_arr.size())
+	self.health += 10*(upgrade_arr.size())
 	turtle_stats = turtle_stats_resource.instantiate()
 	turtle_stats.turtle = self
 	var canvas_layer = get_tree().current_scene.get_node("CanvasLayer")

@@ -36,3 +36,10 @@ position = Vector2(960, 540)
 texture = ExtResource("2_vpwv4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1933880606]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1024330821]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+position_smoothing_enabled = true

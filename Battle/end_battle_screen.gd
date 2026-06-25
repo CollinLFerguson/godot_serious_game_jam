@@ -6,4 +6,5 @@ func _ready() -> void:
 	$EndBattleButton.pressed.connect(endOfBattle)
 
 func endOfBattle():
+	Engine.time_scale = 1
 	SignalBus.scene_switch.emit("res://UpgradeSelection/upgrade_select.tscn")
