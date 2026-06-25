@@ -3,17 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="1_ac2hh"]
 [ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="1_ksnli"]
 [ext_resource type="Script" uid="uid://dn587shuigg4y" path="res://Battle/battle.gd" id="1_ploow"]
-[ext_resource type="Texture2D" uid="uid://b7humnijon73w" path="res://art/grass_background_final.png" id="2_bjo3u"]
+[ext_resource type="Texture2D" uid="uid://dtgspnskla8sv" path="res://art/rock_battle_bg.png" id="2_0lqow"]
 [ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="2_o5tja"]
-[ext_resource type="Texture2D" uid="uid://b0h1djfai7cqa" path="res://art/rock_border.png" id="5_do635"]
 [ext_resource type="AudioStream" uid="uid://bxpixj85531us" path="res://SFX/Soundtrack/battle_theme_srs.mp3" id="7_0lqow"]
+[ext_resource type="Texture2D" uid="uid://cqq8m67ygxq41" path="res://art/rock_battle_border.png" id="7_bjo3u"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
 script = ExtResource("1_ploow")
 
 [node name="GrassBackgroundFinal" type="Sprite2D" parent="." unique_id=2111261285]
 position = Vector2(960, 540)
-texture = ExtResource("2_bjo3u")
+texture = ExtResource("2_0lqow")
 
 [node name="Wall" parent="." unique_id=785614695 groups=["scenery"] instance=ExtResource("1_ksnli")]
 position = Vector2(965, -17)
@@ -39,6 +39,7 @@ bus = &"Soundtrack"
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("1_ac2hh")]
 position = Vector2(125, 104)
 collision_mask = 1
+upgrade_arr = Array[String](["mine", "mine", "mine", "mine"])
 is_player = true
 max_angular_velocity = 100.0
 deceleration = -2.0
@@ -46,22 +47,33 @@ deceleration = -2.0
 [node name="Turtle2" parent="." unique_id=800984328 instance=ExtResource("1_ac2hh")]
 position = Vector2(146, 967)
 collision_mask = 1
+upgrade_arr = Array[String](["mine", "mine", "mine", "mine"])
 max_angular_velocity = 100.0
 sprite = ExtResource("2_o5tja")
 
 [node name="Turtle3" parent="." unique_id=585417831 instance=ExtResource("1_ac2hh")]
 position = Vector2(1782, 125)
 collision_mask = 1
+upgrade_arr = Array[String](["mine", "mine", "mine", "mine"])
 max_angular_velocity = 100.0
 sprite = ExtResource("2_o5tja")
 
 [node name="Turtle4" parent="." unique_id=84617478 instance=ExtResource("1_ac2hh")]
 position = Vector2(1738, 922)
 collision_mask = 1
+upgrade_arr = Array[String](["mine", "mine", "mine", "mine"])
 max_angular_velocity = 100.0
 
 [node name="RockBorder" type="Sprite2D" parent="." unique_id=355733280]
 top_level = true
 z_index = 2
 position = Vector2(960, 540)
-texture = ExtResource("5_do635")
+texture = ExtResource("7_bjo3u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1414926838]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1082791000]
+polygon = PackedVector2Array(249, 355, 315, 361, 389, 320, 470, 338, 594, 339, 625, 295, 569, 218, 460, 206, 304, 288)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=191882904]
+polygon = PackedVector2Array(1283, 709, 1300, 729, 1381, 727, 1499, 751, 1525, 755, 1614, 670, 1599, 639, 1451, 601, 1358, 625, 1297, 678)

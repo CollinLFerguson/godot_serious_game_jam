@@ -18,6 +18,7 @@ polygon = PackedVector2Array(168, 471, 716, 239, 1201, 244, 1208, 273, 1342, 319
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("3_vpwv4")]
 position = Vector2(952, 683)
+upgrade_arr = Array[String](["mine", "mine", "sword", "sword"])
 
 [node name="FinalBattleBorder" type="Sprite2D" parent="." unique_id=1699343770]
 top_level = true

@@ -80,7 +80,4 @@ func populate_button_text():
 		var btn = get_node(b)
 		btn.text = selected[s] + "\n" + upgrades_dict[selected[s]]["description"]
 		s+=1
-	
-	
-	
-	
+

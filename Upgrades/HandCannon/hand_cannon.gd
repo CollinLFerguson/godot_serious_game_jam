@@ -13,7 +13,6 @@ func _ready() -> void:
 func _on_cannonball_timer_timeout() -> void:
 	var turtle = $".."
 	var new_ball = cannonballs_scene.instantiate()
-	new_ball.position = position
 	
 	var turtle_velocity = turtle.linear_velocity
 	
@@ -21,4 +20,6 @@ func _on_cannonball_timer_timeout() -> void:
 	
 	turtle.add_collision_exception_with(new_ball)
 	add_collision_exception_with(new_ball)
-	turtle.add_child(new_ball)
+	get_tree().current_scene.add_child(new_ball)
+
+	new_ball.global_position = self.global_position

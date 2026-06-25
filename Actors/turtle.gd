@@ -30,6 +30,7 @@ func _ready() -> void:
 	if is_player:
 		SaveManager.load_game(self)
 	SignalBus.load_upgrades.emit(self, upgrade_arr)
+
 	$AnimatedSprite2D.sprite_frames = sprite
 	apply_central_impulse(base_velocity)
 	apply_torque_impulse(base_angular_velocity)

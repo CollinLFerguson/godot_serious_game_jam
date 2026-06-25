@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemyCount = 3
+var enemyCount = 1
 const gameOverScene = preload("res://Battle/game_over_screen.tscn")
 const endBattleScene = preload("res://Battle/end_battle_screen.tscn")
 var stars_scene: PackedScene
@@ -12,7 +12,7 @@ func _ready() -> void:
 	SignalBus.load_soundtrack.emit("battle_theme_srs")
 	SignalBus.enemy_died.connect(enemyDied)
 	SignalBus.player_died.connect(gameOver)
-	
+
 
 func enemyDied():
 	enemyCount -= 1

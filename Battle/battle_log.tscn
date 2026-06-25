@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnktcnvmv5nr3"]
 
-[ext_resource type="Texture2D" uid="uid://bmh3xhh2o77ma" path="res://art/log_background.png" id="1_o7vvn"]
+[ext_resource type="Texture2D" uid="uid://dl5hp72k6p8mo" path="res://art/log_battle.png" id="1_ov3sv"]
 [ext_resource type="PackedScene" uid="uid://dxoxarrevn02d" path="res://Collidable/wall-curved.tscn" id="2_gtdv5"]
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="3_gnf34"]
 [ext_resource type="PackedScene" uid="uid://yfhw0ul52hss" path="res://Upgrades/Mine/mine.tscn" id="4_ngede"]
@@ -9,7 +9,7 @@
 
 [node name="LogBackground" type="Sprite2D" parent="." unique_id=1781802957]
 position = Vector2(960, 540)
-texture = ExtResource("1_o7vvn")
+texture = ExtResource("1_ov3sv")
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("3_gnf34")]
 position = Vector2(943, 872)
