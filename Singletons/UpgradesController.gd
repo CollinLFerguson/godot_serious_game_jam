@@ -86,7 +86,7 @@ func attachUpgradeItem(source, upgrade_identifiers):
 					source.add_collision_exception_with(item)
 				source_attach_points.remove_at(i)
 				break
-	
+				
 func attachAndTransform(parent_node, parent_attach_point, child_node):
 	var original_child_scale = child_node.scale
 	parent_node.add_child(child_node)

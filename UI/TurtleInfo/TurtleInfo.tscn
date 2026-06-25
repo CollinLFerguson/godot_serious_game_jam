@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://d267nyuadgqs6"]
+
+[ext_resource type="Script" uid="uid://b0pjra7y3ii7a" path="res://UI/TurtleInfo/turtle_info.gd" id="1_6tv4l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_awlqi"]
+font_size = 20
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hq5gc"]
+font_size = 46
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_75f75"]
+font_size = 25
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="TurtleInfo" type="GridContainer" unique_id=1575035046]
+custom_minimum_size = Vector2(150, 75)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -59.0
+offset_right = 54.5
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6tv4l")
+
+[node name="Name" type="Label" parent="." unique_id=1239296526]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "EVILTURTLE24"
+label_settings = SubResource("LabelSettings_awlqi")
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Health" type="Label" parent="." unique_id=1950775129]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "69"
+label_settings = SubResource("LabelSettings_hq5gc")
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Speed" type="Label" parent="." unique_id=300934177]
+layout_mode = 2
+text = "96"
+label_settings = SubResource("LabelSettings_75f75")
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1

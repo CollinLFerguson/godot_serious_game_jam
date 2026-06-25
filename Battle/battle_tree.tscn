@@ -37,3 +37,5 @@ rotation = 1.5707964
 
 [node name="TreeCollision" parent="." unique_id=305248489 instance=ExtResource("5_3xio2")]
 position = Vector2(-11, -11)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=558444098]

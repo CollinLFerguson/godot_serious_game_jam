@@ -10,7 +10,6 @@ var parent_actor: Node
 func _ready() -> void:
 	if isspawned:
 		await get_tree().create_timer(1.0).timeout
-		print("Spawned mine ready")
 		#self.arm()
 	else:
 		$SpawnTimer.start()
@@ -23,9 +22,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node) -> void:
-	#print("entered")
 	if isarmed and body != parent_actor:
-		#print("blow up")
 		SignalBus.mine_explosion.emit(self, targets)
 		$AudioStreamPlayer2D.stream = explode_sound
 		$AudioStreamPlayer2D.play()
@@ -33,7 +30,6 @@ func _on_body_entered(body: Node) -> void:
 	
 func add_target(object: Node):
 	targets.append(object)
-	#print(targets)
 
 func remove_target(object: Node):
 	var tgt_loc = targets.find(object)
@@ -65,4 +61,3 @@ func _on_spawn_timer_timeout() -> void:
 	mine.position = turtle.position
 	get_tree().current_scene.add_child(mine)
 	mine.arm(turtle)
-	print("Spawned mine?")

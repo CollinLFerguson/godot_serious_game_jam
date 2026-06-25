@@ -13,7 +13,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	get_parent().add_target(body)
-	#print("new target")
 
 
 func _on_body_exited(body: Node) -> void:

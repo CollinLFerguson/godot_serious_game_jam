@@ -32,3 +32,5 @@ position = Vector2(470, 612)
 
 [node name="Mine_Body2" parent="." unique_id=1347725542 instance=ExtResource("4_ngede")]
 position = Vector2(1432, 344)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=279051768]
