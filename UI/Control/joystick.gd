@@ -29,6 +29,5 @@ func get_input_vector() -> Vector2:
 
 func _on_start_button_pressed() -> void:
 	var player_vector = get_input_vector()
-	print("Launching turtle with vector:", player_vector)
 	SignalBus.battle_start.emit(player_vector)
 	self.queue_free()
