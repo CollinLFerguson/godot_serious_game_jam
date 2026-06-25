@@ -7,6 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="2_o5tja"]
 [ext_resource type="AudioStream" uid="uid://bxpixj85531us" path="res://SFX/Soundtrack/battle_theme_srs.mp3" id="7_0lqow"]
 [ext_resource type="Texture2D" uid="uid://cqq8m67ygxq41" path="res://art/rock_battle_border.png" id="7_bjo3u"]
+[ext_resource type="PackedScene" uid="uid://d3t4bv13uean6" path="res://UI/Control/Joystick.tscn" id="8_bjo3u"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
 script = ExtResource("1_ploow")
@@ -78,3 +79,12 @@ polygon = PackedVector2Array(249, 355, 315, 361, 389, 320, 470, 338, 594, 339, 6
 polygon = PackedVector2Array(1283, 709, 1300, 729, 1381, 727, 1499, 751, 1525, 755, 1614, 670, 1599, 639, 1451, 601, 1358, 625, 1297, 678)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1575837722]
+
+[node name="Joystick" parent="CanvasLayer" unique_id=776560750 instance=ExtResource("8_bjo3u")]
+anchors_preset = 0
+offset_left = 785.0
+offset_top = 819.0
+offset_right = 1147.0
+offset_bottom = 1069.0
+grow_horizontal = 1
+grow_vertical = 1

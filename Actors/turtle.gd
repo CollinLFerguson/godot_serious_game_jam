@@ -47,9 +47,6 @@ func _init_stats() -> void:
 	if(canvas_layer):
 		canvas_layer.add_child(turtle_stats)
 	
-	print(turtle_stats)
-	print(turtle_stats.visible)
-	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
@@ -58,7 +55,7 @@ func _physics_process(_delta: float) -> void:
 	var velocity = linear_velocity.length()
 	apply_force(linear_velocity * -(1 - deceleration))
 	
-	var target_av = velocity * rotation_factor
+	var target_av = max(1, velocity) * rotation_factor # min 1 to force spinnnnnn
 	var av_error = target_av - angular_velocity
 	apply_torque(av_error * torque_strength)
 	

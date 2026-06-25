@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://d3t4bv13uean6"]
+
+[ext_resource type="Script" uid="uid://csrmukho854l" path="res://UI/Control/joystick.gd" id="1_536c6"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pnhfq"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vcyjv"]
+
+[node name="Joystick" type="Control" unique_id=1229592199]
+top_level = true
+custom_minimum_size = Vector2(250, 250)
+propagate_maximum_size = true
+layout_mode = 3
+offset_right = 362.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_536c6")
+
+[node name="Base" type="TextureRect" parent="." unique_id=1726950343]
+custom_minimum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_pnhfq")
+
+[node name="Ball" type="TextureRect" parent="." unique_id=2076238707]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_vcyjv")
+
+[node name="StartButton" type="Button" parent="." unique_id=1513763651]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "START
+"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
