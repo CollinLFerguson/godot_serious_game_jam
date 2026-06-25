@@ -76,6 +76,7 @@ func _on_body_entered(body: Node) -> void:
 		$AudioStreamPlayer2D.stream = pain_sound
 		$AudioStreamPlayer2D.play()
 	elif body.is_in_group("weapon"):
+		print(body.name)
 		SignalBus.hit.emit(self, body)
 		health -= body.damage
 

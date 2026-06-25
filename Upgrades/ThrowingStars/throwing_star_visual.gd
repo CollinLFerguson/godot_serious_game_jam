@@ -14,3 +14,4 @@ func _on_star_timer_timeout() -> void:
 	get_tree().current_scene.add_child(new_star)
 
 	new_star.global_position = self.global_position
+	
