@@ -5,6 +5,18 @@
 [ext_resource type="Texture2D" uid="uid://do8o8i34fkh34" path="res://UI/Buttons/TurtleStartBattleButton.png" id="3_qndx7"]
 [ext_resource type="AudioStream" uid="uid://bwrv05r1ibswf" path="res://SFX/UI/start_battle.mp3" id="4_dpkvm"]
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="5_dpkvm"]
+[ext_resource type="Texture2D" uid="uid://kj86k3tkss36" path="res://Actors/Assets/player_turtle.png" id="6_4ynrq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7mqse"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4ynrq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="UpgradeSelect" type="Node2D" unique_id=1106215260]
 script = ExtResource("1_nwyyi")
@@ -71,3 +83,4 @@ volume_db = -20.0
 visible = false
 upgrade_arr = Array[String]([])
 is_player = true
+sprite = SubResource("SpriteFrames_7mqse")

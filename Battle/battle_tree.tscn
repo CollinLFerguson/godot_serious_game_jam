@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://dhp2qsq7hmkuu"]
 
 [ext_resource type="Texture2D" uid="uid://dl8qdi5cwwwx8" path="res://art/tree__battle_bg.png" id="1_7vlax"]
+[ext_resource type="Script" uid="uid://ditbqlfu04x1c" path="res://Battle/battle_tree.gd" id="1_at5ul"]
 [ext_resource type="Texture2D" uid="uid://yqgybsnlmllu" path="res://art/tree_battle_border.png" id="2_k3bmh"]
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="2_w3s0d"]
+[ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="4_3mdo0"]
 [ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="4_3xio2"]
 [ext_resource type="PackedScene" uid="uid://cqgoiv4jluswv" path="res://Collidable/tree_collision.tscn" id="5_3xio2"]
 
 [node name="battle-tree" type="Node2D" unique_id=861134569]
+script = ExtResource("1_at5ul")
 
 [node name="TreeBackground" type="Sprite2D" parent="." unique_id=437700683]
 position = Vector2(960, 540)
@@ -14,6 +17,12 @@ texture = ExtResource("1_7vlax")
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("2_w3s0d")]
 position = Vector2(634, 786)
+is_player = true
+
+[node name="Turtle2" parent="." unique_id=1367277291 instance=ExtResource("2_w3s0d")]
+position = Vector2(1404, 262)
+upgrade_arr = Array[String](["sword", "shield", "stars"])
+sprite = ExtResource("4_3mdo0")
 
 [node name="TreeBorder" type="Sprite2D" parent="." unique_id=812374868]
 top_level = true
@@ -21,21 +30,21 @@ z_index = 2
 position = Vector2(960, 540)
 texture = ExtResource("2_k3bmh")
 
-[node name="Wall" parent="." unique_id=1800999164 instance=ExtResource("4_3xio2")]
+[node name="Wall" parent="." unique_id=1800999164 groups=["scenery"] instance=ExtResource("4_3xio2")]
 position = Vector2(965, 1110)
 
-[node name="Wall2" parent="." unique_id=1248433061 instance=ExtResource("4_3xio2")]
+[node name="Wall2" parent="." unique_id=1248433061 groups=["scenery"] instance=ExtResource("4_3xio2")]
 position = Vector2(0, 654)
 rotation = 1.5707964
 
-[node name="Wall3" parent="." unique_id=1471142430 instance=ExtResource("4_3xio2")]
+[node name="Wall3" parent="." unique_id=1471142430 groups=["scenery"] instance=ExtResource("4_3xio2")]
 position = Vector2(965, 0)
 
-[node name="Wall4" parent="." unique_id=35075151 instance=ExtResource("4_3xio2")]
+[node name="Wall4" parent="." unique_id=35075151 groups=["scenery"] instance=ExtResource("4_3xio2")]
 position = Vector2(1920, 654)
 rotation = 1.5707964
 
-[node name="TreeCollision" parent="." unique_id=305248489 instance=ExtResource("5_3xio2")]
+[node name="TreeCollision" parent="." unique_id=305248489 groups=["scenery"] instance=ExtResource("5_3xio2")]
 position = Vector2(-11, -11)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=558444098]

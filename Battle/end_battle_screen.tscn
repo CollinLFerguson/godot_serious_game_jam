@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cwb6o0s7d5yb8" path="res://Battle/end_battle_screen.gd" id="1_y7wee"]
 
 [node name="EndBattleScreen" type="Control" unique_id=985275269]
+top_level = true
+z_index = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

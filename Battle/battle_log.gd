@@ -12,7 +12,7 @@ func _ready() -> void:
 	SignalBus.load_soundtrack.emit("battle_theme_srs")
 	SignalBus.enemy_died.connect(enemyDied)
 	SignalBus.player_died.connect(gameOver)
-	
+
 
 func enemyDied():
 	enemyCount -= 1

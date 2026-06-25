@@ -33,8 +33,10 @@ var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 func _ready() -> void:
 	if is_player:
 		SaveManager.load_game(self)
+	#else:
+		#sprite.set_frame("henchman")
 	SignalBus.load_upgrades.emit(self, upgrade_arr)
-
+	#if self.visible:
 	_init_stats()
 	$AnimatedSprite2D.sprite_frames = sprite
 	apply_central_impulse(base_velocity)

@@ -13,7 +13,7 @@ script = ExtResource("1_3f7mq")
 position = Vector2(960, 540)
 texture = ExtResource("1_p3uur")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1800280814]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1800280814 groups=["scenery"]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=661692689]
 build_mode = 1
@@ -21,6 +21,17 @@ polygon = PackedVector2Array(168, 471, 716, 239, 1201, 244, 1208, 273, 1342, 319
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("2_igvwn")]
 position = Vector2(1487, 541)
+turtle_name = ""
+is_player = true
+min_velocity = 600
+max_velocity = 2000.0
+health = 100
+min_angular_velocity = 20.0
+base_angular_velocity = 50.0
+rotation_factor = 2.0
+torque_strength = 50.0
+scenery_damage_threshhold = 1000.0
+deceleration = 0.2
 
 [node name="FirstBattleBorder" type="Sprite2D" parent="." unique_id=1459911466]
 top_level = true
@@ -30,6 +41,18 @@ texture = ExtResource("3_3f7mq")
 
 [node name="Turtle2" parent="." unique_id=421837953 instance=ExtResource("2_igvwn")]
 position = Vector2(348, 512)
+turtle_name = ""
+upgrade_arr = Array[String]([])
+is_player = false
+min_velocity = 600
+max_velocity = 2000.0
+health = 100
+min_angular_velocity = 20.0
+base_angular_velocity = 50.0
+rotation_factor = 2.0
+torque_strength = 50.0
+scenery_damage_threshhold = 1000.0
+deceleration = 0.2
 sprite = ExtResource("4_igvwn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=572632643]

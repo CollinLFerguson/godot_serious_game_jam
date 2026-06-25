@@ -1,11 +1,22 @@
 [gd_scene format=3 uid="uid://cq202qb8puj21"]
 
 [ext_resource type="Script" uid="uid://bcjc2nuryxn2o" path="res://Actors/turtle.gd" id="1_veoao"]
-[ext_resource type="SpriteFrames" uid="uid://1akvpnd4dhcu" path="res://Actors/Sprites/player.tres" id="2_7mqse"]
+[ext_resource type="Texture2D" uid="uid://kj86k3tkss36" path="res://Actors/Assets/player_turtle.png" id="2_veoao"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cnp70"]
 friction = 0.0
 bounce = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_veoao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_veoao")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6u5b"]
 radius = 57.0
@@ -24,10 +35,10 @@ max_contacts_reported = 5
 script = ExtResource("1_veoao")
 upgrade_arr = Array[String](["sword", "sword", "sword", "sword"])
 max_angular_velocity = 50.0
-sprite = ExtResource("2_7mqse")
+sprite = SubResource("SpriteFrames_veoao")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2143536447]
-sprite_frames = ExtResource("2_7mqse")
+sprite_frames = SubResource("SpriteFrames_veoao")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
 shape = SubResource("CapsuleShape2D_k6u5b")

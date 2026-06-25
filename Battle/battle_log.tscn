@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cnktcnvmv5nr3"]
 
 [ext_resource type="Texture2D" uid="uid://dl5hp72k6p8mo" path="res://art/log_battle.png" id="1_ov3sv"]
+[ext_resource type="Script" uid="uid://b82jjfqdkvdhh" path="res://Battle/battle_log.gd" id="1_pnilc"]
 [ext_resource type="PackedScene" uid="uid://dxoxarrevn02d" path="res://Collidable/wall-curved.tscn" id="2_gtdv5"]
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="3_gnf34"]
-[ext_resource type="PackedScene" uid="uid://yfhw0ul52hss" path="res://Upgrades/Mine/mine.tscn" id="4_ngede"]
+[ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="5_pnilc"]
 
 [node name="BattleLog" type="Node2D" unique_id=1341374353]
+script = ExtResource("1_pnilc")
 
 [node name="LogBackground" type="Sprite2D" parent="." unique_id=1781802957]
 position = Vector2(960, 540)
@@ -13,24 +15,49 @@ texture = ExtResource("1_ov3sv")
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("3_gnf34")]
 position = Vector2(943, 872)
+turtle_name = null
+is_player = true
+min_velocity = null
+max_velocity = null
+health = null
+min_angular_velocity = null
+base_angular_velocity = null
+rotation_factor = null
+torque_strength = null
+scenery_damage_threshhold = null
+deceleration = null
 
 [node name="WallCurved" parent="." unique_id=2006173947 groups=["scenery"] instance=ExtResource("2_gtdv5")]
 
 [node name="Turtle2" parent="." unique_id=604692791 instance=ExtResource("3_gnf34")]
-position = Vector2(830, 419)
-rotation = -1.7694426
+position = Vector2(452.00006, 334)
+rotation = 0.020926476
+turtle_name = null
+is_player = null
+min_velocity = null
+max_velocity = null
+health = null
+min_angular_velocity = null
+base_angular_velocity = null
+rotation_factor = null
+torque_strength = null
+scenery_damage_threshhold = null
+deceleration = null
 
 [node name="Turtle3" parent="." unique_id=515677159 instance=ExtResource("3_gnf34")]
-position = Vector2(1276, 653)
-rotation = 0.85206676
-
-[node name="Mine" parent="." unique_id=2183746 instance=ExtResource("4_ngede")]
-position = Vector2(1008, 557)
-
-[node name="Mine_Body" parent="." unique_id=1110397731 instance=ExtResource("4_ngede")]
-position = Vector2(470, 612)
-
-[node name="Mine_Body2" parent="." unique_id=1347725542 instance=ExtResource("4_ngede")]
-position = Vector2(1432, 344)
+position = Vector2(1523.9999, 327.99997)
+rotation = 0.08076036
+turtle_name = null
+is_player = null
+min_velocity = null
+max_velocity = null
+health = null
+min_angular_velocity = null
+base_angular_velocity = null
+rotation_factor = null
+torque_strength = null
+scenery_damage_threshhold = null
+deceleration = null
+sprite = ExtResource("5_pnilc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=279051768]

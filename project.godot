@@ -30,6 +30,7 @@ HitstopController="*uid://72irm0im02vy"
 ParticleController="*uid://c485634kvbeec"
 EffectController="*uid://dhiscdd76u8mv"
 SaveManager="*uid://ga1q2p0u1qwn"
+ProgressionController="*uid://cqrts5b4f3ked"
 
 [display]
 

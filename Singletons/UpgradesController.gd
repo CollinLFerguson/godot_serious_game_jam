@@ -38,7 +38,7 @@ var UPGRADES = {
 		"mine": {
 			"description" : "This is a mine.", 
 			"scene": mine_scene ,
-			"attach_points":["LeftHand", "RightHand", "LeftFoot", "RightFoot"]
+			"attach_points":["LeftHand", "RightHand", "LeftFoot", "RightFoot", "Center"]
 		}
 	}
 

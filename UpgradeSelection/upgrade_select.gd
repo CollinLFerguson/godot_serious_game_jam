@@ -50,7 +50,8 @@ func on_startBattleButton_pressed():
 	
 	SignalBus.upgrade_selected.emit(selected_upgrade)
 	# Switch to next scene
-	SignalBus.scene_switch.emit("res://Battle/battle.tscn")
+	var next_level = ProgressionController.load_next_level()
+	SignalBus.scene_switch.emit("res://Battle/%s" %next_level)
 	
 func other_buttons_set_style(button: Button):
 	var btns = button_names
