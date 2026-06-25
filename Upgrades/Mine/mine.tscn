@@ -69,6 +69,7 @@ shape = SubResource("CircleShape2D_t1oqq")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1974946774]
 stream = SubResource("AudioStreamMP3_s83af")
+volume_db = -10.0
 max_polyphony = 5
 bus = &"Effects"
 
