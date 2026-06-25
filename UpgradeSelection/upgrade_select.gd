@@ -2,13 +2,13 @@ extends Node2D
 
 var selected_upgrade = ""
 var button_names = ["optionButton1", "optionButton2", "optionButton3"]
+var buttons = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	buttons = [$optionButton1, $optionButton2, $optionButton3]
 	populate_button_text()
 	load_all_default_button_styles()
 	SignalBus.load_soundtrack.emit("")
-	#SignalBus.on_optionButton_pressed.connect(other_buttons_set_style)
 	
 	$optionButton1.pressed.connect(optionButtonHandler.bind($optionButton1))
 	$optionButton2.pressed.connect(optionButtonHandler.bind($optionButton2))
@@ -18,16 +18,25 @@ func _ready() -> void:
 	
 func optionButtonHandler(button: Button):
 	var text = button.text.split("\n")
-	
-	var normal_style = StyleBoxFlat.new()
-	normal_style.bg_color = Color("e6ba4dff")
-	
-	var hover_style = StyleBoxFlat.new()
-	hover_style.bg_color = Color("7c5b23ff")
-	
-	button.add_theme_stylebox_override("normal", normal_style)
-	button.add_theme_stylebox_override("hover", hover_style)
-	SignalBus.on_optionButton_pressed.emit(button)
+	for b in buttons:
+		if button.name != b.name:	
+			var normal_style = StyleBoxFlat.new()
+			var hover_style = StyleBoxFlat.new()
+			normal_style.bg_color = Color("08356fff") 
+			hover_style.bg_color = Color("185fbbff")
+			b.add_theme_stylebox_override("normal", normal_style)
+			b.add_theme_stylebox_override("hover", hover_style)
+		else:
+			var normal_style1 = StyleBoxFlat.new()
+			var hover_style1 = StyleBoxFlat.new()
+			normal_style1.bg_color = Color("e6ba4dff")
+			hover_style1.bg_color = Color("7c5b23ff")
+			button.add_theme_stylebox_override("normal", normal_style1)
+			button.add_theme_stylebox_override("hover", hover_style1)
+			var sfx = button.get_child(0)
+			sfx.play()
+			await sfx.finished 
+			
 	selected_upgrade = text[0].strip_edges().to_lower()
 
 func on_startBattleButton_pressed():
@@ -80,4 +89,3 @@ func populate_button_text():
 		var btn = get_node(b)
 		btn.text = selected[s] + "\n" + upgrades_dict[selected[s]]["description"]
 		s+=1
-
