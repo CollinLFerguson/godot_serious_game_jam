@@ -19,14 +19,12 @@ func _on_body_entered(body: Node) -> void:
 	print("body entered ")
 	if (body.is_in_group("actor") || body.is_in_group("player")):
 		set_deferred("disabled", true)
-		body.visible = false
 		queue_free()
 		print("ded star, hit someone")
 	elif (body.is_in_group("projectile") || body.is_in_group("scenery") || body.is_in_group("weapon")):
 		collisionsBeforeDecay = collisionsBeforeDecay - 1 #mark as a collision
 		if collisionsBeforeDecay == 0:
 			set_deferred("disabled", true)
-			body.visible = false
 			queue_free()
 			print("ded star. broken")
 			
