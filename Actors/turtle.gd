@@ -26,7 +26,7 @@ var terrain_sound = preload("res://SFX/Effects/crunch.mp3")
 var turtle_stats_resource = preload("res://UI/TurtleInfo/TurtleInfo.tscn")
 
 var turtle_stats:Node
-
+var is_turtle_a_gigachad = false
 var base_velocity = Vector2(500,500).rotated(randf_range(0, PI * 2))
 
 # Called when the node enters the scene tree for the first time.
@@ -43,7 +43,7 @@ func _ready() -> void:
 	apply_torque_impulse(base_angular_velocity)
 
 func _init_stats() -> void:
-	self.health += 5*(upgrade_arr.size())
+	self.health += 10*(upgrade_arr.size())
 	turtle_stats = turtle_stats_resource.instantiate()
 	turtle_stats.turtle = self
 	var canvas_layer = get_tree().current_scene.get_node("CanvasLayer")
