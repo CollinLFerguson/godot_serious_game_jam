@@ -73,7 +73,7 @@ max_polyphony = 5
 bus = &"Effects"
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1524014843]
-autostart = true
+wait_time = 2.0
 
 [node name="AttachPoint" type="Marker2D" parent="." unique_id=418994727]
 

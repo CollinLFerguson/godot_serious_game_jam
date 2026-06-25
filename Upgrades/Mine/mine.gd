@@ -1,16 +1,21 @@
 extends Area2D
 var targets: Array
-var isarmed = false
+@export var isarmed = false
 var isspawned = false
 var explode_sound = preload("res://art/explosion/explosion.mp3")
 var mine_scene: PackedScene = preload("res://Upgrades/Mine/mine.tscn")
+var parent_actor: Node
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
 	if isspawned:
 		await get_tree().create_timer(1.0).timeout
 		print("Spawned mine ready")
-		self.arm()
+		#self.arm()
+	else:
+		$SpawnTimer.start()
+	if isarmed:
+		arm(null)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -19,7 +24,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	#print("entered")
-	if isarmed:
+	if isarmed and body != parent_actor:
 		#print("blow up")
 		SignalBus.mine_explosion.emit(self, targets)
 		$AudioStreamPlayer2D.stream = explode_sound
@@ -42,7 +47,9 @@ func disable():
 	$Mine_animation.animation = "explode"
 	isarmed = false
 
-func arm():
+func arm(parent_actor):
+	self.parent_actor = parent_actor
+	await get_tree().create_timer(1.5).timeout
 	self.isarmed = true
 	$Mine_animation.animation = "armed"
 	self.set_deferred("monitoring", true)
@@ -54,8 +61,8 @@ func _on_spawn_timer_timeout() -> void:
 	var turtle = $".."
 	var mine = mine_scene.instantiate()
 	mine.isspawned = true
-	mine.arm()
-	turtle.add_collision_exception_with(mine)
+	#turtle.add_collision_exception_with(mine)
 	mine.position = turtle.position
-	turtle.add_child(mine)
+	get_tree().current_scene.add_child(mine)
+	mine.arm(turtle)
 	print("Spawned mine?")

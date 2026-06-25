@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0h1djfai7cqa"
-path="res://.godot/imported/rock_border.png-36735c6f4744c941eeb2b367c19a6277.ctex"
+uid="uid://dl8qdi5cwwwx8"
+path="res://.godot/imported/tree__battle_bg.png-cc4a2465a220d7d835357010d3cb2c56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/rock_border.png"
-dest_files=["res://.godot/imported/rock_border.png-36735c6f4744c941eeb2b367c19a6277.ctex"]
+source_file="res://art/tree__battle_bg.png"
+dest_files=["res://.godot/imported/tree__battle_bg.png-cc4a2465a220d7d835357010d3cb2c56.ctex"]
 
 [params]
 

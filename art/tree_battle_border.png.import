@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmh3xhh2o77ma"
-path="res://.godot/imported/log_background.png-3be44ea622ecda5e4074bbfbe1fa16bf.ctex"
+uid="uid://yqgybsnlmllu"
+path="res://.godot/imported/tree_battle_border.png-1021eeed9003e33f7beb21382c6515eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/log_background.png"
-dest_files=["res://.godot/imported/log_background.png-3be44ea622ecda5e4074bbfbe1fa16bf.ctex"]
+source_file="res://art/tree_battle_border.png"
+dest_files=["res://.godot/imported/tree_battle_border.png-1021eeed9003e33f7beb21382c6515eb.ctex"]
 
 [params]
 

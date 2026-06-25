@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhp2qsq7hmkuu"]
 
-[ext_resource type="Texture2D" uid="uid://b2odx6nu0txf8" path="res://art/tree-background.png" id="1_7vlax"]
-[ext_resource type="Texture2D" uid="uid://clpqfdkuy2bge" path="res://art/tree-border.png" id="2_k3bmh"]
+[ext_resource type="Texture2D" uid="uid://dl8qdi5cwwwx8" path="res://art/tree__battle_bg.png" id="1_7vlax"]
+[ext_resource type="Texture2D" uid="uid://yqgybsnlmllu" path="res://art/tree_battle_border.png" id="2_k3bmh"]
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="2_w3s0d"]
 [ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="4_3xio2"]
 [ext_resource type="PackedScene" uid="uid://cqgoiv4jluswv" path="res://Collidable/tree_collision.tscn" id="5_3xio2"]

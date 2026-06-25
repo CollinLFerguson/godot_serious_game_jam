@@ -50,6 +50,7 @@ actor=""
 scenery=""
 hitstop_bodies=""
 weapon=""
+player="is player?"
 
 [layer_names]
 
