@@ -8,8 +8,9 @@ func _ready() -> void:
 func _on_star_timer_timeout() -> void:
 	var turtle = $".."
 	var new_star = stars_scene.instantiate()
-	new_star.position = position
 	
 	turtle.add_collision_exception_with(new_star)
 	add_collision_exception_with(new_star)
-	turtle.add_child(new_star)
+	get_tree().current_scene.add_child(new_star)
+
+	new_star.global_position = self.global_position

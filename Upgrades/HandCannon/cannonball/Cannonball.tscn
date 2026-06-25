@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://budmcf0uaa3ho" path="res://Upgrades/HandCannon/cannonball/cannonball.png" id="1_n680u"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_57lbc"]
+bounce = 0.25
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_35014"]
 animations = [{
@@ -22,6 +23,7 @@ radius = 55.09421
 [node name="Cannonball" type="RigidBody2D" unique_id=1193819863 groups=["projectile", "weapon"]]
 scale = Vector2(0.30243585, 0.3107753)
 collision_layer = 2
+mass = 20.0
 physics_material_override = SubResource("PhysicsMaterial_57lbc")
 gravity_scale = 0.0
 script = ExtResource("1_57lbc")
