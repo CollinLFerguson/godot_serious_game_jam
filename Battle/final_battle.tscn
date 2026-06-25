@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ojl58tpvtk3p" path="res://Battle/final_battle.gd" id="1_tth3p"]
 [ext_resource type="Texture2D" uid="uid://ccffajg0aebbx" path="res://art/final_battle_border.png" id="2_vpwv4"]
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="3_vpwv4"]
-[ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="4_3cgr5"]
+[ext_resource type="SpriteFrames" uid="uid://btog828xylk4i" path="res://Actors/Sprites/boss.tres" id="4_3cgr5"]
 
 [node name="FinalBattle" type="Node2D" unique_id=748497410]
 script = ExtResource("1_tth3p")
@@ -20,12 +20,12 @@ build_mode = 1
 polygon = PackedVector2Array(168, 471, 716, 239, 1201, 244, 1208, 273, 1342, 319, 1407, 325, 1411, 349, 1451, 363, 1473, 366, 1502, 390, 1559, 397, 1572, 390, 1737, 459, 1743, 527, 1755, 555, 1745, 606, 1767, 622, 1218, 865, 761, 868, 166, 605)
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("3_vpwv4")]
-position = Vector2(383, 512)
+position = Vector2(1627, 522)
 upgrade_arr = Array[String](["stars", "stars", "stars", "stars"])
 is_player = true
 
 [node name="Turtle2" parent="." unique_id=1475968658 instance=ExtResource("3_vpwv4")]
-position = Vector2(1627, 525)
+position = Vector2(319, 514)
 upgrade_arr = Array[String](["mace", "mace", "mace", "mace"])
 sprite = ExtResource("4_3cgr5")
 

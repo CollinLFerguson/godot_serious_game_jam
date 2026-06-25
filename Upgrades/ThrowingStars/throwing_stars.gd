@@ -1,8 +1,8 @@
 extends RigidBody2D
 
-@export var damage = 5
+@export var damage = 6
 @export var weight = 5
-@export var collisionsBeforeDecay = 3
+@export var collisionsBeforeDecay = 7
 #@export var secondsBeforeDecay = 5.0
 
 func _ready() -> void:

@@ -1,10 +1,11 @@
 extends Node2D
 
-var enemyCount = 1
+var enemyCount = 3
 const gameOverScene = preload("res://Battle/game_over_screen.tscn")
 const endBattleScene = preload("res://Battle/end_battle_screen.tscn")
 var stars_scene: PackedScene
 var cannonballs_scene: PackedScene
+var is_round_over = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,8 +21,10 @@ func enemyDied():
 		battleOver()
 
 func gameOver():
-	SignalBus.scene_switch.emit("res://Battle/game_over_screen.tscn")
+	if !is_round_over:
+		SignalBus.scene_switch.emit("res://Battle/game_over_screen.tscn")
 
 func battleOver():
+	is_round_over = true
 	var endBattleInstance = endBattleScene.instantiate()
 	add_child(endBattleInstance)

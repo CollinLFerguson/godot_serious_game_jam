@@ -43,6 +43,7 @@ func _ready() -> void:
 	apply_torque_impulse(base_angular_velocity)
 
 func _init_stats() -> void:
+	self.health += 5*(upgrade_arr.size())
 	turtle_stats = turtle_stats_resource.instantiate()
 	turtle_stats.turtle = self
 	var canvas_layer = get_tree().current_scene.get_node("CanvasLayer")
@@ -117,9 +118,17 @@ func _on_body_entered(body: Node) -> void:
 		turtle_stats.queue_free()
 		queue_free()
 	
-func apply_damage():
-	pass
-
+func apply_damage(damage):
+	health -= damage
+	if health <= 0:
+		$AudioStreamPlayer2D.stream = pain_sound
+		$AudioStreamPlayer2D.play()
+		if is_player:
+			SignalBus.player_died.emit()
+		if not is_player:
+			SignalBus.enemy_died.emit()
+		turtle_stats.queue_free()
+		queue_free()
 #func save_upgrades():
 	#if is_player:
 		#return [UpgradesController.UPGRADES]
@@ -136,3 +145,6 @@ func save():
 
 func reportStats(): 
 	pass
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	apply_damage(900)

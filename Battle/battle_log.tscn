@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://b82jjfqdkvdhh" path="res://Battle/battle_log.gd" id="1_pnilc"]
 [ext_resource type="PackedScene" uid="uid://dxoxarrevn02d" path="res://Collidable/wall-curved.tscn" id="2_gtdv5"]
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="3_gnf34"]
+[ext_resource type="SpriteFrames" uid="uid://l7u2e1ccs378" path="res://Actors/Sprites/henchman.tres" id="5_xown1"]
+[ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/grunt.tres" id="6_uegmr"]
 
 [node name="BattleLog" type="Node2D" unique_id=1341374353]
 script = ExtResource("1_pnilc")
@@ -17,14 +19,16 @@ texture = ExtResource("1_ov3sv")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=279051768]
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("3_gnf34")]
-position = Vector2(438, 368)
+position = Vector2(335, 549)
 upgrade_arr = Array[String]([])
 is_player = true
 
 [node name="Turtle2" parent="." unique_id=2070388463 instance=ExtResource("3_gnf34")]
-position = Vector2(1230, 465)
-upgrade_arr = Array[String](["sword", "sword"])
+position = Vector2(1533, 340)
+upgrade_arr = Array[String](["sword", "stars"])
+sprite = ExtResource("5_xown1")
 
 [node name="Turtle3" parent="." unique_id=1016347890 instance=ExtResource("3_gnf34")]
-position = Vector2(853, 683)
-upgrade_arr = Array[String](["sword", "sword"])
+position = Vector2(1377, 728)
+upgrade_arr = Array[String](["sword", "shield"])
+sprite = ExtResource("6_uegmr")

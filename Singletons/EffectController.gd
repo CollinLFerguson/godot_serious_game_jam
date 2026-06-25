@@ -33,4 +33,6 @@ func handleMineExplosion(mine, target_list):
 			tgt.linear_velocity = pos_vec
 			#if tgt.get_class() == "RigidBody2D":
 				#tgt.apply_impulse(tgt.position, pos_vec)
+			if tgt.has_method("apply_damage"):
+				tgt.apply_damage(5)
 	

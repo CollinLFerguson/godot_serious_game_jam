@@ -71,4 +71,7 @@ rotation = 2.0943952
 [node name="Center" type="Marker2D" parent="AttachPoints" unique_id=1073313959]
 rotation = 0.64664906
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1410577490]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

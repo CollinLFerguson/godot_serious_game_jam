@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="1_ksnli"]
 [ext_resource type="Script" uid="uid://dn587shuigg4y" path="res://Battle/battle.gd" id="1_ploow"]
 [ext_resource type="Texture2D" uid="uid://dtgspnskla8sv" path="res://art/rock_battle_bg.png" id="2_0lqow"]
-[ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="2_o5tja"]
 [ext_resource type="SpriteFrames" uid="uid://1akvpnd4dhcu" path="res://Actors/Sprites/player.tres" id="6_ihngk"]
 [ext_resource type="AudioStream" uid="uid://bxpixj85531us" path="res://SFX/Soundtrack/battle_theme_srs.mp3" id="7_0lqow"]
 [ext_resource type="Texture2D" uid="uid://cqq8m67ygxq41" path="res://art/rock_battle_border.png" id="7_bjo3u"]
+[ext_resource type="SpriteFrames" uid="uid://l7u2e1ccs378" path="res://Actors/Sprites/henchman.tres" id="7_ihngk"]
 [ext_resource type="PackedScene" uid="uid://d3t4bv13uean6" path="res://UI/Control/Joystick.tscn" id="8_bjo3u"]
 
 [node name="Battle" type="Node2D" unique_id=1111483387]
@@ -52,7 +52,7 @@ position = Vector2(1631, 190)
 collision_mask = 1
 upgrade_arr = Array[String](["mine", "sword"])
 max_angular_velocity = 100.0
-sprite = ExtResource("2_o5tja")
+sprite = ExtResource("7_ihngk")
 
 [node name="RockBorder" type="Sprite2D" parent="." unique_id=355733280]
 top_level = true

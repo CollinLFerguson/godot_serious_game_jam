@@ -20,6 +20,7 @@ height = 62.0
 
 [node name="HandCannon" type="StaticBody2D" unique_id=1520056570]
 scale = Vector2(1.5569118, 1.3326215)
+collision_layer = 0
 script = ExtResource("1_cuw63")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1603891620]

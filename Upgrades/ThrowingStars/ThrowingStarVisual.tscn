@@ -27,7 +27,7 @@ script = ExtResource("2_52a6i")
 scale = Vector2(0.5, 0.5)
 
 [node name="StarTimer" type="Timer" parent="." unique_id=1080903265]
-wait_time = 3.0
+wait_time = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=77629594]
 shape = SubResource("CircleShape2D_d076r")

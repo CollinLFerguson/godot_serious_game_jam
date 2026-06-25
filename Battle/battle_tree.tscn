@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://ditbqlfu04x1c" path="res://Battle/battle_tree.gd" id="1_at5ul"]
 [ext_resource type="Texture2D" uid="uid://yqgybsnlmllu" path="res://art/tree_battle_border.png" id="2_k3bmh"]
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="2_w3s0d"]
-[ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/enemy.tres" id="4_3mdo0"]
+[ext_resource type="SpriteFrames" uid="uid://l7u2e1ccs378" path="res://Actors/Sprites/henchman.tres" id="4_3mdo0"]
 [ext_resource type="PackedScene" uid="uid://mdk087nvv283" path="res://Collidable/wall.tscn" id="4_3xio2"]
 [ext_resource type="PackedScene" uid="uid://cqgoiv4jluswv" path="res://Collidable/tree_collision.tscn" id="5_3xio2"]
+[ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/grunt.tres" id="5_jq54r"]
 
 [node name="battle-tree" type="Node2D" unique_id=861134569]
 script = ExtResource("1_at5ul")
@@ -16,13 +17,23 @@ position = Vector2(960, 540)
 texture = ExtResource("1_7vlax")
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("2_w3s0d")]
-position = Vector2(634, 786)
+position = Vector2(358, 841)
 is_player = true
 
 [node name="Turtle2" parent="." unique_id=1367277291 instance=ExtResource("2_w3s0d")]
-position = Vector2(1404, 262)
+position = Vector2(1404, 260)
 upgrade_arr = Array[String](["sword", "shield", "stars"])
 sprite = ExtResource("4_3mdo0")
+
+[node name="Turtle3" parent="." unique_id=367737973 instance=ExtResource("2_w3s0d")]
+position = Vector2(572, 226)
+upgrade_arr = Array[String](["mine"])
+sprite = ExtResource("5_jq54r")
+
+[node name="Turtle4" parent="." unique_id=711619219 instance=ExtResource("2_w3s0d")]
+position = Vector2(1461, 715)
+upgrade_arr = Array[String](["mine"])
+sprite = ExtResource("5_jq54r")
 
 [node name="TreeBorder" type="Sprite2D" parent="." unique_id=812374868]
 top_level = true

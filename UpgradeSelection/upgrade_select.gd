@@ -79,13 +79,26 @@ func load_all_default_button_styles():
 		btn.add_theme_stylebox_override("hover", hover_style)
 
 func populate_button_text():
-	var upgrades_dict = UpgradesController.UPGRADES
-	var shuffled = upgrades_dict.keys().duplicate()
-	shuffled.shuffle()
-	var selected = shuffled.slice(0, 3) #upgrades array reduced to random 3 items
-	
-	var s = 0
-	for b in button_names:
-		var btn = get_node(b)
-		btn.text = selected[s] + "\n" + upgrades_dict[selected[s]]["description"]
-		s+=1
+	if ProgressionController.current_level < 4:
+		var upgrades_dict = UpgradesController.UPGRADES
+		var shuffled = upgrades_dict.keys().duplicate()
+		shuffled.shuffle()
+		var selected = shuffled.slice(0, 3) #upgrades array reduced to random 3 items
+		
+		var s = 0
+		for b in button_names:
+			var btn = get_node(b)
+			btn.text = selected[s] + "\n" + upgrades_dict[selected[s]]["description"]
+			s+=1
+	else:
+		var upgrades_dict = UpgradesController.UPGRADES
+		var selected = ["mine", "stars"]
+		var s = 0
+		for b in button_names:
+			if s < 2:
+				var btn = get_node(b)
+				btn.text = selected[s] + "\n" + upgrades_dict[selected[s]]["description"]
+			else:
+				var btn = get_node(b)
+				btn.text = "No upgrade"
+			s+=1

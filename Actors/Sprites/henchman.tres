@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://l7u2e1ccs378"]
+
+[ext_resource type="Texture2D" uid="uid://bx654dhd5v8fd" path="res://Actors/Assets/enemy_turtle_henchmen.png" id="1_kx5ox"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kx5ox")
+}],
+"loop": 1,
+"name": &"basic",
+"speed": 5.0
+}]
