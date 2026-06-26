@@ -1,13 +1,15 @@
 extends Node
 
 var EFFECTS: Dictionary = {}
-var SOUNDTRACKS: Dictionary = {}
+var tracks = [preload("res://SFX/Soundtrack/main_menu.mp3"), preload("res://SFX/Soundtrack/battle_theme_srs.mp3")]
+var SOUNDTRACKS: Dictionary = {"main_menu":tracks[0], "battle_theme_srs": tracks[1]}
+
 var MUSIC_STREAM: AudioStreamPlayer
 var current_soundtrack:String = ""
 
 func _ready():
 	_read_effects_directory("res://SFX/TrackEffects/")
-	_load_soundtracks("res://SFX/Soundtrack/")
+	#_load_soundtracks("res://SFX/Soundtrack/")
 	_initiate_music_player()
 	
 func _initiate_music_player():
@@ -74,7 +76,7 @@ func enableSoundtrack(soundtrack_identifier: String, loop: bool = true):
 	var track = SOUNDTRACKS[soundtrack_identifier]
 	if(loop == true):
 		track.loop()
-	MUSIC_STREAM.stream = SOUNDTRACKS[soundtrack_identifier]
+	MUSIC_STREAM.stream = track
 	MUSIC_STREAM.play()
 	current_soundtrack = soundtrack_identifier
 	
