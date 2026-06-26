@@ -39,7 +39,7 @@ var shake_count = 10
 
 #hurt/dying variables
 var redHurtFlash_amount = 10
-var redHurtFlash_duration = 10.0
+var redHurtFlash_duration = 0.1
 var redHurtFlash_count = 10
 var redHurtFlash_Turtle = preload("res://Actors/Assets/red_dying_turtle.png")
 
@@ -188,14 +188,15 @@ func shake_turtle():
 
 func dying_turtle():
 	for i in redHurtFlash_count:
-		#var sprite_frames = $AnimatedSprite2D.get_sprite_frames()
-		#var texture = $AnimatedSprite2D.sprite_frames.get_frame_texture(
-				#"default",
-				#$AnimatedSprite2D.frame
-			#)
-		#if !sprite_frames.has_animation("dying"):
-			#sprite_frames.add_animation("dying")
-			#sprite_frames.add_frame("dying", texture)
+		var sprite_frames = $AnimatedSprite2D.get_sprite_frames()
+		var texture = $AnimatedSprite2D.sprite_frames.get_frame_texture(
+			"default",
+			$AnimatedSprite2D.frame
+		)
+		if !sprite_frames.has_animation("dying"):
+			sprite_frames.add_animation("dying")
+			sprite_frames.add_frame("dying", texture)
+		$AnimatedSprite2D.play("dying")
 		await get_tree().create_timer(redHurtFlash_duration).timeout
 	
 	
