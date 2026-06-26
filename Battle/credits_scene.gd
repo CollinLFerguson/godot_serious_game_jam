@@ -1,7 +1,7 @@
 extends Node
 
 func _ready() -> void:
-	$TextureButton.pressed(goToCredits)
+	$TextureButton.pressed.connect(goToMain)
 
-func goToCredits():
+func goToMain():
 	SignalBus.scene_switch.emit("res://main.tscn")

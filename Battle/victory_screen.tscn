@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://e1tgrt2ajvqk"]
 
 [ext_resource type="Texture2D" uid="uid://bktib1d3e3dyi" path="res://UI/Backgrounds/TurtleYouWinScreen.png" id="1_gj62n"]
+[ext_resource type="Script" uid="uid://bvmbjrxnfdwva" path="res://Battle/victory_screen.gd" id="1_nk0pi"]
 [ext_resource type="Texture2D" uid="uid://46x7knkbkmro" path="res://UI/Buttons/TurtleNextButton.png" id="2_s6lyw"]
 
 [node name="VictoryScreen" type="Control" unique_id=472911444]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nk0pi")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2075989786]
 layout_mode = 0
