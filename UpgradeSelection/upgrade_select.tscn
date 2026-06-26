@@ -25,7 +25,6 @@ alignment = 0
 
 [node name="ButtonSound" type="AudioStreamPlayer2D" parent="optionButton1" unique_id=1006359692]
 stream = ExtResource("4_dpkvm")
-volume_db = -20.0
 
 [node name="optionButton2" type="Button" parent="." unique_id=992438751]
 offset_left = 503.0
@@ -39,7 +38,6 @@ alignment = 0
 
 [node name="ButtonSound" type="AudioStreamPlayer2D" parent="optionButton2" unique_id=210097126]
 stream = ExtResource("4_dpkvm")
-volume_db = -20.0
 
 [node name="optionButton3" type="Button" parent="." unique_id=738771349]
 offset_left = 501.0
@@ -53,7 +51,6 @@ alignment = 0
 
 [node name="ButtonSound" type="AudioStreamPlayer2D" parent="optionButton3" unique_id=1814005907]
 stream = ExtResource("4_dpkvm")
-volume_db = -20.0
 
 [node name="StartBattleButton" type="TextureButton" parent="." unique_id=1684609894]
 offset_left = 1378.0
@@ -64,4 +61,3 @@ texture_normal = ExtResource("3_qndx7")
 
 [node name="StartBattleSound" type="AudioStreamPlayer2D" parent="StartBattleButton" unique_id=1902981708]
 stream = ExtResource("4_dpkvm")
-volume_db = -20.0

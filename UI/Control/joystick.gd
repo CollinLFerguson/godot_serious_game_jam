@@ -14,7 +14,7 @@ func _gui_input(event: InputEvent) -> void:
 		if (event.button_index == MOUSE_BUTTON_LEFT):
 			dragging = event.pressed
 	elif (event is InputEventMouseMotion and dragging):
-		var local_position = get_local_mouse_position()
+		var _local_position = get_local_mouse_position()
 		var offset = get_local_mouse_position() - center
 		
 		if (offset.length() > radius):

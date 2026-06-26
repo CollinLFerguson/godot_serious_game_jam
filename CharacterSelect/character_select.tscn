@@ -25,7 +25,6 @@ texture_normal = ExtResource("3_satj8")
 
 [node name="StartBattleSound" type="AudioStreamPlayer2D" parent="StartBattleButton" unique_id=780411458]
 stream = ExtResource("2_8hkwl")
-volume_db = -20.0
 
 [node name="Turtle" type="TextureRect" parent="." unique_id=438047227]
 offset_left = 770.0

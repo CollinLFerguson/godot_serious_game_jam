@@ -45,8 +45,8 @@ func disable():
 	$Mine_animation.animation = "explode"
 	isarmed = false
 
-func arm(parent_actor):
-	self.parent_actor = parent_actor
+func arm(_parent_actor):
+	self.parent_actor = _parent_actor
 	await get_tree().create_timer(1.5).timeout
 	self.isarmed = true
 	$Mine_animation.animation = "armed"
