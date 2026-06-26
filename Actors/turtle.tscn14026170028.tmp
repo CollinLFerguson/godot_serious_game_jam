@@ -13,9 +13,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_veoao")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_veoao")
 }],
 "loop": 1,
 "name": &"default",
@@ -45,13 +42,26 @@ continuous_cd = 1
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_veoao")
+turtle_name = null
 upgrade_arr = Array[String](["sword", "sword", "sword", "sword"])
+is_player = null
+min_velocity = null
+max_velocity = null
+health = null
+min_angular_velocity = null
+base_angular_velocity = null
 max_angular_velocity = 50.0
+rotation_factor = null
+torque_strength = null
+scenery_damage_threshhold = null
+deceleration = null
 sprite = SubResource("SpriteFrames_veoao")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2143536447]
 sprite_frames = SubResource("SpriteFrames_veoao")
+animation = &"dying"
+frame_progress = 0.07495623
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
 shape = SubResource("CapsuleShape2D_k6u5b")

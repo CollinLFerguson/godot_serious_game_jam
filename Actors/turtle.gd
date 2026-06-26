@@ -37,6 +37,14 @@ var shake_amount = 10
 var shake_duration = 0.1
 var shake_count = 10
 
+
+#hurt/dying variables
+var redHurtFlash_amount = 10
+var redHurtFlash_duration = 0.1
+var redHurtFlash_count = 10
+var redHurtFlash_Turtle = preload("res://Actors/Assets/red_dying_turtle.png")
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if is_player:
@@ -59,7 +67,8 @@ func battle_start_actions(playerVector:Vector2):
 	angular_velocity = base_angular_velocity
 		
 func _init_stats() -> void:
-	self.health += 10*(upgrade_arr.size())
+	if upgrade_arr.size() != 0:
+		self.health += 10*(upgrade_arr.size())
 	turtle_stats = turtle_stats_resource.instantiate()
 	turtle_stats.turtle = self
 	var canvas_layer = get_tree().current_scene.get_node("CanvasLayer")
@@ -106,6 +115,7 @@ func _on_body_entered(body: Node) -> void:
 		shake_turtle()
 		$AudioStreamPlayer2D.stream = pain_sound
 		$AudioStreamPlayer2D.play()
+		
 	elif body.is_in_group("weapon"):
 		SignalBus.hit.emit(self, body)
 		health -= body.damage
@@ -126,12 +136,18 @@ func _on_body_entered(body: Node) -> void:
 			health -= int(linear_velocity.length() / 200)
 			$AudioStreamPlayer2D.stream = terrain_sound
 			$AudioStreamPlayer2D.play()
+	if health <= 15:
+		print("turt hurt")
+		dying_turtle()
 	if health <= 0:
+		print("Ded turt")
+		dying_turtle()
 		$AudioStreamPlayer2D.stream = pain_sound
 		$AudioStreamPlayer2D.play()
 		if is_player:
 			SignalBus.player_died.emit()
 		if not is_player:
+			self.remove_from_group("actor")
 			SignalBus.enemy_died.emit()
 		turtle_stats.queue_free()
 		queue_free()
@@ -145,7 +161,7 @@ func apply_damage(damage):
 			SignalBus.player_died.emit()
 		if not is_player:
 			SignalBus.enemy_died.emit()
-		turtle_stats.queue_free()
+		#turtle_stats.queue_free()
 		queue_free()
 #func save_upgrades():
 	#if is_player:
@@ -170,3 +186,19 @@ func shake_turtle():
 		var offset = Vector2(randf_range(-shake_amount, shake_amount), randf_range(-shake_amount, shake_amount))
 		global_position += offset
 		await get_tree().create_timer(shake_duration).timeout
+
+func dying_turtle():
+	for i in redHurtFlash_count:
+		var sprite_frames = $AnimatedSprite2D.get_sprite_frames()
+		var texture = $AnimatedSprite2D.sprite_frames.get_frame_texture(
+			"default",
+			$AnimatedSprite2D.frame
+		)
+		if !sprite_frames.has_animation("dying"):
+			sprite_frames.add_animation("dying")
+			sprite_frames.add_frame("dying", texture)
+		$AnimatedSprite2D.play("dying")
+		await get_tree().create_timer(redHurtFlash_duration).timeout
+	
+	
+	

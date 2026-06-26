@@ -23,7 +23,6 @@ radius = 73.061615
 
 [node name="ThrowingStars" type="RigidBody2D" unique_id=1597296165 groups=["projectile"]]
 collision_layer = 2
-collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_veoao")
 gravity_scale = 0.0
 script = ExtResource("1_xn71j")

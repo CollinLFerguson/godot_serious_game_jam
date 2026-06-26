@@ -12,7 +12,7 @@ func _ready():
 	
 func _initiate_music_player():
 	MUSIC_STREAM = AudioStreamPlayer.new()
-	MUSIC_STREAM.bus = "Music"
+	MUSIC_STREAM.bus = "Soundtrack"
 	add_child(MUSIC_STREAM)
 	
 func _load_effects(path:String, dir_name):

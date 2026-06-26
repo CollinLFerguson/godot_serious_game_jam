@@ -6,8 +6,7 @@ extends Control
 var dragging := false
 
 func _ready() -> void:
-	print($Base.visible)
-	print($Ball.visible)
+	pass
 	
 func _gui_input(event: InputEvent) -> void:
 	var center = size / 2
@@ -25,7 +24,7 @@ func _gui_input(event: InputEvent) -> void:
 func get_input_vector() -> Vector2:
 	var center = size / 2
 	var ball_center = ball.position + ball.size / 2
-	return -((ball_center - center) / radius)
+	return (ball_center - center) / radius
 
 func _on_start_button_pressed() -> void:
 	var player_vector = get_input_vector()

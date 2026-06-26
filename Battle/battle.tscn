@@ -70,9 +70,7 @@ polygon = PackedVector2Array(1283, 709, 1300, 729, 1381, 727, 1499, 751, 1525, 7
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1575837722]
 
 [node name="Joystick" parent="CanvasLayer" unique_id=776560750 instance=ExtResource("8_bjo3u")]
-offset_left = 785.0
-offset_top = 819.0
-offset_right = 1147.0
-offset_bottom = 1069.0
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = 787.0
+offset_top = 873.0
+offset_right = 1149.0
+offset_bottom = 1123.0

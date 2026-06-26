@@ -24,8 +24,6 @@ offset_left = 799.0
 offset_top = 831.0
 offset_right = 1161.0
 offset_bottom = 1081.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("3_gnf34")]
 position = Vector2(335, 549)
