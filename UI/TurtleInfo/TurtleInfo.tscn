@@ -54,6 +54,7 @@ max_lines_visible = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Speed" type="Label" parent="." unique_id=300934177]
+visible = false
 layout_mode = 2
 text = "96"
 label_settings = SubResource("LabelSettings_75f75")
