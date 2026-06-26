@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" uid="uid://csrmukho854l" path="res://UI/Control/joystick.gd" id="1_536c6"]
 [ext_resource type="Texture2D" uid="uid://13e5v5ne1hk0" path="res://UI/Buttons/TurtleStartButton.png" id="2_1mr4h"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pnhfq"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vcyjv"]
+[ext_resource type="Texture2D" uid="uid://c0hhv6xc8hyjc" path="res://UI/Control/joystick_base.png" id="2_shxfs"]
+[ext_resource type="Texture2D" uid="uid://641g1qvltdoo" path="res://UI/Control/joystick_ball.png" id="4_107ic"]
 
 [node name="Joystick" type="Control" unique_id=1229592199]
 top_level = true
@@ -34,9 +32,10 @@ offset_right = 25.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_pnhfq")
+texture = ExtResource("2_shxfs")
 
 [node name="Ball" type="TextureRect" parent="." unique_id=2076238707]
+z_index = 2
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 8
@@ -44,13 +43,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -25.0
-offset_right = 25.0
-offset_bottom = 25.0
+offset_left = -38.0
+offset_top = -38.0
+offset_right = 90.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_vcyjv")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_107ic")
 
 [node name="StartButton" type="Button" parent="." unique_id=1513763651]
 layout_mode = 1
