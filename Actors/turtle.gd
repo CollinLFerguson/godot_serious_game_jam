@@ -156,6 +156,7 @@ func apply_damage(damage):
 		if is_player:
 			SignalBus.player_died.emit()
 		if not is_player:
+			self.remove_from_group("actor")
 			SignalBus.enemy_died.emit()
 		turtle_stats.queue_free()
 		queue_free()
