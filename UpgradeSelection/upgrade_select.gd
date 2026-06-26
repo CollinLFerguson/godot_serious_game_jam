@@ -34,7 +34,7 @@ func optionButtonHandler(button: Button):
 			button.add_theme_stylebox_override("hover", hover_style1)
 			var sfx = button.get_child(0)
 			sfx.play()
-			await sfx.finished 
+			#await sfx.finished 
 			
 	selected_upgrade = text[0].strip_edges().to_lower()
 
@@ -44,9 +44,10 @@ func on_startBattleButton_pressed():
 	sfx.play()
 	$StartBattleButton.disabled = true
 	ProgressionController.upgrade_list.append(selected_upgrade)
+	SignalBus.upgrade_selected.emit(selected_upgrade)
 	await sfx.finished
 	
-	SignalBus.upgrade_selected.emit(selected_upgrade)
+	
 	# Switch to next scene
 	var next_level = ProgressionController.load_next_level()
 	SignalBus.scene_switch.emit("res://Battle/%s" %next_level)
