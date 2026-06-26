@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cq202qb8puj21"]
 
 [ext_resource type="Script" uid="uid://bcjc2nuryxn2o" path="res://Actors/turtle.gd" id="1_veoao"]
-[ext_resource type="Texture2D" uid="uid://bn23wemjir8lr" path="res://Actors/Assets/player_turtle_blue.png" id="2_gen5i"]
 [ext_resource type="SpriteFrames" uid="uid://1akvpnd4dhcu" path="res://Actors/Sprites/player.tres" id="2_7mqse"]
+[ext_resource type="Texture2D" uid="uid://bn23wemjir8lr" path="res://Actors/Assets/player_turtle_blue.png" id="2_gen5i"]
 [ext_resource type="Texture2D" uid="uid://kj86k3tkss36" path="res://Actors/Assets/player_turtle.png" id="2_veoao"]
 [ext_resource type="Texture2D" uid="uid://c6o847ox1n1d2" path="res://Actors/Assets/red_dying_turtle.png" id="3_7mqse"]
 [ext_resource type="Texture2D" uid="uid://ct1m8mlxdeoww" path="res://Actors/Assets/player_turtle_red.png" id="4_3x8h4"]
@@ -106,7 +106,7 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2143536447]
 sprite_frames = SubResource("SpriteFrames_veoao")
-animation = &"green"
+animation = &"purple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
 shape = SubResource("CapsuleShape2D_k6u5b")
@@ -139,6 +139,8 @@ rotation = 2.0943952
 rotation = 0.64664906
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1410577490]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1666847661]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
