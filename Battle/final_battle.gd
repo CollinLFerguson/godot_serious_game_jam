@@ -41,6 +41,7 @@ func enemyDied():
 
 func gameOver():
 	if !is_round_over:
+		is_round_over = true
 		var timer = Timer.new()
 		add_child(timer)
 		timer.start(2)
