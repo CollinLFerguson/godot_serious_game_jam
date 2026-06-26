@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://13e5v5ne1hk0" path="res://UI/Buttons/TurtleStartButton.png" id="2_1mr4h"]
 [ext_resource type="Texture2D" uid="uid://c0hhv6xc8hyjc" path="res://UI/Control/joystick_base.png" id="2_shxfs"]
 [ext_resource type="Texture2D" uid="uid://641g1qvltdoo" path="res://UI/Control/joystick_ball.png" id="4_107ic"]
+[ext_resource type="Texture2D" uid="uid://olh6nb1kd5g3" path="res://UI/Control/UIToggleTip.png" id="5_107ic"]
 
 [node name="Joystick" type="Control" unique_id=1229592199]
 top_level = true
@@ -68,5 +69,14 @@ text = "
 "
 icon = ExtResource("2_1mr4h")
 flat = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2060814677]
+layout_mode = 0
+offset_left = -210.00005
+offset_top = -724.99994
+offset_right = 689.99994
+offset_bottom = -24.999939
+scale = Vector2(0.8794298, 0.8434364)
+texture = ExtResource("5_107ic")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
