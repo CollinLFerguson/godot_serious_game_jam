@@ -1,8 +1,12 @@
 extends Node2D
 
-var canDraw: bool
-var line: Line2D
-var currentLine: Line2D
+var red_turtle_sprite = preload("res://Actors/Assets/player_turtle_red.png")
+var orange_turtle_sprite = preload("res://Actors/Assets/player_turtle_orange.png")
+var yellow_turtle_sprite = preload("res://Actors/Assets/player_turtle_yellow.png")
+var green_turtle_sprite = preload("res://Actors/Assets/player_turtle.png")
+var blue_turtle_sprite = preload("res://Actors/Assets/player_turtle_blue.png")
+var purple_turtle_sprite = preload("res://Actors/Assets/player_turtle_purple.png")
+
 
 func setColorPalletteButtons():
 	var colors = [
@@ -26,21 +30,34 @@ func setColorPalletteButtons():
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	canDraw = false
-	line = $Line2D
-	line.clear_points()
 	setColorPalletteButtons()
-	$PixelArtCanvas.mouse_entered.connect(mouseEnteredCanvas)
-	$PixelArtCanvas.mouse_exited.connect(mouseExitedCanvas)
 	$StartBattleButton.pressed.connect(on_startBattleButton_pressed)
+	$RedColorButton.pressed.connect(redButtonPressed)
+	$OrangeColorButton.pressed.connect(orangeButtonPressed)
+	$YellowColorButton.pressed.connect(yellowButtonPressed)
+	$GreenColorButton.pressed.connect(greenButtonPressed)
+	$BlueColorButton.pressed.connect(blueButtonPressed)
+	$PurpleColorButton.pressed.connect(purpleButtonPressed)
+
+func redButtonPressed():
+	$Turtle.texture = red_turtle_sprite
 	
+func orangeButtonPressed():
+	$Turtle.texture = orange_turtle_sprite
+	
+func yellowButtonPressed():
+	$Turtle.texture = yellow_turtle_sprite
+
+func greenButtonPressed():
+	$Turtle.texture = green_turtle_sprite
+
+func blueButtonPressed():
+	$Turtle.texture = blue_turtle_sprite
+
+func purpleButtonPressed():
+	$Turtle.texture = purple_turtle_sprite
+
 func on_startBattleButton_pressed():
-	# Save user drawing TODO this doesn't seem to work lmfao
-	await RenderingServer.frame_post_draw
-	var img: Image = $PixelArtCanvas/SubViewportContainer/SubViewport.get_texture().get_image()
-	img.save_png("res://PlayerDrawing/playerDrawing.png")
-	var userTexture := ImageTexture.create_from_image(img)
-	
 	# Play sound effect for hitting the button
 	var sfx = $StartBattleButton/StartBattleSound
 	sfx.play()
@@ -49,36 +66,3 @@ func on_startBattleButton_pressed():
 	
 	# Switch to next scene
 	SignalBus.scene_switch.emit("res://UpgradeSelection/upgrade_select.tscn")
-
-func mouseEnteredCanvas():
-	canDraw = true
-
-func mouseExitedCanvas():
-	canDraw = false
-	currentLine = null
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				currentLine = line.duplicate()
-				line.add_sibling(currentLine)
-				currentLine.clear_points()
-				if drawCheck(event.position, currentLine):
-					currentLine.add_point(to_local(event.position))
-			else:
-				currentLine = null
-	elif event is InputEventMouseMotion and currentLine != null:
-		if drawCheck(event.position, currentLine):
-			currentLine.add_point(to_local(event.position))
-
-func drawCheck(mouse: Vector2, line: Line2D) -> bool:
-	# First check if mouse is inside the drawing canvas area
-	if canDraw:
-		# Allow drawing if nothing has been drawn
-		if line.points.size() == 0: 
-			return true
-		# Allow drawing if the mouse has moved
-		if mouse != line.points[line.points.size() - 1]:
-			return true
-	return false

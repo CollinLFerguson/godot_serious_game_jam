@@ -1,4 +1,7 @@
 extends Node
+
+var player_sprite_choice: Resource
+
 #Keeping this here for historic evidence, but its completely worthless, moved over to Jonah's progression controller
 func save_game():
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)

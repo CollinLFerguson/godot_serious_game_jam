@@ -31,6 +31,7 @@ var base_velocity:Vector2 = Vector2(500,500)
 var battle_started = false
 
 
+
 #shake variables
 var shake_amount = 10
 var shake_duration = 0.1
@@ -40,9 +41,9 @@ var shake_count = 10
 func _ready() -> void:
 	if is_player:
 		upgrade_arr.assign(ProgressionController.upgrade_list)
+	$AnimatedSprite2D.sprite_frames = sprite
 	SignalBus.battle_start.connect(battle_start_actions)
 	SignalBus.load_upgrades.emit(self, upgrade_arr)
-	$AnimatedSprite2D.sprite_frames = sprite
 	_init_stats()
 	
 	linear_velocity = Vector2.ZERO
@@ -134,7 +135,7 @@ func _on_body_entered(body: Node) -> void:
 			SignalBus.enemy_died.emit()
 		turtle_stats.queue_free()
 		queue_free()
-	
+
 func apply_damage(damage):
 	health -= damage
 	if health <= 0:
