@@ -25,3 +25,5 @@ texture_normal = ExtResource("3_1bvp3")
 
 [node name="StartButtonSound" type="AudioStreamPlayer2D" parent="StartGameButton" unique_id=1071253263]
 stream = ExtResource("2_0xm2m")
+bus = &"UI"
+
