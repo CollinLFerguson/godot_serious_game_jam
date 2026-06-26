@@ -38,7 +38,13 @@ func enemyDied():
 		battleOver()
 
 func gameOver():
-	SignalBus.scene_switch.emit("res://Battle/game_over_screen.tscn")
+	var timer = Timer.new()
+	add_child(timer)
+	timer.start(2)
+	timer.connect("timeout", triggerGameOverScreen)
+		
+func triggerGameOverScreen():
+		SignalBus.scene_switch.emit("res://Battle/game_over_screen.tscn")
 
 func battleOver():
 	SignalBus.battle_over.emit()

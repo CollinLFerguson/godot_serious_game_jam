@@ -40,11 +40,18 @@ func enemyDied():
 
 func gameOver():
 	if !is_round_over:
+		var timer = Timer.new()
+		add_child(timer)
+		timer.start(2)
+		timer.connect("timeout", triggerGameOverScreen)
+		
+func triggerGameOverScreen():
 		SignalBus.scene_switch.emit("res://Battle/game_over_screen.tscn")
 
 func battleOver():
 	SignalBus.battle_over.emit()
 	is_round_over = true
 	zooming = true
-	var endBattleInstance = endBattleScene.instantiate()
-	$CanvasLayer.add_child(endBattleInstance)
+	#var endBattleInstance = endBattleScene.instantiate()
+	#$CanvasLayer.add_child(endBattleInstance)
+	SignalBus.scene_switch.emit("res://Battle/victory_screen.tscn")
