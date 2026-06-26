@@ -6,8 +6,7 @@ extends Control
 var dragging := false
 
 func _ready() -> void:
-	print($Base.visible)
-	print($Ball.visible)
+	pass
 	
 func _gui_input(event: InputEvent) -> void:
 	var center = size / 2
