@@ -30,6 +30,12 @@ var is_turtle_a_gigachad = false
 var base_velocity:Vector2 = Vector2(500,500)
 var battle_started = false
 
+
+#shake variables
+var shake_amount = 10
+var shake_duration = 0.1
+var shake_count = 10
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if is_player:
@@ -96,6 +102,7 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("actor"):
 		SignalBus.hit.emit(self, body)
 		health -= int(body.linear_velocity.length() / 200)
+		shake_turtle()
 		$AudioStreamPlayer2D.stream = pain_sound
 		$AudioStreamPlayer2D.play()
 	elif body.is_in_group("weapon"):
@@ -155,3 +162,10 @@ func save():
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	apply_damage(900)
+
+
+func shake_turtle():
+	for i in shake_count:
+		var offset = Vector2(randf_range(-shake_amount, shake_amount), randf_range(-shake_amount, shake_amount))
+		global_position += offset
+		await get_tree().create_timer(shake_duration).timeout
