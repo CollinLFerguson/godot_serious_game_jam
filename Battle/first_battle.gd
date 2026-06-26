@@ -38,6 +38,9 @@ func enemyDied():
 
 func gameOver():
 	if !is_round_over:
+		var timer = Timer.new()
+		add_child(timer)
+		timer.start(3)
 		SignalBus.scene_switch.emit("res://Battle/game_over_screen.tscn")
 
 func battleOver():
