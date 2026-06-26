@@ -2,10 +2,12 @@ extends Control
 
 @export var radius := 100.0
 @onready var ball = $Ball
-
+@export var showTutorial = false
 var dragging := false
 
 func _ready() -> void:
+	if(showTutorial):
+		$TextureRect.visible = true
 	pass
 	
 func _gui_input(event: InputEvent) -> void:

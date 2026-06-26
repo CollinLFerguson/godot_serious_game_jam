@@ -16,8 +16,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if(turtle != null):
 		global_position = turtle.global_position - size / 2
-		$Health.text = str(turtle.health)
+		$Health.text = str(max(turtle.health, 0))
 		$Speed.text = str(turtle.linear_velocity.length())
 
 func cleanup():
 	self.queue_free()
+ 

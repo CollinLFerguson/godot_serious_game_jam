@@ -71,6 +71,7 @@ icon = ExtResource("2_1mr4h")
 flat = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2060814677]
+visible = false
 layout_mode = 0
 offset_left = -210.00005
 offset_top = -724.99994
