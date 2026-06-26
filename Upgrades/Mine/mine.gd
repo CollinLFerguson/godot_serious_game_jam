@@ -10,7 +10,7 @@ var parent_actor: Node
 func _ready() -> void:
 	SignalBus.battle_start.connect(startTimer)
 	
-func startTimer(args):
+func startTimer(_args):
 	if isspawned:
 		await get_tree().create_timer(1.0).timeout
 	else:
@@ -19,7 +19,7 @@ func startTimer(args):
 		arm(null)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 

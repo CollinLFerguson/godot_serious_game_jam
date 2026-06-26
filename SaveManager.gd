@@ -29,7 +29,7 @@ func load_game(player):
 	if not FileAccess.file_exists("user://savegame.save"):
 		return
 		
-	var save_nodes = get_tree().get_nodes_in_group("Persist")
+	var _save_nodes = get_tree().get_nodes_in_group("Persist")
 	
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
 	while save_file.get_position() < save_file.get_length():

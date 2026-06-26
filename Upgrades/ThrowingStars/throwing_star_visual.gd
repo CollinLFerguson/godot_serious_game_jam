@@ -5,7 +5,7 @@ var stars_scene: PackedScene = preload("res://Upgrades/ThrowingStars/ThrowingSta
 func _ready() -> void:
 	SignalBus.battle_start.connect(startTimer)
 	
-func startTimer(args):
+func startTimer(_args):
 	$StarTimer.start()
 
 func _on_star_timer_timeout() -> void:

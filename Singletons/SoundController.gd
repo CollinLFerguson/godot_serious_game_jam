@@ -67,7 +67,7 @@ func playBattleTheme():
 func enableSoundtrack(soundtrack_identifier: String, loop: bool = true):
 	if(soundtrack_identifier == current_soundtrack):
 		return
-	var bus_idx = AudioServer.get_bus_index("Soundtrack")
+	var _bus_idx = AudioServer.get_bus_index("Soundtrack")
 	if(!SOUNDTRACKS.has(soundtrack_identifier)):
 		MUSIC_STREAM.stop()
 		return
