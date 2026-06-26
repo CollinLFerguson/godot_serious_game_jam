@@ -8,6 +8,7 @@ var level_array = ["grungo",
 					"final_battle.tscn"]
 var current_level = 0
 var upgrade_list = []
+var is_player_a_gigachad = false
 
 func load_next_level() -> String:
 	current_level += 1

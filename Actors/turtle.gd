@@ -27,7 +27,6 @@ var terrain_sound = preload("res://SFX/Effects/crunch.mp3")
 var turtle_stats_resource = preload("res://UI/TurtleInfo/TurtleInfo.tscn")
 
 var turtle_stats:Node
-var is_turtle_a_gigachad = false
 var base_velocity:Vector2 = Vector2(500,500)
 var battle_started = false
 

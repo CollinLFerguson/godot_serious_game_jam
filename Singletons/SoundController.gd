@@ -1,8 +1,17 @@
 extends Node
 
 var EFFECTS: Dictionary = {}
-var tracks = [preload("res://SFX/Soundtrack/main_menu.mp3"), preload("res://SFX/Soundtrack/battle_theme_srs.mp3")]
-var SOUNDTRACKS: Dictionary = {"main_menu":tracks[0], "battle_theme_srs": tracks[1]}
+var tracks = [preload("res://SFX/Soundtrack/main_menu.mp3"), 
+				preload("res://SFX/Soundtrack/battle_theme_srs.mp3"),
+				preload("res://SFX/Soundtrack/final_boss.mp3"),
+				preload("res://SFX/Soundtrack/chad_ending.mp3"),
+				preload("res://SFX/Soundtrack/beta_ending.mp3")]
+var SOUNDTRACKS: Dictionary = {"main_menu":tracks[0], 
+								"battle_theme_srs": tracks[1],
+								"final_boss": tracks[2],
+								"chad_ending": tracks[3],
+								"beta_ending": tracks[4]
+								}
 
 var MUSIC_STREAM: AudioStreamPlayer
 var current_soundtrack:String = ""

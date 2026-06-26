@@ -74,7 +74,7 @@ func attachUpgradeItem(source, upgrade_identifiers):
 		var item = createItemInstantiation(item_name)
 		
 		if item == null:
-			source.is_turtle_a_gigachad = true
+			ProgressionController.is_player_a_gigachad = true
 			return
 			
 		var valid_attach_points = UPGRADES[item_name]["attach_points"]

@@ -11,7 +11,7 @@ var engine_time = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.load_soundtrack.emit("battle_theme_srs")
+	SignalBus.load_soundtrack.emit("final_boss")
 	SignalBus.enemy_died.connect(enemyDied)
 	SignalBus.player_died.connect(gameOver)
 
@@ -33,10 +33,11 @@ func zoom(delta):
 		
 
 func enemyDied():
-	enemyCount -= 1
-	var turt_count = get_tree().get_nodes_in_group("actor").size()
-	if enemyCount <= 0 and turt_count <= 1:
-		battleOver()
+	if !is_round_over:
+		enemyCount -= 1
+		var turt_count = get_tree().get_nodes_in_group("actor").size()
+		if enemyCount <= 0 and turt_count <= 1:
+			battleOver()
 
 func gameOver():
 	if !is_round_over:
