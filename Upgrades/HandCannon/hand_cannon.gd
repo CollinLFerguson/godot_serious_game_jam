@@ -9,7 +9,7 @@ var explode_sound = preload("res://art/explosion/explosion.mp3")
 func _ready() -> void:
 	SignalBus.battle_start.connect(startTimer)
 	
-func startTimer(args):
+func startTimer(_args):
 	$CannonballTimer.start()
 
 

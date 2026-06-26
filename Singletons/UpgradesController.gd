@@ -46,7 +46,7 @@ func _ready() -> void:
 	SignalBus.upgrade_selected.connect(setUpgradeItem)
 	SignalBus.load_upgrades.connect(attachUpgradeItem)
 
-func setUpgradeItem(itemName):
+func setUpgradeItem(_itemName):
 	#upgrade_item = itemName
 	pass
 		

@@ -7,7 +7,6 @@ var green_turtle_sprite = preload("res://Actors/Assets/player_turtle.png")
 var blue_turtle_sprite = preload("res://Actors/Assets/player_turtle_blue.png")
 var purple_turtle_sprite = preload("res://Actors/Assets/player_turtle_purple.png")
 
-
 func setColorPalletteButtons():
 	var colors = [
 		{"buttonObject": $RedColorButton, "code": "DF3100"},

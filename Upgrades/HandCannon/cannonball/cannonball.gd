@@ -11,7 +11,7 @@ func _ready() -> void:
 	max_contacts_reported = 1
 	pass
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	$AnimatedSprite2D.rotation += .1
 
 

@@ -10,7 +10,7 @@ func _ready() -> void:
 	max_contacts_reported = 1
 	linear_velocity = Vector2(800,800).rotated(randf_range(0, PI * 2))
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	$AnimatedSprite2D.rotation += .1
 
 func _on_body_entered(body: Node) -> void:

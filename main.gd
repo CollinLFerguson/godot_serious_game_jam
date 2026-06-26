@@ -13,5 +13,5 @@ func on_startGameButton_pressed():
 	SignalBus.scene_switch.emit("res://CharacterSelect/character_select.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

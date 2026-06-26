@@ -30,20 +30,24 @@ var is_turtle_a_gigachad = false
 var base_velocity:Vector2 = Vector2(500,500)
 var battle_started = false
 
-
-
 #shake variables
 var shake_amount = 10
 var shake_duration = 0.1
 var shake_count = 10
 
+var inHurtFrame = false
+var isHurt = false
+var hurt_flash_duration = 30 # frames
+var hurt_flash_color: Color = Color(1,1,1, 0)
 
 #hurt/dying variables
-var redHurtFlash_amount = 10
-var redHurtFlash_duration = 0.1
-var redHurtFlash_count = 10
-var redHurtFlash_Turtle = preload("res://Actors/Assets/red_dying_turtle.png")
+var death_flash_duration = 30 # frames
+var death_flash_color: Color = Color(1,0,0)
 
+var inDeathFrame = false
+var isDead = false
+var current_hurt_flash = 0
+var current_dead_flash = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -78,9 +82,15 @@ func _init_stats() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if(isDead):
+		handleTurtleDeathFlash()
+	elif(isHurt):
+		handleTurtleHurtFlash()
 	pass
 
 func _physics_process(_delta: float) -> void:	
+	if(isDead):
+		freeze = true
 	var velocity = linear_velocity.length()
 	apply_force(linear_velocity * -(1 - deceleration))
 	
@@ -98,8 +108,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	elif speed < min_velocity and speed > 0.0:
 		state.linear_velocity = vel.normalized() * min_velocity
 		
-	
-	#$Speed.text = "%s" % int(state.linear_velocity.length())
 	var angular: float = abs(state.angular_velocity)
 
 	if angular > max_angular_velocity:
@@ -111,6 +119,7 @@ func _on_body_entered(body: Node) -> void:
 	if(!battle_started):
 		return
 	if body.is_in_group("actor"):
+		current_hurt_flash = hurt_flash_duration
 		SignalBus.hit.emit(self, body)
 		health -= int(body.linear_velocity.length() / 200)
 		shake_turtle()
@@ -118,21 +127,22 @@ func _on_body_entered(body: Node) -> void:
 		$AudioStreamPlayer2D.play()
 		
 	elif body.is_in_group("weapon"):
+		hurt()
 		SignalBus.hit.emit(self, body)
 		health -= body.damage
-
 		apply_impulse(linear_velocity * (1 + body.weight / 100))
 		$AudioStreamPlayer2D.stream = sword_sound
 		$AudioStreamPlayer2D.play()
 	
 	elif body.is_in_group("projectile"):
+		hurt()
 		health -= body.damage
 		apply_impulse(linear_velocity * (1 + body.weight / 200))
 		body.queue_free()
 	
 	elif body.is_in_group("scenery"):
 		if linear_velocity.length() > scenery_damage_threshhold:
-			
+			hurt()
 			SignalBus.hit.emit(self, body)
 			health -= int(linear_velocity.length() / 200)
 			$AudioStreamPlayer2D.stream = terrain_sound
@@ -145,9 +155,8 @@ func _on_body_entered(body: Node) -> void:
 		if not is_player:
 			self.remove_from_group("actor")
 			SignalBus.enemy_died.emit()
-		#turtle_stats.queue_free()
-		queue_free()
-
+		handleTurtleDeath()
+	
 func apply_damage(damage):
 	health -= damage
 	if health <= 0:
@@ -158,13 +167,8 @@ func apply_damage(damage):
 		if not is_player:
 			self.remove_from_group("actor")
 			SignalBus.enemy_died.emit()
-		turtle_stats.queue_free()
 		queue_free()
-#func save_upgrades():
-	#if is_player:
-		#return [UpgradesController.UPGRADES]
-	#else:
-		#return upgrade_dict
+		
 
 func save():
 	var upgrades = upgrade_arr
@@ -174,13 +178,48 @@ func save():
 	
 	return save_dict
 
+func hurt():
+		current_hurt_flash = hurt_flash_duration
+		isHurt = true
+
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	apply_damage(900)
 
+func handleTurtleDeath():
+	isDead = true
+	$CollisionShape2D.disabled = true
+	
+func handleTurtleDeathFlash():
+	if(death_flash_duration <= 0):
+		queue_free()
+		return
+	death_flash_duration -= 1
+	if(death_flash_duration % 5 == 1):
+		if(inDeathFrame == false):
+			inDeathFrame = true
+			$AnimatedSprite2D.modulate = death_flash_color
+		else:
+			inDeathFrame = false
+			$AnimatedSprite2D.modulate = Color(1,1,1,1)
+
+func handleTurtleHurtFlash():
+	if(current_hurt_flash <= 0):
+		$AnimatedSprite2D.modulate = Color(1,1,1,1)
+		isHurt = false
+		return
+	current_hurt_flash -= 1
+	if(current_hurt_flash % 5 == 1):
+		if(inHurtFrame == false):
+			inHurtFrame = true
+			$AnimatedSprite2D.modulate = hurt_flash_color
+		else:
+			inHurtFrame = false
+			$AnimatedSprite2D.modulate = Color(1,1,1,1)
 
 func shake_turtle():
-	for i in shake_count:
-		var offset = Vector2(randf_range(-shake_amount, shake_amount), randf_range(-shake_amount, shake_amount))
-		global_position += offset
-		await get_tree().create_timer(shake_duration).timeout
+	pass
+	#for i in shake_count:
+		#var offset = Vector2(randf_range(-shake_amount, shake_amount), randf_range(-shake_amount, shake_amount))
+		#global_position += offset
+		#await get_tree().create_timer(shake_duration).timeout
 	

@@ -12,16 +12,16 @@ func _ready():
 func handleSoundtrack(track_name: String, loop: bool = false):
 	SoundController.enableSoundtrack(track_name, loop)
 
-func handleHitstop(source, target):
+func handleHitstop(_source, target):
 	if target.is_in_group('scenery'):
 		return
 	#define more conditions here.
 	HitstopController.hitstop_short()
 
-func handleSparksParticles(source: Node2D, target) -> void:
+func handleSparksParticles(source: Node2D, _target) -> void:
 	ParticleController.throwSparksParticle(source)
 	
-func handleDamage(source, target):
+func handleDamage(_source, target):
 	if target.get_class() == "RigidBody2D":
 		pass
 		

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cq202qb8puj21" path="res://Actors/turtle.tscn" id="2_igvwn"]
 [ext_resource type="Texture2D" uid="uid://bb8d6cin6dwf3" path="res://art/first_battle_border.png" id="3_3f7mq"]
 [ext_resource type="SpriteFrames" uid="uid://qfqq8a0co8xr" path="res://Actors/Sprites/grunt.tres" id="4_igvwn"]
+[ext_resource type="SpriteFrames" uid="uid://1akvpnd4dhcu" path="res://Actors/Sprites/player.tres" id="4_r3nno"]
 [ext_resource type="PackedScene" uid="uid://d3t4bv13uean6" path="res://UI/Control/Joystick.tscn" id="6_dyk1e"]
 
 [node name="FirstBattle" type="Node2D" unique_id=1746147702]
@@ -23,6 +24,7 @@ polygon = PackedVector2Array(168, 471, 716, 239, 1201, 244, 1208, 273, 1342, 319
 [node name="Turtle" parent="." unique_id=2115216272 instance=ExtResource("2_igvwn")]
 position = Vector2(1487, 541)
 is_player = true
+sprite = ExtResource("4_r3nno")
 
 [node name="FirstBattleBorder" type="Sprite2D" parent="." unique_id=1459911466]
 top_level = true
