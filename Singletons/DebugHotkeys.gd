@@ -2,7 +2,6 @@ extends Node
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Immediately stop if this is not a debug/editor run
-	print("pressed button")
 	if not OS.is_debug_build():
 		return
 		
