@@ -50,6 +50,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2143536447]
 sprite_frames = SubResource("SpriteFrames_veoao")
 animation = &"dying"
+frame_progress = 0.07495623
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
 shape = SubResource("CapsuleShape2D_k6u5b")
