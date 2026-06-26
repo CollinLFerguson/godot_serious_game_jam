@@ -1,6 +1,6 @@
 extends Node
 var default_screen_texture = preload("res://UI/Backgrounds/TurtleYouWinScreen.png")
-
+var epic_screen_texture = preload("res://UI/Backgrounds/GigaChadEnding.png")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$TextureButton.pressed.connect(goToCredits)
@@ -8,7 +8,7 @@ func _ready() -> void:
 		$TextureRect.texture = default_screen_texture
 		SignalBus.load_soundtrack.emit("beta_ending")
 	else:
-		$TextureRect.texture = default_screen_texture
+		$TextureRect.texture = epic_screen_texture
 		SignalBus.load_soundtrack.emit("chad_ending")
 
 func goToCredits():
