@@ -28,7 +28,7 @@ func zoom(delta):
 		$Camera2D.position = $Turtle.position
 		if $Camera2D.zoom.x > end * .8:
 			zooming = false
-	if is_round_over:
+	if is_round_over and is_instance_valid($Turtle):
 		$Camera2D.position = $Turtle.position
 		
 
