@@ -20,6 +20,7 @@ height = 126.0
 
 [node name="Sword" type="StaticBody2D" unique_id=2064383032 groups=["weapon"]]
 collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_mce6v")
 weight = 6
 
