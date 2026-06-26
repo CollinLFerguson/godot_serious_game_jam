@@ -189,7 +189,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func handleTurtleDeath():
 	isDead = true
-	$CollisionShape2D.set_diferred("disabled", true)
+	$CollisionShape2D.set_deferred("disabled", true)
 	
 func handleTurtleDeathFlash():
 	if(death_flash_duration <= 0):
