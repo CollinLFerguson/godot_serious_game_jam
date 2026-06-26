@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://cq202qb8puj21"]
 
 [ext_resource type="Script" uid="uid://bcjc2nuryxn2o" path="res://Actors/turtle.gd" id="1_veoao"]
+[ext_resource type="Texture2D" uid="uid://bn23wemjir8lr" path="res://Actors/Assets/player_turtle_blue.png" id="2_gen5i"]
 [ext_resource type="Texture2D" uid="uid://kj86k3tkss36" path="res://Actors/Assets/player_turtle.png" id="2_veoao"]
 [ext_resource type="Texture2D" uid="uid://c6o847ox1n1d2" path="res://Actors/Assets/red_dying_turtle.png" id="3_7mqse"]
+[ext_resource type="Texture2D" uid="uid://ct1m8mlxdeoww" path="res://Actors/Assets/player_turtle_red.png" id="4_3x8h4"]
+[ext_resource type="Texture2D" uid="uid://drmewahlj6s2o" path="res://Actors/Assets/player_turtle_orange.png" id="5_sk5pr"]
+[ext_resource type="Texture2D" uid="uid://b8l7imweueudn" path="res://Actors/Assets/player_turtle_purple.png" id="6_tjcle"]
+[ext_resource type="Texture2D" uid="uid://cwlxkjnsp2p77" path="res://Actors/Assets/player_turtle_yellow.png" id="8_xebea"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cnp70"]
 friction = 0.0
@@ -10,6 +15,14 @@ bounce = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_veoao"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gen5i")
+}],
+"loop": 1,
+"name": &"blue",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_veoao")
@@ -28,6 +41,46 @@ animations = [{
 "loop": 1,
 "name": &"dying",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_veoao")
+}],
+"loop": 1,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_sk5pr")
+}],
+"loop": 1,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tjcle")
+}],
+"loop": 1,
+"name": &"purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3x8h4")
+}],
+"loop": 1,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xebea")
+}],
+"loop": 1,
+"name": &"yellow",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6u5b"]
@@ -52,6 +105,7 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2143536447]
 sprite_frames = SubResource("SpriteFrames_veoao")
+animation = &"green"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937546947]
 shape = SubResource("CapsuleShape2D_k6u5b")

@@ -47,9 +47,10 @@ var redHurtFlash_Turtle = preload("res://Actors/Assets/red_dying_turtle.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AnimatedSprite2D.sprite_frames = sprite
 	if is_player:
 		upgrade_arr.assign(ProgressionController.upgrade_list)
-	$AnimatedSprite2D.sprite_frames = sprite
+		$AnimatedSprite2D.animation = SaveManager.player_sprite_choice
 	SignalBus.battle_start.connect(battle_start_actions)
 	SignalBus.load_upgrades.emit(self, upgrade_arr)
 	_init_stats()

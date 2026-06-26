@@ -41,21 +41,27 @@ func _ready() -> void:
 
 func redButtonPressed():
 	$Turtle.texture = red_turtle_sprite
+	SaveManager.player_sprite_choice = "red"
 	
 func orangeButtonPressed():
 	$Turtle.texture = orange_turtle_sprite
+	SaveManager.player_sprite_choice = "orange"
 	
 func yellowButtonPressed():
 	$Turtle.texture = yellow_turtle_sprite
+	SaveManager.player_sprite_choice = "yellow"
 
 func greenButtonPressed():
 	$Turtle.texture = green_turtle_sprite
+	SaveManager.player_sprite_choice = "green"
 
 func blueButtonPressed():
 	$Turtle.texture = blue_turtle_sprite
+	SaveManager.player_sprite_choice = "blue"
 
 func purpleButtonPressed():
 	$Turtle.texture = purple_turtle_sprite
+	SaveManager.player_sprite_choice = "purple"
 
 func on_startBattleButton_pressed():
 	# Play sound effect for hitting the button
