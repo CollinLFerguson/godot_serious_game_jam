@@ -56,4 +56,5 @@ func battleOver():
 	zooming = true
 	#var endBattleInstance = endBattleScene.instantiate()
 	#$CanvasLayer.add_child(endBattleInstance)
+	await get_tree().create_timer(5, true, false, true).timeout
 	SignalBus.scene_switch.emit("res://Battle/victory_screen.tscn")
