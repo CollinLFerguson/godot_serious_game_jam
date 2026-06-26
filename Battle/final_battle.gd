@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	
 func zoom(delta):
 	var end: float = 2.0
-	if zooming:
+	if zooming and is_instance_valid($Turtle):
 		$Camera2D.zoom.x = lerp($Camera2D.zoom.x, end, 0.6 * delta)
 		$Camera2D.zoom.y = lerp($Camera2D.zoom.y, end, 0.6 * delta)
 		engine_time = lerp(engine_time, .05, .6 * delta)
