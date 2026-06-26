@@ -43,8 +43,6 @@ offset_left = 777.0
 offset_top = 809.0
 offset_right = 1139.0
 offset_bottom = 1059.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1024330821]
 limit_left = 0
