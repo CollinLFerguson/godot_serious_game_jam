@@ -64,6 +64,9 @@ func purpleButtonPressed():
 	SaveManager.player_sprite_choice = "purple"
 
 func on_startBattleButton_pressed():
+	if SaveManager.player_sprite_choice == "":
+		SaveManager.player_sprite_choice = "green"
+		
 	# Play sound effect for hitting the button
 	var sfx = $StartBattleButton/StartBattleSound
 	sfx.play()
