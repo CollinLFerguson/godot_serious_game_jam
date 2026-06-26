@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @export var damage = 20
 @export var weight = 60
-@export var collisionsBeforeDecay = 3
+@export var collisionsBeforeDecay = 4
 #@export var secondsBeforeDecay = 5.0
 var base_velocity
 
