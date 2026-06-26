@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	
 func zoom(delta):
 	var end: float = 2.0
-	if zooming and is_instance_valid($Turtle):
+	if zooming and has_node("Turtle"):
 		$Camera2D.zoom.x = lerp($Camera2D.zoom.x, end, 0.6 * delta)
 		$Camera2D.zoom.y = lerp($Camera2D.zoom.y, end, 0.6 * delta)
 		engine_time = lerp(engine_time, .05, .6 * delta)
@@ -28,7 +28,7 @@ func zoom(delta):
 		$Camera2D.position = $Turtle.position
 		if $Camera2D.zoom.x > end * .8:
 			zooming = false
-	if is_round_over and is_instance_valid($Turtle):
+	if is_round_over and has_node("Turtle"):
 		$Camera2D.position = $Turtle.position
 
 func enemyDied():
