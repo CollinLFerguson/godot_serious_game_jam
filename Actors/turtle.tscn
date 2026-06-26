@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcjc2nuryxn2o" path="res://Actors/turtle.gd" id="1_veoao"]
 [ext_resource type="Texture2D" uid="uid://bn23wemjir8lr" path="res://Actors/Assets/player_turtle_blue.png" id="2_gen5i"]
+[ext_resource type="SpriteFrames" uid="uid://1akvpnd4dhcu" path="res://Actors/Sprites/player.tres" id="2_7mqse"]
 [ext_resource type="Texture2D" uid="uid://kj86k3tkss36" path="res://Actors/Assets/player_turtle.png" id="2_veoao"]
 [ext_resource type="Texture2D" uid="uid://c6o847ox1n1d2" path="res://Actors/Assets/red_dying_turtle.png" id="3_7mqse"]
 [ext_resource type="Texture2D" uid="uid://ct1m8mlxdeoww" path="res://Actors/Assets/player_turtle_red.png" id="4_3x8h4"]
@@ -100,7 +101,7 @@ max_contacts_reported = 5
 script = ExtResource("1_veoao")
 upgrade_arr = Array[String](["sword", "sword", "sword", "sword"])
 max_angular_velocity = 50.0
-sprite = SubResource("SpriteFrames_veoao")
+sprite = ExtResource("2_7mqse")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2143536447]
