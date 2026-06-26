@@ -20,6 +20,7 @@ extends RigidBody2D
 
 @export var deceleration:float = 0.2
 @export var sprite: SpriteFrames = load("res://Actors/Sprites/player.tres")
+
 var sword_sound = preload("res://SFX/Effects/sword_sound.mp3")
 var pain_sound = preload("res://SFX/Effects/turtle_hurt2.mp3")
 var terrain_sound = preload("res://SFX/Effects/crunch.mp3")
@@ -51,7 +52,8 @@ var current_dead_flash = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimatedSprite2D.sprite_frames = sprite
+	if(!is_player):
+		$AnimatedSprite2D.sprite_frames = sprite
 	if is_player:
 		upgrade_arr.assign(ProgressionController.upgrade_list)
 		$AnimatedSprite2D.animation = SaveManager.player_sprite_choice
