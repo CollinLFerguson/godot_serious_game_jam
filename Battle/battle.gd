@@ -33,7 +33,8 @@ func zoom(delta):
 	
 func enemyDied():
 	enemyCount -= 1
-	if enemyCount == 0:
+	var turt_count = get_tree().get_nodes_in_group("actor").size()
+	if enemyCount == 0 and turt_count <= 1:
 		battleOver()
 
 func gameOver():
