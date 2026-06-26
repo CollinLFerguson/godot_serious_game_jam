@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://4mawly5pe3jq"]
 
 [ext_resource type="Texture2D" uid="uid://dlwii41sivm0u" path="res://UI/Backgrounds/TurtleGameCredits.png" id="1_f3yit"]
+[ext_resource type="Texture2D" uid="uid://46x7knkbkmro" path="res://UI/Buttons/TurtleNextButton.png" id="2_kh5kd"]
 
 [node name="CreditsScreen" type="Control" unique_id=587760966]
 layout_mode = 3
@@ -15,3 +16,11 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_f3yit")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=699979214]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 832.0
+offset_right = 1220.0
+offset_bottom = 1032.0
+texture_normal = ExtResource("2_kh5kd")

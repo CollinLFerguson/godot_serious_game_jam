@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://e1tgrt2ajvqk"]
 
 [ext_resource type="Texture2D" uid="uid://bktib1d3e3dyi" path="res://UI/Backgrounds/TurtleYouWinScreen.png" id="1_gj62n"]
+[ext_resource type="Texture2D" uid="uid://46x7knkbkmro" path="res://UI/Buttons/TurtleNextButton.png" id="2_s6lyw"]
 
 [node name="VictoryScreen" type="Control" unique_id=472911444]
 layout_mode = 3
@@ -15,3 +16,11 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_gj62n")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1572606112]
+layout_mode = 0
+offset_left = 1369.0
+offset_top = 847.0
+offset_right = 1869.0
+offset_bottom = 1047.0
+texture_normal = ExtResource("2_s6lyw")
