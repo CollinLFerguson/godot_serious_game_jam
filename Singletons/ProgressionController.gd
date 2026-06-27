@@ -17,3 +17,4 @@ func load_next_level() -> String:
 func reset_level():
 	current_level = 0
 	upgrade_list = []
+	is_player_a_gigachad = false

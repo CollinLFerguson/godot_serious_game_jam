@@ -5,6 +5,8 @@ extends Node2D
 func _ready() -> void:
 	$StartGameButton.pressed.connect(on_startGameButton_pressed)
 	SignalBus.load_soundtrack.emit("main_menu")
+	ProgressionController.reset_level()
+
 func on_startGameButton_pressed():
 	var sfx = $StartGameButton/StartButtonSound
 	sfx.play()
